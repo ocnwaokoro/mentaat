@@ -1,6 +1,9 @@
 export const metadata = {
   title: 'Mentaat',
   description: 'Mentaat Logo',
+  icons: {
+    icon: '/mentaat-logo.jpg',
+  },
 }
 
 export default function RootLayout({ children }) {
