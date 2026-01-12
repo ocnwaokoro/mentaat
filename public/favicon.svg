@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-  <!-- White square background -->
-  <rect width="512" height="512" fill="#FFFFFF"/>
+  <!-- Black square background -->
+  <rect width="512" height="512" fill="#000000"/>
   
   <!-- Centered logo - scaled to fit nicely with padding -->
   <!-- Original logo is 266x279, scaling to ~1.5x and centering -->
   <g transform="translate(56.5, 46.75) scale(1.5)">
-    <g transform="translate(0.000000,279.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+    <g transform="translate(0.000000,279.000000) scale(0.100000,-0.100000)" fill="#FFFFFF" stroke="none">
       <path d="M1350 2055 c-36 2 -82 0 -103 -5 -20 -5 -61 -22 -90 -36 -37 -19
 -111 -85 -262 -235 -116 -115 -215 -209 -220 -209 -6 0 -99 89 -208 198 l-198
 197 -90 -94 -91 -94 513 -512 c483 -482 518 -514 574 -536 46 -18 80 -23 150

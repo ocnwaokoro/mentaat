@@ -23,13 +23,6 @@ export default function Home() {
   const desktopGap = baseGap * DESKTOP_SCALE
   
   const styles = `
-    :root {
-      --bg0: #070a10;
-      --bg1: #0b1220;
-      --bg2: #101b30;
-      --glow: #2b3f66;
-    }
-
     .logo-container {
       height: clamp(${mobileSigilSize * 0.6}px, ${mobileSigilSize * 0.15}vw, ${mobileSigilSize}px);
       width: clamp(${mobileSigilSize * 0.6}px, ${mobileSigilSize * 0.15}vw, ${mobileSigilSize}px);
@@ -45,39 +38,8 @@ export default function Home() {
     
     .main-container {
       gap: ${mobileGap}px;
-      background:
-        radial-gradient(900px 520px at 50% 38%,
-          rgba(43,63,102,0.55) 0%,
-          rgba(16,27,48,0.28) 40%,
-          rgba(11,18,32,0.10) 65%,
-          rgba(7,10,16,0.00) 78%),
-        linear-gradient(135deg,
-          rgba(255,255,255,0.06) 0%,
-          rgba(255,255,255,0.00) 40%,
-          rgba(0,0,0,0.12) 100%),
-        radial-gradient(1200px 800px at 50% 55%,
-          var(--bg2) 0%,
-          var(--bg1) 55%,
-          var(--bg0) 100%);
+      background: #000000;
       position: relative;
-    }
-
-    .main-container::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background:
-        radial-gradient(1200px 900px at 50% 50%,
-          rgba(0,0,0,0.00) 45%,
-          rgba(0,0,0,0.40) 100%),
-        repeating-linear-gradient(0deg,
-          rgba(255,255,255,0.018) 0px,
-          rgba(255,255,255,0.018) 1px,
-          rgba(0,0,0,0.00) 2px,
-          rgba(0,0,0,0.00) 4px);
-      opacity: 0.55;
-      mix-blend-mode: overlay;
     }
     
     @media (min-width: 768px) {
