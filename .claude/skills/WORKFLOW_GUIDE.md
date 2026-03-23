@@ -4,6 +4,69 @@ Complete guide from project bootstrap through PRD to production-ready code.
 
 All skills read from `config.md` (project settings) and `tech-stack.md` (codebase reality). Run the bootstrap stages once, then use the development lifecycle repeatedly.
 
+**Global skills available (from ~/.claude/skills/):** Bencium UX design suite (controlled-ux-designer, innovative-ux-designer, impact-designer, code-conventions), design-audit, ui-design-core, ui-design-a11y, typography, human-architect-mindset, vanity-engineering-review. Superpowers suite (brainstorming, TDD, writing-plans, executing-plans, systematic-debugging, code-review, etc.) loaded via plugin.
+
+---
+
+## Mentaat Daily Workflow (Start Here)
+
+```
+MORNING:
+  /start-day                        → Dashboard, standup, pick task
+
+BUILDING (two modes):
+
+  Mode A — Full pipeline (new product):
+    /build-product <product-name>   → Orchestrates everything:
+      Phase 0:    Read PRD, confirm
+      Phase 0.5:  Preprocess PRD into build spec
+      Phase 0.75: Prototype — uses Bencium UX skills for design,
+                  design-audit + ui-design-a11y for audit passes
+                  (HTML for apps/*, USSDify for bots/*)
+      Phase 1:    Scaffold in monorepo
+      Phase 2:    Create Linear tickets via /prd
+      Phase 2.5:  Refine top tickets via /refine-ticket
+      Phase 3:    GitHub remote setup
+      Phase 4:    Build via /autopilot (ticket by ticket)
+                  Uses superpowers:TDD, superpowers:writing-plans,
+                  superpowers:verification-before-completion
+      Phase 5:    PR review (superpowers:requesting-code-review)
+                  + deploy
+      (Asks approval at each checkpoint — auto-advances between)
+
+  Mode B — Individual ticket (continuing work):
+    /refine-ticket MNT-X            → Add AC + implementation plan
+    /autopilot MNT-X                → Branch → TDD → commit → PR
+    /pr-feedback                    → Address review comments
+    /ready-for-review               → Mark PR ready
+
+EVENING:
+  /end-day                          → Log what happened, update files
+  (Fridays: /end-day invokes /retro → structured retrospective)
+```
+
+**How tickets get created:**
+- Sprint 1 tickets (MNT-1 to MNT-7) already exist in Linear
+- Future sprints: `/build-product <name>` creates tickets from PRDs automatically
+- Or manually: `/prd prds-v2/<file>.md` parses a PRD into Linear tickets
+- Individual tickets: `/linear-tickets` for bugs, chores, or ad-hoc features
+
+**How tickets get refined:**
+- `/build-product` auto-refines the top 3-5 tickets during Phase 2.5
+- Or manually: `/refine-ticket MNT-X` adds AC + implementation plan to any ticket
+- `/autopilot` requires a refined ticket (with implementation plan) — it will tell you to run `/refine-ticket` first if the plan is missing
+
+**Design & quality skills used throughout:**
+- `superpowers:brainstorming` — before any creative work
+- `bencium-controlled-ux-designer` or `bencium-innovative-ux-designer` — during prototype phase
+- `design-audit` — audit pass on prototypes before production code
+- `ui-design-a11y` — accessibility audit pass (WCAG 2.1 AA)
+- `superpowers:test-driven-development` — during /autopilot implementation
+- `superpowers:verification-before-completion` — before claiming anything is done
+- `superpowers:systematic-debugging` — when tests fail
+- `superpowers:requesting-code-review` — before merging
+- `/retro` — weekly retrospective that saves lessons to memory
+
 ---
 
 ## Workflow Overview
