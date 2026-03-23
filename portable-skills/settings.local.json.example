@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx vitest:*)",
+      "Bash(npx tsc:*)",
+      "Bash(docker compose:*)",
+      "Bash(gh pr:*)",
+      "Bash(gh api:*)",
+      "Read(//Users/ocnwaokoro/.claude/skills/**)",
+      "Read(//Users/ocnwaokoro/Downloads/nig-$$.claude/skills/implement-design/**)",
+      "Read(//Users/ocnwaokoro/Downloads/**)",
+      "Bash(cp -R /Users/ocnwaokoro/Downloads/nig-$$$/.claude/skills/* /Users/ocnwaokoro/Downloads/nig-$$$/portable-skills/)",
+      "Bash(cp /Users/ocnwaokoro/Downloads/nig-$$$/.claude/settings.json /Users/ocnwaokoro/Downloads/nig-$$$/portable-skills/settings.json.example)",
+      "Bash(cp /Users/ocnwaokoro/Downloads/nig-$$$/.claude/settings.local.json /Users/ocnwaokoro/Downloads/nig-$$$/portable-skills/settings.local.json.example)"
+    ]
+  }
+}
