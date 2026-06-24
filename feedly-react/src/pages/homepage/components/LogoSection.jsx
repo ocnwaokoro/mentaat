@@ -1,0 +1,35 @@
+const LOGOS = [
+  { alt: 'Canada Media Fund', src: '/assets/asset-9.svg' },
+  { alt: 'Cloudflare', src: '/assets/asset-10.svg' },
+  { alt: 'Lufthansa', src: '/assets/asset-11.svg' },
+  { alt: 'Sopra Steria', src: '/assets/asset-12.svg' },
+  { alt: 'Agenus', src: '/assets/asset-13.svg' },
+  { alt: 'EMarketer', src: '/assets/asset-14.svg' },
+  { alt: 'Netskope', src: '/assets/asset-15.svg' },
+  { alt: 'Secure Cyber Defense', src: '/assets/asset-16.svg' },
+  { alt: 'Danone', src: '/assets/asset-17.svg' },
+  { alt: 'Verizon', src: '/assets/asset-18.svg' },
+  { alt: 'Airbus', src: '/assets/asset-19.svg' },
+  { alt: 'Openfields', src: '/assets/asset-20.svg' },
+  { alt: 'Royal Bank of Scotland', src: '/assets/asset-21.svg' },
+  { alt: 'Delta Dental', src: '/assets/asset-22.svg' },
+  { alt: 'River Cap', src: '/assets/asset-23.svg' },
+]
+
+const slideClass = 'Flex_flex___mzvZ Flex_align--center__9VuNC Flex_direction--row__W6CGY Flex_justify--start__vk9Tl LogoSection_slide__VPla0'
+
+export default function LogoSection() {
+  return (
+    <section className="LogoSection_logoSection__t58uZ">
+      <div className="LogoSection_slider__oD3c2" style={{ '--n-logos': 15 }}>
+        <div className="Flex_flex___mzvZ Flex_align--center__9VuNC Flex_direction--row__W6CGY Flex_justify--start__vk9Tl LogoSection_sliderTrack__Wk41d">
+          {[...LOGOS, ...LOGOS].map((logo, i) => (
+            <div key={i} className={slideClass}>
+              <img alt={logo.alt} loading="lazy" width={134} height={48} decoding="async" className="LogoSection_logo__Gkdzt" src={logo.src} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

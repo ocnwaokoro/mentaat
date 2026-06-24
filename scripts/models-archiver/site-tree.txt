@@ -1,0 +1,126 @@
+/ (root)
+  └ https://www.models.com/
+about/
+  listings/
+    creatives/
+      about/listings/creatives
+        └ https://www.models.com/about/listings/creatives/
+    modeling/
+      about/listings/modeling
+        └ https://www.models.com/about/listings/modeling/
+  services/
+    about/services
+      └ https://www.models.com/about/services/
+account/
+  account
+    └ https://www.models.com/account/
+activism/
+  activism
+    └ https://www.models.com/activism
+agencies/
+  agencies
+    └ https://www.models.com/agencies/
+  Modeling/
+    agencies/Modeling
+      └ https://www.models.com/agencies/Modeling
+  PhotoRep/
+    agencies/PhotoRep
+      └ https://www.models.com/agencies/PhotoRep
+  Production/
+    agencies/Production
+      └ https://www.models.com/agencies/Production
+beauty/
+  beauty
+    └ https://www.models.com/beauty
+company/
+  masthead.html/
+    company/masthead.html
+      └ https://www.models.com/company/masthead.html
+  privacy.html/
+    company/privacy.html
+      └ https://www.models.com/company/privacy.html
+creatives/
+  creatives
+    └ https://www.models.com/creatives
+db/
+  advertising/
+    db/advertising
+      └ https://www.models.com/db/advertising
+      └ https://www.models.com/db/advertising/
+  editorial/
+    db/editorial
+      └ https://www.models.com/db/editorial/
+  favoritepeople/
+    db/favoritepeople
+      └ https://www.models.com/db/favoritepeople
+  lookbook/
+    db/lookbook
+      └ https://www.models.com/db/lookbook/
+  magazine-cover/
+    db/magazine-cover
+      └ https://www.models.com/db/magazine-cover/
+  polaroids/
+    db/polaroids
+      └ https://www.models.com/db/polaroids/
+  shows/
+    db/shows
+      └ https://www.models.com/db/shows
+  socialmedia/
+    db/socialmedia
+      └ https://www.models.com/db/socialmedia/
+  trending/
+    db/trending
+      └ https://www.models.com/db/trending
+fashion/
+  fashion
+    └ https://www.models.com/fashion
+feedback/
+  feedback.html/
+    feedback/feedback.html
+      └ https://www.models.com/feedback/feedback.html
+help/
+  help
+    └ https://www.models.com/help/
+interviews/
+  interviews
+    └ https://www.models.com/interviews/
+lists/
+  lists
+    └ https://www.models.com/lists/
+  featured/
+    lists/featured
+      └ https://www.models.com/lists/featured
+models/
+  models
+    └ https://www.models.com/models
+newfaces/
+  newfaces
+    └ https://www.models.com/newfaces/
+news/
+  news
+    └ https://www.models.com/news/
+rankings/
+  rankings
+    └ https://www.models.com/rankings/
+register/
+  register
+    └ https://www.models.com/register/
+  tos.cfm/
+    register/tos.cfm
+      └ https://www.models.com/register/tos.cfm
+search/
+  all/
+    search/all
+      └ https://www.models.com/search/all
+  fashion-editor-stylist/
+    search/fashion-editor-stylist
+      └ https://www.models.com/search/fashion-editor-stylist
+  makeup-artist/
+    search/makeup-artist
+      └ https://www.models.com/search/makeup-artist
+  model/
+    search/model
+      └ https://www.models.com/search/model
+  photographer/
+    search/photographer
+      └ https://www.models.com/search/photographer

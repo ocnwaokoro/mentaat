@@ -1,0 +1,22 @@
+{
+  "name": "models-archiver",
+  "version": "1.0.0",
+  "description": "Login, crawl models.com, save each page as single HTML (Playwright + playwright-single-file)",
+  "type": "module",
+  "scripts": {
+    "login": "node scripts/login.js",
+    "auto-login": "node scripts/auto-login.js",
+    "find-login": "node scripts/find-login-selectors.js",
+    "crawl": "node scripts/crawl.js",
+    "crawl:headed": "HEADED=1 node scripts/crawl.js",
+    "crawl-tree": "node scripts/crawl-tree.js",
+    "save": "node scripts/save.js",
+    "import-auth": "node scripts/import-auth.js",
+    "get-sitemap": "bash scripts/get-sitemap.sh"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "playwright": "^1.48.0",
+    "playwright-single-file": "^0.0.5"
+  }
+}

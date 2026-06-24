@@ -1,0 +1,219 @@
+{
+  "_urls": [
+    "https://www.models.com/"
+  ],
+  "about": {
+    "_urls": [],
+    "listings": {
+      "_urls": [],
+      "creatives": {
+        "_urls": [
+          "https://www.models.com/about/listings/creatives/"
+        ]
+      },
+      "modeling": {
+        "_urls": [
+          "https://www.models.com/about/listings/modeling/"
+        ]
+      }
+    },
+    "services": {
+      "_urls": [
+        "https://www.models.com/about/services/"
+      ]
+    }
+  },
+  "account": {
+    "_urls": [
+      "https://www.models.com/account/"
+    ]
+  },
+  "activism": {
+    "_urls": [
+      "https://www.models.com/activism"
+    ]
+  },
+  "agencies": {
+    "_urls": [
+      "https://www.models.com/agencies/"
+    ],
+    "Modeling": {
+      "_urls": [
+        "https://www.models.com/agencies/Modeling"
+      ]
+    },
+    "PhotoRep": {
+      "_urls": [
+        "https://www.models.com/agencies/PhotoRep"
+      ]
+    },
+    "Production": {
+      "_urls": [
+        "https://www.models.com/agencies/Production"
+      ]
+    }
+  },
+  "beauty": {
+    "_urls": [
+      "https://www.models.com/beauty"
+    ]
+  },
+  "company": {
+    "_urls": [],
+    "masthead.html": {
+      "_urls": [
+        "https://www.models.com/company/masthead.html"
+      ]
+    },
+    "privacy.html": {
+      "_urls": [
+        "https://www.models.com/company/privacy.html"
+      ]
+    }
+  },
+  "creatives": {
+    "_urls": [
+      "https://www.models.com/creatives"
+    ]
+  },
+  "db": {
+    "_urls": [],
+    "advertising": {
+      "_urls": [
+        "https://www.models.com/db/advertising",
+        "https://www.models.com/db/advertising/"
+      ]
+    },
+    "editorial": {
+      "_urls": [
+        "https://www.models.com/db/editorial/"
+      ]
+    },
+    "favoritepeople": {
+      "_urls": [
+        "https://www.models.com/db/favoritepeople"
+      ]
+    },
+    "lookbook": {
+      "_urls": [
+        "https://www.models.com/db/lookbook/"
+      ]
+    },
+    "magazine-cover": {
+      "_urls": [
+        "https://www.models.com/db/magazine-cover/"
+      ]
+    },
+    "polaroids": {
+      "_urls": [
+        "https://www.models.com/db/polaroids/"
+      ]
+    },
+    "shows": {
+      "_urls": [
+        "https://www.models.com/db/shows"
+      ]
+    },
+    "socialmedia": {
+      "_urls": [
+        "https://www.models.com/db/socialmedia/"
+      ]
+    },
+    "trending": {
+      "_urls": [
+        "https://www.models.com/db/trending"
+      ]
+    }
+  },
+  "fashion": {
+    "_urls": [
+      "https://www.models.com/fashion"
+    ]
+  },
+  "feedback": {
+    "_urls": [],
+    "feedback.html": {
+      "_urls": [
+        "https://www.models.com/feedback/feedback.html"
+      ]
+    }
+  },
+  "help": {
+    "_urls": [
+      "https://www.models.com/help/"
+    ]
+  },
+  "interviews": {
+    "_urls": [
+      "https://www.models.com/interviews/"
+    ]
+  },
+  "lists": {
+    "_urls": [
+      "https://www.models.com/lists/"
+    ],
+    "featured": {
+      "_urls": [
+        "https://www.models.com/lists/featured"
+      ]
+    }
+  },
+  "models": {
+    "_urls": [
+      "https://www.models.com/models"
+    ]
+  },
+  "newfaces": {
+    "_urls": [
+      "https://www.models.com/newfaces/"
+    ]
+  },
+  "news": {
+    "_urls": [
+      "https://www.models.com/news/"
+    ]
+  },
+  "rankings": {
+    "_urls": [
+      "https://www.models.com/rankings/"
+    ]
+  },
+  "register": {
+    "_urls": [
+      "https://www.models.com/register/"
+    ],
+    "tos.cfm": {
+      "_urls": [
+        "https://www.models.com/register/tos.cfm"
+      ]
+    }
+  },
+  "search": {
+    "_urls": [],
+    "all": {
+      "_urls": [
+        "https://www.models.com/search/all"
+      ]
+    },
+    "fashion-editor-stylist": {
+      "_urls": [
+        "https://www.models.com/search/fashion-editor-stylist"
+      ]
+    },
+    "makeup-artist": {
+      "_urls": [
+        "https://www.models.com/search/makeup-artist"
+      ]
+    },
+    "model": {
+      "_urls": [
+        "https://www.models.com/search/model"
+      ]
+    },
+    "photographer": {
+      "_urls": [
+        "https://www.models.com/search/photographer"
+      ]
+    }
+  }
+}
