@@ -4,6 +4,7 @@ node_modules/
 # build output / caches
 dist/
 .vite/
+.astro/
 build/
 
 # logs
@@ -19,3 +20,6 @@ npm-debug.log*
 .env
 .env.local
 .env.*.local
+
+# local screenshots
+.screens/

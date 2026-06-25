@@ -1,0 +1,447 @@
+/* =============================================================================
+ * DESIGN TOKENS — single source of truth
+ * Harvested from the captured Feedly CSS. This is the design system: every
+ * color, space, and size in the site resolves to a token defined here.
+ *
+ * NAMING GRAMMAR:  --semantic <property> <role> <variant> <state>
+ *   e.g. --semanticColorBackgroundAccent            (brand green background)
+ *        --semanticColorBackgroundStatesAccentHover (its hover state)
+ *
+ * GROUPS:
+ *   Sizing           — width/height/icon scale (steps 0..1100 → rem)
+ *   Color·Background — surfaces & fills       Color·Content  — text & icons
+ *   Color·Border     — strokes/dividers       Color·Services — 3rd-party brand colors
+ *   Color·Data       — chart/dataviz          Spacing        — margins/padding (responsive)
+ *
+ * THEMING: each color is defined twice — `.theme--light, :root` (default) and
+ * `.theme--dark`. Re-skinning later = redefining these values; component markup
+ * never changes. Spacing is responsive (different scale per breakpoint below).
+ * ============================================================================= */
+
+:root {
+    --semanticSizing0: 0;
+    --semanticSizing100: 0.125rem;
+    --semanticSizing200: 0.25rem;
+    --semanticSizing300: 0.5rem;
+    --semanticSizing400: 0.75rem;
+    --semanticSizing500: 1rem;
+    --semanticSizing550: 1.25rem;
+    --semanticSizing600: 1.5rem;
+    --semanticSizing650: 1.75rem;
+    --semanticSizing700: 2rem;
+    --semanticSizing750: 2.5rem;
+    --semanticSizing800: 3rem;
+    --semanticSizing825: 3.25rem;
+    --semanticSizing850: 3.5rem;
+    --semanticSizing900: 4rem;
+    --semanticSizing1000: 5rem;
+    --semanticSizing1100: 6rem
+}
+
+.theme--light,
+:root {
+    --semanticColorBackgroundAccent: #2bb24c;
+    --semanticColorBackgroundAccentBold: #bfe8c9;
+    --semanticColorBackgroundAccentLight: #eaf7ed;
+    --semanticColorBackgroundAccentMain: #061427;
+    --semanticColorBackgroundAccentMedium: #d5f0db;
+    --semanticColorBackgroundAware: #ffca0d;
+    --semanticColorBackgroundAwareBold: #ffefb6;
+    --semanticColorBackgroundAwareLight: #fffae7;
+    --semanticColorBackgroundAwareMedium: #fff4cf;
+    --semanticColorBackgroundBold: #9e9e9e;
+    --semanticColorBackgroundBoldest: #333;
+    --semanticColorBackgroundDanger: #f44336;
+    --semanticColorBackgroundDangerBold: #fcc7c3;
+    --semanticColorBackgroundDangerLight: #feeceb;
+    --semanticColorBackgroundDangerMedium: #fdd9d7;
+    --semanticColorBackgroundElevationBold: #121212;
+    --semanticColorBackgroundElevationLight: #fff;
+    --semanticColorBackgroundElevationMedium: #fff;
+    --semanticColorBackgroundHighlightGreen: #dff3e4;
+    --semanticColorBackgroundHighlightYellow: #fff7aa;
+    --semanticColorBackgroundInfo: #3979cc;
+    --semanticColorBackgroundInfoBold: #c4d7f0;
+    --semanticColorBackgroundInfoLight: #ebf2fa;
+    --semanticColorBackgroundInfoMedium: #d7e4f5;
+    --semanticColorBackgroundLight: #f7f7f7;
+    --semanticColorBackgroundLightest: #fff;
+    --semanticColorBackgroundMedium: #e6e6e6;
+    --semanticColorBackgroundOverlayBold: rgba(0, 0, 0, .64);
+    --semanticColorBackgroundOverlayLightest: hsla(0, 0%, 100%, .54);
+    --semanticColorBackgroundOverlayMedium: rgba(0, 0, 0, .38);
+    --semanticColorBackgroundSuccess: #2bb24c;
+    --semanticColorBackgroundSuccessBold: #bfe8c9;
+    --semanticColorBackgroundSuccessLight: #eaf7ed;
+    --semanticColorBackgroundSuccessMedium: #d5f0db;
+    --semanticColorBackgroundWarning: #ff9800;
+    --semanticColorBackgroundWarningBold: #ffe0b2;
+    --semanticColorBackgroundWarningLight: #fff5e5;
+    --semanticColorBackgroundWarningMedium: #ffeacc;
+    --semanticColorBackgroundYellow: #fe5;
+    --semanticColorBackgroundYellowBold: #fffacc;
+    --semanticColorBackgroundYellowLight: #fffae7;
+    --semanticColorBackgroundYellowMedium: #fffcdd;
+    --semanticColorBackgroundStatesAccentBoldHover: #55c170;
+    --semanticColorBackgroundStatesAccentDisabled: #d9d9d9;
+    --semanticColorBackgroundStatesAccentFocus: #f4fbf6;
+    --semanticColorBackgroundStatesAccentHover: #228e3d;
+    --semanticColorBackgroundStatesAccentLightHover: #bfe8c9;
+    --semanticColorBackgroundStatesAccentMainDisabled: #d9d9d9;
+    --semanticColorBackgroundStatesAccentMainFocus: #f2f2f5;
+    --semanticColorBackgroundStatesAccentMainHover: #30425a;
+    --semanticColorBackgroundStatesAccentMediumHover: #aae0b7;
+    --semanticColorBackgroundStatesDangerBoldHover: #f9a19a;
+    --semanticColorBackgroundStatesDangerDisabled: #f9a19a;
+    --semanticColorBackgroundStatesDangerFocus: #fef6f5;
+    --semanticColorBackgroundStatesDangerHover: #c3362b;
+    --semanticColorBackgroundStatesDangerLightHover: #fcc7c3;
+    --semanticColorBackgroundStatesDangerMediumHover: #fbb4af;
+    --semanticColorBackgroundStatesElevationMediumActive: #ecedee;
+    --semanticColorBackgroundStatesElevationMediumHover: #f7f7f7;
+    --semanticColorBackgroundStatesInfoBoldHover: #6194d6;
+    --semanticColorBackgroundStatesInfoMediumHover: #b0c9eb;
+    --semanticColorBackgroundStatesLightActive: #ecedee;
+    --semanticColorBackgroundStatesLightHover: #f2f2f2;
+    --semanticColorBackgroundStatesLightestActive: rgba(0, 0, 0, .05);
+    --semanticColorBackgroundStatesLightestDisabled: #e6e6e6;
+    --semanticColorBackgroundStatesLightestHover: #f7f7f7;
+    --semanticColorBackgroundStatesSuccessBoldHover: #55c170;
+    --semanticColorBackgroundStatesSuccessMediumHover: #aae0b7;
+    --semanticColorBackgroundStatesWarningDisabled: #ffcb80;
+    --semanticColorBackgroundStatesWarningHover: #cc7a00;
+    --semanticColorBorderAccent: #2bb24c;
+    --semanticColorBorderAccentMain: #061427;
+    --semanticColorBorderBold: #333;
+    --semanticColorBorderDanger: #f44336;
+    --semanticColorBorderInverse: #fff;
+    --semanticColorBorderLight: #d9d9d9;
+    --semanticColorBorderLightest: #f2f2f2;
+    --semanticColorBorderMedium: #bfbfbf;
+    --semanticColorBorderOverlay: rgba(0, 0, 0, .05);
+    --semanticColorBorderWarning: #ff9800;
+    --semanticColorBorderStatesAccentDisabled: #95d9a5;
+    --semanticColorBorderStatesAccentFocus: #2bb24c;
+    --semanticColorBorderStatesAccentHover: #228e3d;
+    --semanticColorBorderStatesAccentMainDisabled: #d9d9d9;
+    --semanticColorBorderStatesAccentMainFocus: #061427;
+    --semanticColorBorderStatesAccentMainHover: #30425a;
+    --semanticColorBorderStatesBoldDisabled: #9e9e9e;
+    --semanticColorBorderStatesBoldHover: #646464;
+    --semanticColorBorderStatesDangerDisabled: #f9a19a;
+    --semanticColorBorderStatesDangerFocus: #f44336;
+    --semanticColorBorderStatesDangerHover: #c3362b;
+    --semanticColorBorderStatesLightDisabled: #d9d9d9;
+    --semanticColorBorderStatesLightHover: #9e9e9e;
+    --semanticColorBorderStatesLightestHover: #9e9e9e;
+    --semanticColorBorderStatesMediumDisabled: #bfbfbf;
+    --semanticColorBorderStatesMediumHover: #646464;
+    --semanticColorBorderStatesWarningDisabled: #ffcb80;
+    --semanticColorBorderStatesWarningHover: #cc7a00;
+    --semanticColorContentAccent: #2bb24c;
+    --semanticColorContentAccentMain: #061427;
+    --semanticColorContentAccentVivid: #8df4bc;
+    --semanticColorContentAccentVividBold: #22e059;
+    --semanticColorContentAware: #ffca0d;
+    --semanticColorContentBold: #333;
+    --semanticColorContentDanger: #f44336;
+    --semanticColorContentInfo: #3979cc;
+    --semanticColorContentInverse: #fff;
+    --semanticColorContentLight: #9e9e9e;
+    --semanticColorContentLightest: #fff;
+    --semanticColorContentMedium: #757575;
+    --semanticColorContentSuccess: #2bb24c;
+    --semanticColorContentWarning: #ff9800;
+    --semanticColorContentStatesAccentDisabled: #95d9a5;
+    --semanticColorContentStatesAccentHover: #228e3d;
+    --semanticColorContentStatesAccentMainDisabled: #7186a4;
+    --semanticColorContentStatesAccentMainHover: #30425a;
+    --semanticColorContentStatesBoldDisabled: #9e9e9e;
+    --semanticColorContentStatesBoldHover: #646464;
+    --semanticColorContentStatesDangerDisabled: #f9a19a;
+    --semanticColorContentStatesDangerHover: #c3362b;
+    --semanticColorContentStatesInfoDisabled: #9cbce5;
+    --semanticColorContentStatesInfoHover: #2e61a3;
+    --semanticColorContentStatesInverseDisabled: #646464;
+    --semanticColorContentStatesInverseHover: #f2f2f2;
+    --semanticColorContentStatesLightDisabled: #bfbfbf;
+    --semanticColorContentStatesLightHover: #646464;
+    --semanticColorContentStatesLightestDisabled: #646464;
+    --semanticColorContentStatesLightestHover: #f2f2f2;
+    --semanticColorContentStatesMediumDisabled: #9e9e9e;
+    --semanticColorContentStatesMediumHover: #646464;
+    --semanticColorContentStatesWarningDisabled: #ffcb80;
+    --semanticColorContentStatesWarningHover: #cc7a00;
+    --semanticColorDataVizNeutralLight: #d8e0e7;
+    --semanticColorDataVizNeutralLightHover: #b7c3cf;
+    --semanticColorDataVizNeutralLightest: #ecf0f4;
+    --semanticColorDataVizNeutralMedium: #87909a;
+    --semanticColorDataVizPrimaryBold: #246678;
+    --semanticColorDataVizPrimaryLight: #bddfef;
+    --semanticColorDataVizPrimaryMedium: #5da2c1;
+    --semanticColorDataVizQuaternaryMedium: #69b487;
+    --semanticColorDataVizQuinaryMedium: #facf53;
+    --semanticColorDataVizSecondaryMedium: #e59e4d;
+    --semanticColorDataVizSextenaryMedium: #bc9d6e;
+    --semanticColorDataVizTertiaryMedium: #ce6969;
+    --semanticColorServicesApple: #000;
+    --semanticColorServicesBluesky: #1185fe;
+    --semanticColorServicesBlueskyLight: #cfe7ff;
+    --semanticColorServicesEnterpriseSso: #6d747d;
+    --semanticColorServicesFeedly: #2bb24c;
+    --semanticColorServicesGoogle: #4285f4;
+    --semanticColorServicesReddit: #ff4500;
+    --semanticColorServicesRedditLight: #ffdacc;
+    --semanticColorServicesTwitter: #1da1f2;
+    --semanticColorServicesTwitterLight: #d2ecfc;
+    --semanticColorServicesStatesAppleHover: #333;
+    --semanticColorServicesStatesEnterpriseSsoHover: #373a3f;
+    --semanticColorServicesStatesFeedlyHover: #228e3d;
+    --semanticColorServicesStatesGoogleHover: #356ac3;
+    --semanticColorServicesStatesRedditDisabled: #ffa280;
+    --semanticColorServicesStatesTwitterDisabled: #8ed0f9
+}
+
+.theme--dark {
+    --semanticColorBackgroundAccent: #6bc982;
+    --semanticColorBackgroundAccentBold: #11471e;
+    --semanticColorBackgroundAccentLight: #0b2d13;
+    --semanticColorBackgroundAccentMain: #e6e6e6;
+    --semanticColorBackgroundAccentMedium: #0d3517;
+    --semanticColorBackgroundAware: #ffca0d;
+    --semanticColorBackgroundAwareBold: #665105;
+    --semanticColorBackgroundAwareLight: #403303;
+    --semanticColorBackgroundAwareMedium: #4d3d04;
+    --semanticColorBackgroundBold: #757575;
+    --semanticColorBackgroundBoldest: #e6e6e6;
+    --semanticColorBackgroundDanger: #f44336;
+    --semanticColorBackgroundDangerBold: #621b16;
+    --semanticColorBackgroundDangerLight: #3d110e;
+    --semanticColorBackgroundDangerMedium: #491410;
+    --semanticColorBackgroundElevationBold: #262626;
+    --semanticColorBackgroundElevationLight: #202020;
+    --semanticColorBackgroundElevationMedium: #262626;
+    --semanticColorBackgroundHighlightGreen: #0d3517;
+    --semanticColorBackgroundHighlightYellow: #665f22;
+    --semanticColorBackgroundInfo: #3979cc;
+    --semanticColorBackgroundInfoBold: #173052;
+    --semanticColorBackgroundInfoLight: #0e1e33;
+    --semanticColorBackgroundInfoMedium: #11243d;
+    --semanticColorBackgroundLight: #1a1a1a;
+    --semanticColorBackgroundLightest: #121212;
+    --semanticColorBackgroundMedium: #4c4c4c;
+    --semanticColorBackgroundOverlayBold: rgba(0, 0, 0, .64);
+    --semanticColorBackgroundOverlayLightest: rgba(0, 0, 0, .64);
+    --semanticColorBackgroundOverlayMedium: rgba(0, 0, 0, .38);
+    --semanticColorBackgroundSuccess: #2bb24c;
+    --semanticColorBackgroundSuccessBold: #11471e;
+    --semanticColorBackgroundSuccessLight: #0b2d13;
+    --semanticColorBackgroundSuccessMedium: #0d3517;
+    --semanticColorBackgroundWarning: #ff9800;
+    --semanticColorBackgroundWarningBold: #663d00;
+    --semanticColorBackgroundWarningLight: #402600;
+    --semanticColorBackgroundWarningMedium: #4d2e00;
+    --semanticColorBackgroundYellow: #fe5;
+    --semanticColorBackgroundYellowBold: #665f22;
+    --semanticColorBackgroundYellowLight: #403c15;
+    --semanticColorBackgroundYellowMedium: #4d471a;
+    --semanticColorBackgroundStatesAccentBoldHover: #228e3d;
+    --semanticColorBackgroundStatesAccentDisabled: #4c4c4c;
+    --semanticColorBackgroundStatesAccentFocus: #09240f;
+    --semanticColorBackgroundStatesAccentHover: #40ba5e;
+    --semanticColorBackgroundStatesAccentLightHover: #165926;
+    --semanticColorBackgroundStatesAccentMainDisabled: #4c4c4c;
+    --semanticColorBackgroundStatesAccentMainFocus: #757575;
+    --semanticColorBackgroundStatesAccentMainHover: #fcfcfc;
+    --semanticColorBackgroundStatesAccentMediumHover: #1a6b2e;
+    --semanticColorBackgroundStatesDangerBoldHover: #c3362b;
+    --semanticColorBackgroundStatesDangerDisabled: #621b16;
+    --semanticColorBackgroundStatesDangerFocus: #310d0b;
+    --semanticColorBackgroundStatesDangerHover: #c3362b;
+    --semanticColorBackgroundStatesDangerLightHover: #7a221b;
+    --semanticColorBackgroundStatesDangerMediumHover: #922820;
+    --semanticColorBackgroundStatesElevationMediumActive: #4c4c4c;
+    --semanticColorBackgroundStatesElevationMediumHover: #333;
+    --semanticColorBackgroundStatesInfoBoldHover: #2e61a3;
+    --semanticColorBackgroundStatesInfoMediumHover: #22497a;
+    --semanticColorBackgroundStatesLightActive: #333;
+    --semanticColorBackgroundStatesLightHover: #262626;
+    --semanticColorBackgroundStatesLightestActive: hsla(0, 0%, 100%, .15);
+    --semanticColorBackgroundStatesLightestDisabled: #333;
+    --semanticColorBackgroundStatesLightestHover: #262626;
+    --semanticColorBackgroundStatesSuccessBoldHover: #228e3d;
+    --semanticColorBackgroundStatesSuccessMediumHover: #1a6b2e;
+    --semanticColorBackgroundStatesWarningDisabled: #663d00;
+    --semanticColorBackgroundStatesWarningHover: #cc7a00;
+    --semanticColorBorderAccent: #6bc982;
+    --semanticColorBorderAccentMain: #e6e6e6;
+    --semanticColorBorderBold: #e6e6e6;
+    --semanticColorBorderDanger: #f44336;
+    --semanticColorBorderInverse: #121212;
+    --semanticColorBorderLight: #333;
+    --semanticColorBorderLightest: #262626;
+    --semanticColorBorderMedium: #646464;
+    --semanticColorBorderOverlay: hsla(0, 0%, 100%, .15);
+    --semanticColorBorderWarning: #ff9800;
+    --semanticColorBorderStatesAccentDisabled: #11471e;
+    --semanticColorBorderStatesAccentFocus: #6bc982;
+    --semanticColorBorderStatesAccentHover: #40ba5e;
+    --semanticColorBorderStatesAccentMainDisabled: #4c4c4c;
+    --semanticColorBorderStatesAccentMainFocus: #fcfcfc;
+    --semanticColorBorderStatesAccentMainHover: #fcfcfc;
+    --semanticColorBorderStatesBoldDisabled: #646464;
+    --semanticColorBorderStatesBoldHover: #bfbfbf;
+    --semanticColorBorderStatesDangerDisabled: #621b16;
+    --semanticColorBorderStatesDangerFocus: #f44336;
+    --semanticColorBorderStatesDangerHover: #c3362b;
+    --semanticColorBorderStatesLightDisabled: #333;
+    --semanticColorBorderStatesLightHover: #4c4c4c;
+    --semanticColorBorderStatesLightestHover: #9e9e9e;
+    --semanticColorBorderStatesMediumDisabled: #646464;
+    --semanticColorBorderStatesMediumHover: #bfbfbf;
+    --semanticColorBorderStatesWarningDisabled: #663d00;
+    --semanticColorBorderStatesWarningHover: #cc7a00;
+    --semanticColorContentAccent: #6bc982;
+    --semanticColorContentAccentMain: #e6e6e6;
+    --semanticColorContentAccentVivid: #8df4bc;
+    --semanticColorContentAccentVividBold: #22e059;
+    --semanticColorContentAware: #ffca0d;
+    --semanticColorContentBold: #e6e6e6;
+    --semanticColorContentDanger: #f44336;
+    --semanticColorContentInfo: #3979cc;
+    --semanticColorContentInverse: #fff;
+    --semanticColorContentLight: #757575;
+    --semanticColorContentLightest: #121212;
+    --semanticColorContentMedium: #9e9e9e;
+    --semanticColorContentSuccess: #6bc982;
+    --semanticColorContentWarning: #ff9800;
+    --semanticColorContentStatesAccentDisabled: #11471e;
+    --semanticColorContentStatesAccentHover: #40ba5e;
+    --semanticColorContentStatesAccentMainDisabled: #4c4c4c;
+    --semanticColorContentStatesAccentMainHover: #fcfcfc;
+    --semanticColorContentStatesBoldDisabled: #646464;
+    --semanticColorContentStatesBoldHover: #bfbfbf;
+    --semanticColorContentStatesDangerDisabled: #621b16;
+    --semanticColorContentStatesDangerHover: #c3362b;
+    --semanticColorContentStatesInfoDisabled: #173052;
+    --semanticColorContentStatesInfoHover: #2e61a3;
+    --semanticColorContentStatesInverseDisabled: #bfbfbf;
+    --semanticColorContentStatesInverseHover: #f2f2f2;
+    --semanticColorContentStatesLightDisabled: #4c4c4c;
+    --semanticColorContentStatesLightHover: #bfbfbf;
+    --semanticColorContentStatesLightestDisabled: #262626;
+    --semanticColorContentStatesLightestHover: #262626;
+    --semanticColorContentStatesMediumDisabled: #4c4c4c;
+    --semanticColorContentStatesMediumHover: #bfbfbf;
+    --semanticColorContentStatesWarningDisabled: #663d00;
+    --semanticColorContentStatesWarningHover: #cc7a00;
+    --semanticColorDataVizNeutralLight: #2f3336;
+    --semanticColorDataVizNeutralLightHover: #4a5055;
+    --semanticColorDataVizNeutralLightest: #26292c;
+    --semanticColorDataVizNeutralMedium: #87909a;
+    --semanticColorDataVizPrimaryBold: #87c5e1;
+    --semanticColorDataVizPrimaryLight: #1b525d;
+    --semanticColorDataVizPrimaryMedium: #3687ac;
+    --semanticColorDataVizQuaternaryMedium: #2a825e;
+    --semanticColorDataVizQuinaryMedium: #c99f26;
+    --semanticColorDataVizSecondaryMedium: #b8701d;
+    --semanticColorDataVizSextenaryMedium: #6c593b;
+    --semanticColorDataVizTertiaryMedium: #a44343;
+    --semanticColorServicesApple: #000;
+    --semanticColorServicesBluesky: #1185fe;
+    --semanticColorServicesBlueskyLight: #124070;
+    --semanticColorServicesEnterpriseSso: #6d747d;
+    --semanticColorServicesFeedly: #2bb24c;
+    --semanticColorServicesGoogle: #4285f4;
+    --semanticColorServicesReddit: #ff4500;
+    --semanticColorServicesRedditLight: #661c00;
+    --semanticColorServicesTwitter: #1da1f2;
+    --semanticColorServicesTwitterLight: #0c4061;
+    --semanticColorServicesStatesAppleHover: #333;
+    --semanticColorServicesStatesEnterpriseSsoHover: #373a3f;
+    --semanticColorServicesStatesFeedlyHover: #228e3d;
+    --semanticColorServicesStatesGoogleHover: #356ac3;
+    --semanticColorServicesStatesRedditDisabled: #661c00;
+    --semanticColorServicesStatesTwitterDisabled: #0c4061
+}
+
+@media (min-width:1024px) {
+    :root {
+        --semanticSpacingNegative0: 0;
+        --semanticSpacingNegative100: -0.125rem;
+        --semanticSpacingNegative200: -0.25rem;
+        --semanticSpacingNegative300: -0.5rem;
+        --semanticSpacingNegative400: -0.75rem;
+        --semanticSpacingNegative500: -1rem;
+        --semanticSpacingNegative600: -1.5rem;
+        --semanticSpacingNegative700: -2rem;
+        --semanticSpacingPositive0: 0;
+        --semanticSpacingPositive100: 0.125rem;
+        --semanticSpacingPositive200: 0.25rem;
+        --semanticSpacingPositive300: 0.5rem;
+        --semanticSpacingPositive400: 0.75rem;
+        --semanticSpacingPositive500: 1rem;
+        --semanticSpacingPositive600: 1.5rem;
+        --semanticSpacingPositive700: 2rem;
+        --semanticSpacingPositive750: 2.5rem;
+        --semanticSpacingPositive800: 3rem;
+        --semanticSpacingPositive825: 3.25rem;
+        --semanticSpacingPositive900: 4rem;
+        --semanticSpacingPositive1000: 5rem;
+        --semanticSpacingPositive1100: 6rem
+    }
+}
+
+@media (max-width:1023px) {
+    :root {
+        --semanticSpacingNegative0: 0;
+        --semanticSpacingNegative100: -0.125rem;
+        --semanticSpacingNegative200: -0.25rem;
+        --semanticSpacingNegative300: -0.5rem;
+        --semanticSpacingNegative400: -0.75rem;
+        --semanticSpacingNegative500: -1rem;
+        --semanticSpacingNegative600: -1rem;
+        --semanticSpacingNegative700: -1rem;
+        --semanticSpacingPositive0: 0;
+        --semanticSpacingPositive100: 0.125rem;
+        --semanticSpacingPositive200: 0.25rem;
+        --semanticSpacingPositive300: 0.5rem;
+        --semanticSpacingPositive400: 0.75rem;
+        --semanticSpacingPositive500: 1rem;
+        --semanticSpacingPositive600: 1rem;
+        --semanticSpacingPositive700: 1rem;
+        --semanticSpacingPositive750: 1.5rem;
+        --semanticSpacingPositive800: 2rem;
+        --semanticSpacingPositive825: 2rem;
+        --semanticSpacingPositive900: 3rem;
+        --semanticSpacingPositive1000: 3rem;
+        --semanticSpacingPositive1100: 4rem
+    }
+}
+
+@media (max-width:425px) {
+    :root {
+        --semanticSpacingNegative0: 0;
+        --semanticSpacingNegative100: -0.125rem;
+        --semanticSpacingNegative200: -0.25rem;
+        --semanticSpacingNegative300: -0.5rem;
+        --semanticSpacingNegative400: -0.75rem;
+        --semanticSpacingNegative500: -1rem;
+        --semanticSpacingNegative600: -1rem;
+        --semanticSpacingNegative700: -1rem;
+        --semanticSpacingPositive0: 0;
+        --semanticSpacingPositive100: 0.125rem;
+        --semanticSpacingPositive200: 0.25rem;
+        --semanticSpacingPositive300: 0.5rem;
+        --semanticSpacingPositive400: 0.75rem;
+        --semanticSpacingPositive500: 1rem;
+        --semanticSpacingPositive600: 1rem;
+        --semanticSpacingPositive700: 1rem;
+        --semanticSpacingPositive750: 1.5rem;
+        --semanticSpacingPositive800: 1.5rem;
+        --semanticSpacingPositive825: 1.5rem;
+        --semanticSpacingPositive900: 2.5rem;
+        --semanticSpacingPositive1000: 2.5rem;
+        --semanticSpacingPositive1100: 3rem
+    }
+}

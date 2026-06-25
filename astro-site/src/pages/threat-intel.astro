@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import { pageHtml } from '../html/threat-intel.js';
+import '../styles/threat-intel.css';
+---
+
+<Base
+  title="Feedly Threat Intelligence: Collect, analyze, and share actionable intelligence"
+  description="Be the first to know about emerging threats. Collect, analyze, and share open-source threat intelligence faster using AI."
+>
+  <Fragment set:html={pageHtml} />
+</Base>

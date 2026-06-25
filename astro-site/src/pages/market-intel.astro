@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import { pageHtml } from '../html/market-intel.js';
+import '../styles/market-intel.css';
+---
+
+<Base
+  title="Feedly Market Intelligence: Gain the full view of your competition and industry trends"
+  description="Outsmart the competition and stay ahead of industry shifts. Find, synthesize, and share market intelligence faster using AI."
+>
+  <Fragment set:html={pageHtml} />
+</Base>

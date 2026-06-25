@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import { pageHtml } from '../html/news-reader.js';
+import '../styles/news-reader.css';
+---
+
+<Base
+  title="Feedly News Reader: Take control of your newsfeed"
+  description="Read all your favorite blogs, news sites, and newsletters in one place. Take control of your news feed."
+>
+  <Fragment set:html={pageHtml} />
+</Base>

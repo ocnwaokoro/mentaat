@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import { pageHtml } from '../html/app-pro.js';
+import '../styles/app-pro.css';
+---
+
+<Base
+  title="Feedly Pro & Pro+: Personalize your Feedly"
+  description="Keep up with the topics, feeds, and trends that matter to you. Compare Feedly Pro, Pro+, and Enterprise plans."
+>
+  <Fragment set:html={pageHtml} />
+</Base>

@@ -1,0 +1,33 @@
+---
+// Base layout — the SEO-friendly <head> the old React SPA never had.
+// Every page is pre-rendered to static HTML, so crawlers/social scrapers get
+// real content + meta tags, not an empty #root.
+import '../styles/tokens.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = 'Feedly',
+  description = 'Track the topics and trends that matter to you.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/assets/favicon.png" type="image/png" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
