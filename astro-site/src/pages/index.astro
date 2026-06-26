@@ -9,8 +9,8 @@ import '../styles/homepage.css';
 ---
 
 <Base
-  title="Feedly: Track the topics and trends that matter to you"
-  description="Collect, analyze, and share actionable open source threat intelligence, market intelligence, and the news that matters — faster, with AI."
+  title="Mentaat — Engineering & AI for Boutique Businesses"
+  description="We go into your operation, find the leverage, and build the systems and AI that make it run better. A forward-deployed engineering and AI studio for boutique businesses."
 >
   <div id="__next">
     <div class="app_site--homepage__E5h5V app_loggedOut__HHvfJ">
@@ -18,44 +18,67 @@ import '../styles/homepage.css';
         <div class="Flex_flex___mzvZ Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Layout_content__q1d4E">
           <Header />
           <main class="Layout_main__nbmiJ index_layout__cD6cr">
+
+            <!-- Hero: the H1 + value prop + the two next-steps -->
+            <div class="index_container__9GuY8">
+              <div class="Flex_flex___mzvZ Flex_align--start__Nb_Sy Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Flex_gap--l__lrJk4">
+                <h1 class="Heading_heading__me6NI Heading_heading--02__GxsbA Heading_align--left__hNEzl Heading_color--primary___QOq1">
+                  We build the systems that run your business, and the intelligence that runs them better.
+                </h1>
+                <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT Text_deprecatedMargin--none__sZLCS">
+                  Mentaat is a forward-deployed engineering and AI studio for boutique businesses. We go into your operation, find the leverage, and build it.
+                </p>
+                <div class="Flex_flex___mzvZ Flex_align--center__9VuNC Flex_direction--row__W6CGY Flex_justify--start__vk9Tl ButtonRow_buttonRow__hs7qV Flex_gap--s__0656J">
+                  <a href="/contact" class="BaseButton_button__S8cdB BaseButton_size--large__dpOfr BaseButton_importance--primary__1_2vI MarketingLinkButton_marketingLinkButton__n8FI4 BaseButton_color--accent-main__KBIuP FocusRing_focusRing__izyZU">
+                    <span>Book a call</span>
+                  </a>
+                  <a href="/work" class="BaseButton_button__S8cdB BaseButton_size--large__dpOfr BaseButton_importance--secondary__qMmu3 MarketingLinkButton_marketingLinkButton__n8FI4 BaseButton_color--accent-main__KBIuP FocusRing_focusRing__izyZU">
+                    <span>See the work</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Three services -->
             <div class="Flex_flex___mzvZ Flex_align--center__9VuNC Flex_direction--row__W6CGY Flex_justify--start__vk9Tl index_container__9GuY8 Flex_gap--m__j4Ha1">
               <Tile
                 badge="Build"
                 titleHtml="Digital<br />Products"
                 description="Modern websites and web apps, built to perform."
-                primaryHref="https://feedly.com/signup?gate=%2Fhomepage&workEmail=false"
-                primaryLabel="Get Started for Free"
-                secondaryHref="/threat-intel"
-                secondaryLabel="Learn More"
+                primaryHref="/work"
+                primaryLabel="See the work"
+                secondaryHref="/services/web-development"
+                secondaryLabel="Explore"
                 imageSrc={tileImages.digitalProducts}
-                imageAlt="Illustration of an article about cyberattacks and ransomware. AI has identified a CVSS score of 8.5, 8 IoCs, and 6 TTPs."
+                imageAlt="A modern web product built by Mentaat."
                 theme="dark"
               />
               <Tile
                 badge="Embed"
                 titleHtml="Workflow<br />Intelligence"
-                description="AI woven into the way your team already works."
-                primaryHref="https://feedly.com/market-intelligence/request-trial?gate=%2Fhomepage"
-                primaryLabel="Get Started for Free"
-                secondaryHref="/market-intel"
-                secondaryLabel="Learn More"
+                description="We embed with your team, learn how you really work, and weave AI into it."
+                primaryHref="/contact"
+                primaryLabel="Book a call"
+                secondaryHref="/services/ai-automation"
+                secondaryLabel="Explore"
                 imageSrc={tileImages.workflowIntelligence}
-                imageAlt="Illustration of an article about a product launch in the finance industry. A tooltip points out an AI Summary and an icon to “save to board”"
+                imageAlt="An AI-assisted workflow built into a team's existing tools."
                 theme="light"
               />
               <Tile
                 badge="Transform"
                 titleHtml="Keystone<br />Infrastructure"
-                description="Operational analysis and build out, end to end."
-                primaryHref="https://feedly.com/i/newAccountSetup?accountType=Personal&gate=%2Fhomepage"
-                primaryLabel="Get Started for Free"
-                secondaryHref="/news-reader"
-                secondaryLabel="Learn More"
+                description="We go in like an operator, find the leverage, and build the systems that scale you."
+                primaryHref="/contact"
+                primaryLabel="Book a call"
+                secondaryHref="/services/custom-software"
+                secondaryLabel="Explore"
                 imageSrc={tileImages.keystoneInfrastructure}
-                imageAlt="A screenshot of the Feedly news reader interface showing the “Today” page and a list of articles."
+                imageAlt="A custom operations system built for a small business."
                 theme="white"
               />
             </div>
+
             <LogoSection />
           </main>
         </div>
