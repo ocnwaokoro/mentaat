@@ -3,6 +3,9 @@
 // Every page is pre-rendered to static HTML, so crawlers/social scrapers get
 // real content + meta tags, not an empty #root.
 import '../styles/tokens.css';
+// Re-skin experimentation layer: overrides token values on top of the baseline.
+// Empty = baseline (Feedly green). Swap in a candidate to preview a palette.
+import '../styles/active-theme.css';
 
 interface Props {
   title?: string;
@@ -19,7 +22,7 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/assets/favicon.png" type="image/png" />
+    <link rel="icon" href="/assets/mentaat-favicon.svg" type="image/svg+xml" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />

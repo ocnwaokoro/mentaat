@@ -10,10 +10,12 @@ interface Props {
   imageSrc: string;
   imageAlt: string;
   theme?: 'dark' | 'light' | 'white';
+  steps?: string[];
 }
 const {
   badge, titleHtml, description, primaryHref, primaryLabel,
   secondaryHref, secondaryLabel, imageSrc, imageAlt, theme = 'dark',
+  steps = [],
 } = Astro.props;
 
 const themeClass =
@@ -34,6 +36,13 @@ const imageMod = theme === 'dark' ? '' : theme === 'light' ? ' Tile_image--1__ZH
         <div class="Flex_flex___mzvZ Flex_align--start__Nb_Sy Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Flex_gap--l__lrJk4">
           <h2 class={`Heading_heading__me6NI Heading_heading--02__GxsbA Tile_title__g73a0 Heading_align--left__hNEzl ${titleColorClass}`} set:html={titleHtml}></h2>
           <p class="Tile_description__NV9Re Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT Text_deprecatedMargin--none__sZLCS">{description}</p>
+          {steps.length > 0 && (
+            <div class="Flex_flex___mzvZ Flex_align--start__Nb_Sy Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Flex_gap--m__j4Ha1">
+              {steps.map((s, i) => (
+                <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--02__HVmZN Text_deprecatedMargin--none__sZLCS">{i + 1}.&nbsp;&nbsp;{s}</p>
+              ))}
+            </div>
+          )}
           <div>
             <div class="Flex_flex___mzvZ Flex_align--center__9VuNC Flex_direction--row__W6CGY Flex_justify--start__vk9Tl ButtonRow_buttonRow__hs7qV Flex_gap--s__0656J">
               <a target="_self" rel="noreferrer" href={primaryHref} class="BaseButton_button__S8cdB BaseButton_size--large__dpOfr BaseButton_importance--primary__1_2vI MarketingLinkButton_marketingLinkButton__n8FI4 BaseButton_color--accent-main__KBIuP FocusRing_focusRing__izyZU">
