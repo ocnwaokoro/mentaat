@@ -12,7 +12,8 @@ import '../styles/work.css';
 const body = applyImageOverrides(
   pageHtml
     .replace(/(src|srcset)="\/_next\//g, '$1="https://feedly.com/_next/')
-    .replace(/(src|srcset)="\/(?!\/)/g, '$1="https://feedly.com/')
+    // rewrite Feedly's other relative paths to absolute, but keep our /assets/ placeholders
+    .replace(/(src|srcset)="\/(?!assets\/|_next\/|\/)/g, '$1="https://feedly.com/')
 );
 ---
 
