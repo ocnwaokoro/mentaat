@@ -29,6 +29,56 @@ const {
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'Organization',
+          '@id': 'https://mentaat.com/#organization',
+          name: 'Mentaat',
+          url: 'https://mentaat.com',
+          email: 'hello@mentaat.com',
+          description: 'A forward-deployed engineering and AI studio for boutique businesses',
+          areaServed: 'New Jersey',
+          address: {
+            '@type': 'PostalAddress',
+            addressRegion: 'New Jersey',
+            addressCountry: 'US',
+          },
+          makesOffer: [
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Web development and digital products',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'AI workflow automation',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Custom software and operations engineering',
+              },
+            },
+          ],
+        },
+        {
+          '@type': 'WebSite',
+          '@id': 'https://mentaat.com/#website',
+          url: 'https://mentaat.com',
+          name: 'Mentaat',
+          description: 'A forward-deployed engineering and AI studio for boutique businesses',
+          publisher: { '@id': 'https://mentaat.com/#organization' },
+        },
+      ],
+    })} />
   </head>
   <body>
     <slot />

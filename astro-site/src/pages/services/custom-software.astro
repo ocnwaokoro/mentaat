@@ -1,0 +1,26 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { pageHtml } from '../../html/news-reader.js';
+import { applyImageOverrides } from '../../config/images.js';
+import '../../styles/news-reader.css';
+
+// Keystone Infrastructure service page. Reskinned Feedly design + our chrome.
+// NOTE: body content is still Feedly placeholder, pending full re-content.
+const body = applyImageOverrides(
+  pageHtml
+    .replace(/<header[\s\S]*?<\/header>/g, '')
+    .replace(/<footer[\s\S]*?<\/footer>/g, '')
+    .replace(/Get Started/g, 'Book a call')
+);
+---
+
+<Base
+  title="Keystone Infrastructure — Custom Software & Operations Engineering | Mentaat"
+  description="We go in like an operator, find the leverage, and build the custom systems that scale your operation. Forward-deployed engineering for boutique businesses."
+>
+  <Header />
+  <Fragment set:html={body} />
+  <Footer />
+</Base>

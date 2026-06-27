@@ -1,0 +1,27 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { pageHtml } from '../../html/threat-intel.js';
+import { applyImageOverrides } from '../../config/images.js';
+import '../../styles/threat-intel.css';
+
+// Digital Products service page. Reskinned Feedly design + our chrome; hero re-contented.
+// NOTE: lower-body content is still Feedly placeholder, pending full re-content.
+const body = applyImageOverrides(
+  pageHtml
+    .replace(/<header[\s\S]*?<\/header>/g, '')
+    .replace(/<footer[\s\S]*?<\/footer>/g, '')
+    .replace(/Be the first to know about emerging threats/g, 'Websites and web apps that pull their weight')
+    .replace(/Get Started/g, 'Book a call')
+);
+---
+
+<Base
+  title="Digital Products — Web Development for Boutique Businesses | Mentaat"
+  description="We design and build the digital products that move your business: fast websites and real web apps, built to perform and easy to run."
+>
+  <Header />
+  <Fragment set:html={body} />
+  <Footer />
+</Base>

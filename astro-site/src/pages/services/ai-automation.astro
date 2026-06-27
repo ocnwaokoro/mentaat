@@ -1,0 +1,26 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { pageHtml } from '../../html/market-intel.js';
+import { applyImageOverrides } from '../../config/images.js';
+import '../../styles/market-intel.css';
+
+// Workflow Intelligence service page. Reskinned Feedly design + our chrome.
+// NOTE: body content is still Feedly placeholder, pending full re-content.
+const body = applyImageOverrides(
+  pageHtml
+    .replace(/<header[\s\S]*?<\/header>/g, '')
+    .replace(/<footer[\s\S]*?<\/footer>/g, '')
+    .replace(/Get Started/g, 'Book a call')
+);
+---
+
+<Base
+  title="Workflow Intelligence — AI Automation for Small Teams | Mentaat"
+  description="We embed with your team, learn how you actually work, and weave AI into it. Practical automation that saves real hours, not a science project."
+>
+  <Header />
+  <Fragment set:html={body} />
+  <Footer />
+</Base>
