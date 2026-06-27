@@ -1,27 +1,5 @@
 ---
 import ServicePage from '../../components/ServicePage.astro';
-
-const how = [
-  { tag: 'Design', h: 'Built around how you sell', t: 'Not a template. We start with how your business actually wins customers, then design the site around that.' },
-  { tag: 'Build', h: 'Fast, and easy to find', t: 'Quick to load, sharp on a phone, and built to show up on Google so the right people find you.' },
-  { tag: 'Own', h: 'Yours to run', t: 'Change prices, hours, and photos yourself in minutes. You own the code, the content, and the domain. No lock-in.' },
-];
-const proof = [
-  { tag: 'Boutique hotel', h: 'Direct bookings the platforms used to own', t: 'A slow, dated site was sending guests to the booking platforms. We rebuilt it. Direct bookings rose, and each one skips the commission.', href: '/casestudy' },
-  { tag: 'Retail', h: 'One source of truth, not six spreadsheets', t: 'A two-location shop kept overselling online from a shared sheet. We built one system they trust, with room to add a third location.', href: '/work' },
-];
+import { meta, how, proof } from '../../data/web-development.js';
 ---
-
-<ServicePage
-  title="Digital Products — Websites & Web Apps for Boutique Businesses | Mentaat"
-  description="We design and build fast, modern websites and web apps for boutique businesses. Built to win customers, and simple enough to run yourself. Book a call."
-  kicker="Digital Products"
-  heading="A website that brings in work, not just compliments"
-  sub="We design and build fast, modern websites and web apps for boutique businesses. Built to win customers, and simple enough to run yourself."
-  problemHeading="Most small-business websites just sit there"
-  problemBody="Maybe yours is a slow template you cannot update. Maybe it is a business card no one finds. Either way, the people looking for what you sell are landing on a competitor instead. A good website should be your best salesperson, working while you run the place."
-  how={how}
-  proof={proof}
-  quote={'"For the first time the website feels like part of the business, not a brochure nobody reads."'}
-  ctaHeading="Let us build you one that earns its keep"
-/>
+<ServicePage {...meta} how={how} proof={proof} />
