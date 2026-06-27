@@ -30,6 +30,10 @@
   padding-top: 124px; padding-bottom: 124px;
 }
 @media (max-width: 900px) { .svc-hero .svc-inner { grid-template-columns: 1fr; gap: 40px; padding-top: 88px; padding-bottom: 80px; } }
+/* solo hero — single-column statement (home, about), no image column */
+.svc-hero--solo .svc-inner { grid-template-columns: 1fr; }
+.svc-hero--solo .svc-h1 { max-width: 15em; }
+.svc-hero--solo .svc-sub { max-width: 36em; }
 .svc-h1 {
   font-size: clamp(2.5rem, 5.4vw, 4.5rem); line-height: 1.03; letter-spacing: -0.022em;
   font-weight: 700; margin: 0 0 24px;
@@ -100,6 +104,28 @@
 .svc-case-metric em { font-style: normal; color: var(--semanticColorContentAccent); }
 .svc-case-title { font-size: 1.0625rem; font-weight: 600; line-height: 1.4; margin: 0 0 12px; }
 .svc-case-client { font-family: ui-monospace, monospace; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--semanticColorContentMedium); margin: 0; }
+
+/* FEATURE ROWS — reused by services hub + about (text + image, alternating sides) */
+.svc-feature { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.svc-feature--flip .svc-feature-text { order: 2; }
+@media (max-width: 820px) { .svc-feature { grid-template-columns: 1fr; gap: 28px; } .svc-feature--flip .svc-feature-text { order: 0; } }
+.svc-feature-h { font-size: clamp(1.75rem, 3.2vw, 2.5rem); line-height: 1.08; letter-spacing: -0.018em; font-weight: 700; margin: 0 0 16px; }
+.svc-feature-h em { font-style: normal; color: var(--semanticColorContentAccent); }
+.svc-feature-p { font-size: 1.0625rem; line-height: 1.55; color: rgba(255,255,255,0.72); margin: 0 0 22px; max-width: 32em; }
+.svc-band--light .svc-feature-p { color: var(--semanticColorContentMedium); }
+.svc-feature-img { aspect-ratio: 4 / 3; }
+.svc-link { font-family: ui-monospace, monospace; font-size: 0.8125rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--semanticColorContentAccent); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: gap .15s ease; }
+.svc-band--light .svc-link { color: var(--semanticColorContentStatesAccentMainHover); }
+.svc-link:hover { gap: 13px; }
+
+/* PROSE — reused by about (mono section eyebrows + readable body on dark/light) */
+.svc-prose { max-width: 40em; }
+.svc-prose h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); line-height: 1.12; letter-spacing: -0.014em; font-weight: 700; margin: 0 0 14px; }
+.svc-prose p { font-size: 1.125rem; line-height: 1.6; color: rgba(255,255,255,0.74); margin: 0; }
+.svc-band--light .svc-prose p { color: var(--semanticColorContentMedium); }
+.svc-prose em { font-style: normal; color: var(--semanticColorContentAccent); }
+.svc-band--light .svc-prose em { color: var(--semanticColorContentStatesAccentMainHover); }
+.svc-prose-group { display: flex; flex-direction: column; gap: 48px; }
 
 /* CTA */
 .svc-cta .svc-inner { text-align: center; padding-top: 112px; padding-bottom: 112px; }
