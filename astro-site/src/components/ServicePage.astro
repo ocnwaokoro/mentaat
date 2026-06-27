@@ -1,0 +1,105 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import '../styles/threat-intel.css';
+
+// Shared service-page layout. Research-backed structure (hero -> problem -> how we work
+// -> proof -> CTA), composed entirely from existing design-system classes. Plain language,
+// anonymized proof. Each service page passes its copy via props.
+const { title, description, kicker, heading, sub, problemHeading, problemBody, how = [], proof = [], quote, ctaHeading } = Astro.props;
+
+const c = {
+  kicker: 'Kicker_kicker__IRc0E Text_text__4F9CK Text_color--accent__VU5AF Text_size--body--02__HVmZN',
+  h1: 'Heading_heading__me6NI Heading_heading--01__eCDWT Heading_align--center__FohI8 Heading_color--primary___QOq1',
+  h2: 'Heading_heading__me6NI Heading_heading--02__GxsbA Heading_align--left__hNEzl Heading_color--primary___QOq1',
+  h2c: 'Heading_heading__me6NI Heading_heading--02__GxsbA Heading_align--center__FohI8 Heading_color--primary___QOq1',
+  lead: 'Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT Text_align--center___SIFC Text_deprecatedMargin--none__sZLCS',
+  body: 'Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT Text_deprecatedMargin--none__sZLCS',
+  colCenter: 'Flex_flex___mzvZ Flex_align--center__9VuNC Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Flex_gap--m__j4Ha1',
+  colStart: 'Flex_flex___mzvZ Flex_align--start__Nb_Sy Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Flex_gap--s__0656J',
+  cardsRow: 'Flex_flex___mzvZ Flex_align--start__Nb_Sy Flex_direction--row__W6CGY Flex_justify--center__xip LandingCards_cards__BK9gg Flex_wrap__fR1jo',
+  card: 'Card_card__S5Ka1 Card_size--default__WMqZP LandingCards_card__BVgmP',
+  cardInner: 'Flex_flex___mzvZ Flex_align--start__Nb_Sy Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Flex_gap--s__0656J',
+  badge: 'Badge_badge__A7OHD Badge_color--accent__Vuh4G Badge_size--medium__MxotV',
+  ch: 'Heading_heading__me6NI Heading_heading--05__4gkI8 Heading_align--left__hNEzl Heading_color--primary___QOq1',
+  ct: 'Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--02__HVmZN Text_deprecatedMargin--none__sZLCS',
+  btnRow: 'Flex_flex___mzvZ Flex_align--center__9VuNC Flex_direction--row__W6CGY Flex_justify--center__xip ButtonRow_buttonRow__hs7qV Flex_gap--s__0656J',
+  btnPrimary: 'BaseButton_button__S8cdB BaseButton_size--large__dpOfr BaseButton_importance--primary__1_2vI MarketingLinkButton_marketingLinkButton__n8FI4 BaseButton_color--accent-main__KBIuP FocusRing_focusRing__izyZU',
+  btnSecondary: 'BaseButton_button__S8cdB BaseButton_size--large__dpOfr BaseButton_importance--secondary__qMmu3 MarketingLinkButton_marketingLinkButton__n8FI4 FocusRing_focusRing__izyZU',
+  quote: 'Text_text__4F9CK Text_color--primary__thVpO Text_size--body--01__aiSyT Text_align--center___SIFC Text_deprecatedMargin--none__sZLCS',
+};
+---
+
+<Base title={title} description={description}>
+  <div id="__next">
+    <div class="app_site--homepage__E5h5V app_loggedOut__HHvfJ">
+      <div class="Flex_flex___mzvZ Flex_direction--column__TTxLV Flex_justify--space-between__LdB4V Layout_layout__u6BrU">
+        <div class="Flex_flex___mzvZ Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Layout_content__q1d4E">
+          <Header />
+          <main class="Layout_main__nbmiJ index_layout__cD6cr">
+            <div class="index_container__9GuY8">
+              <div class="Flex_flex___mzvZ Flex_align--center__9VuNC Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Flex_gap--xxl__mFPOt">
+
+                <div class={c.colCenter}>
+                  <span class={c.kicker}>{kicker}</span>
+                  <h1 class={c.h1}>{heading}</h1>
+                  <p class={c.lead}>{sub}</p>
+                  <div class={c.btnRow}>
+                    <a href="/contact" class={c.btnPrimary}><span>Book a call</span></a>
+                    <a href="/work" class={c.btnSecondary}><span>See our work</span></a>
+                  </div>
+                </div>
+
+                <div class={c.colStart}>
+                  <h2 class={c.h2}>{problemHeading}</h2>
+                  <p class={c.body}>{problemBody}</p>
+                </div>
+
+                <div class={c.colStart}>
+                  <h2 class={c.h2}>How we work</h2>
+                  <div class={c.cardsRow}>
+                    {how.map((x) => (
+                      <div class={c.card}>
+                        <div class={c.cardInner}>
+                          <span class={c.badge}>{x.tag}</span>
+                          <h3 class={c.ch}>{x.h}</h3>
+                          <p class={c.ct}>{x.t}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div class={c.colStart}>
+                  <h2 class={c.h2}>Proof, not promises</h2>
+                  <div class={c.cardsRow}>
+                    {proof.map((x) => (
+                      <a href={x.href} class={c.card}>
+                        <div class={c.cardInner}>
+                          <span class={c.badge}>{x.tag}</span>
+                          <h3 class={c.ch}>{x.h}</h3>
+                          <p class={c.ct}>{x.t}</p>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
+                <div class={c.colCenter}>
+                  <p class={c.quote}>{quote}</p>
+                  <h2 class={c.h2c}>{ctaHeading}</h2>
+                  <div class={c.btnRow}>
+                    <a href="/contact" class={c.btnPrimary}><span>Book a call</span></a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </main>
+        </div>
+        <Footer />
+      </div>
+    </div>
+  </div>
+</Base>

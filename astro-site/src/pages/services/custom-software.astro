@@ -1,26 +1,27 @@
 ---
-import Base from '../../layouts/Base.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { pageHtml } from '../../html/news-reader.js';
-import { applyImageOverrides } from '../../config/images.js';
-import '../../styles/news-reader.css';
+import ServicePage from '../../components/ServicePage.astro';
 
-// Keystone Infrastructure service page. Reskinned Feedly design + our chrome.
-// NOTE: body content is still Feedly placeholder, pending full re-content.
-const body = applyImageOverrides(
-  pageHtml
-    .replace(/<header[\s\S]*?<\/header>/g, '')
-    .replace(/<footer[\s\S]*?<\/footer>/g, '')
-    .replace(/Get Started/g, 'Book a call')
-);
+const how = [
+  { tag: 'Diagnose', h: 'We find the real bottleneck', t: 'We come in like an operator and map quote to cash. The constraint is often not where you think it is.' },
+  { tag: 'Build', h: 'Systems made for your operation', t: 'Custom software built around how your business actually runs, not a template you have to bend yourself around.' },
+  { tag: 'Stay', h: 'We stay until it works', t: 'Forward-deployed means we are in it with you, through rollout and the messy edges, until the system carries real weight.' },
+];
+const proof = [
+  { tag: 'Machine shop', h: 'Three-day quotes became same-day', t: 'Every quote ran through one tired owner. We built a system that reads the drawing and prices from history. The owner got a day a week back.', href: '/casestudy' },
+  { tag: 'Dental', h: 'The front desk stopped calling insurers', t: 'A family practice did all benefit verification by hand. We cut it from fifteen minutes to under two, with no new hires.', href: '/work' },
+];
 ---
 
-<Base
+<ServicePage
   title="Keystone Infrastructure — Custom Software & Operations Engineering | Mentaat"
-  description="We go in like an operator, find the leverage, and build the custom systems that scale your operation. Forward-deployed engineering for boutique businesses."
->
-  <Header />
-  <Fragment set:html={body} />
-  <Footer />
-</Base>
+  description="We go in like an operator, find the leverage, and build the custom systems that scale your operation. Forward-deployed engineering for boutique businesses. Book a call."
+  kicker="Keystone Infrastructure"
+  heading="We go in like an operator and build what your business runs on"
+  sub="When the whole operation needs to scale, we come in, find the leverage, and build the custom systems that change how the business runs."
+  problemHeading="At some point, spreadsheets stop holding the business together"
+  problemBody="The workarounds that got you here start to cost you. One person becomes the bottleneck. The numbers live in six places and none of them agree. You do not need another off-the-shelf tool that almost fits. You need someone to come in, understand the operation, and build the system it actually needs."
+  how={how}
+  proof={proof}
+  quote={'"They did not replace the expert. They bottled the expert\'s instinct."'}
+  ctaHeading="Let us find the leverage in your operation"
+/>

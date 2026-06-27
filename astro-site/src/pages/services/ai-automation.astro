@@ -1,26 +1,27 @@
 ---
-import Base from '../../layouts/Base.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { pageHtml } from '../../html/market-intel.js';
-import { applyImageOverrides } from '../../config/images.js';
-import '../../styles/market-intel.css';
+import ServicePage from '../../components/ServicePage.astro';
 
-// Workflow Intelligence service page. Reskinned Feedly design + our chrome.
-// NOTE: body content is still Feedly placeholder, pending full re-content.
-const body = applyImageOverrides(
-  pageHtml
-    .replace(/<header[\s\S]*?<\/header>/g, '')
-    .replace(/<footer[\s\S]*?<\/footer>/g, '')
-    .replace(/Get Started/g, 'Book a call')
-);
+const how = [
+  { tag: 'Embed', h: 'We learn how you really work', t: 'We sit with your team and map the actual process, the steps, the exceptions, the workarounds, before we automate anything.' },
+  { tag: 'Build', h: 'AI inside the tools you use', t: 'We weave automation into the tools your team already works in, so it fits how you work instead of fighting it.' },
+  { tag: 'Measure', h: 'Hours back, not hype', t: 'We tie it to real outcomes: hours saved, errors caught, work that stops slipping. If it does not earn its keep, we change it.' },
+];
+const proof = [
+  { tag: 'Vet clinic', h: 'The vet goes home with records done', t: 'A two-vet clinic was drowning in after-hours charting and phones. We moved charting into the visit. Missed calls dropped, evenings came back.', href: '/work' },
+  { tag: 'Law', h: 'Every after-hours caller becomes a consult', t: 'A solo attorney was losing cases to voicemail. After-hours leads now convert instead of vanishing to the next firm.', href: '/work' },
+];
 ---
 
-<Base
+<ServicePage
   title="Workflow Intelligence — AI Automation for Small Teams | Mentaat"
-  description="We embed with your team, learn how you actually work, and weave AI into it. Practical automation that saves real hours, not a science project."
->
-  <Header />
-  <Fragment set:html={body} />
-  <Footer />
-</Base>
+  description="We embed with your team, learn how you actually work, and weave AI into it. Practical automation that saves real hours, not a science project. Book a call."
+  kicker="Workflow Intelligence"
+  heading="Give your team back the hours busywork eats"
+  sub="We embed with your team, learn how you actually work, and weave AI into it. Practical automation that saves real hours, not a science project."
+  problemHeading="Your best people are stuck doing repetitive work"
+  problemBody="Quoting, scheduling, data entry, follow-up, the same tasks every day, done by hand. It is slow, it is easy to get wrong, and it keeps your most capable people from the work only they can do. Most AI tools promise the moon and end up unused. The difference is building it into how your team already works."
+  how={how}
+  proof={proof}
+  quote={'"It saved us a day a week we did not know we were losing."'}
+  ctaHeading="Find the hours hiding in your week"
+/>
