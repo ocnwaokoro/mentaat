@@ -7,7 +7,7 @@
 
 /* Accent — blue is the one accent. Bright #009fec on dark surfaces; deeper blue on light
    surfaces so it clears WCAG AA. Applied to <em> (bolded accent words) + the big numerals. */
-.cong em { font-style: normal; }
+.cong em { font-style: normal; font-weight: 600; } /* deliberate highlight: blue + heavier */
 .theme--dark em, .cong-card--dark em { color: var(--semanticColorContentAccent); }
 .cong-card--tint em, .cong-card--white em, .cong-statement em { color: var(--semanticColorContentStatesAccentMainHover); }
 
@@ -30,6 +30,10 @@
 .cong-case .cong-ph { border-radius: 0; aspect-ratio: 16 / 9; }
 .cong-case-body { padding: 24px 28px 28px; }
 
+.cong-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.cong-page-hero { padding: clamp(44px, 6vw, 84px) 0 clamp(24px, 3vw, 40px); }
+.cong-page-hero > * + * { margin-top: 18px; }
+.cong-page-hero p { max-width: 34em; }
 .cong-center { text-align: center; }
 .cong-center .cong-hero, .cong-center .cong-cta-row { justify-content: center; }
 
@@ -37,5 +41,5 @@
    the service page from the homepage's pure tile grid; rhyme, not uniform) */
 .cong-sec { display: flex; flex-direction: column; gap: var(--semanticSpacingPositive700); }
 .cong-statement { max-width: 34em; padding: clamp(12px, 2vw, 28px) 0; }
-/* big blue numerals on the process cards (Aeonik via Heading--02, recoloured to accent) */
-.cong-num { color: var(--semanticColorContentAccent); line-height: 1; font-variant-numeric: tabular-nums; display: block; margin-bottom: 6px; }
+/* big blue numerals on the process cards (Aeonik, recoloured to accent, oversized signature) */
+.cong-num { color: var(--semanticColorContentAccent); font-size: clamp(3.5rem, 5vw, 5rem); line-height: 1; font-variant-numeric: tabular-nums; display: block; margin-bottom: 10px; }

@@ -1,0 +1,116 @@
+/*
+ * legal.css — layout only for the Privacy / Terms reading pages.
+ * No fonts, no font-sizes: all type comes from the Heading_* / Text_* classes.
+ * Colors come from design-system tokens only.
+ */
+
+.legal {
+  padding-bottom: 4rem;
+}
+
+/* Container lines up with the header/footer measure (1180px, 32px side padding). */
+.legal__container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 2.5rem 32px 0;
+}
+
+/* Header block: badge, title, effective date, then a thin rule. */
+.legal__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--semanticColorBorderLight);
+}
+
+.legal__header h1 {
+  margin: 0;
+}
+
+/* Body: single reading column on mobile. */
+.legal__body {
+  padding-top: 1rem;
+}
+
+/* Reading column kept to a comfortable measure. */
+.legal__content {
+  max-width: 70ch;
+}
+
+.legal__section {
+  margin-top: 3rem;
+  /* Offset for the sticky TOC / anchor jumps. */
+  scroll-margin-top: 2rem;
+}
+
+.legal__section h2 {
+  margin: 0 0 1rem;
+}
+
+.legal__section p {
+  margin: 0 0 1rem;
+}
+
+.legal__section p:last-child {
+  margin-bottom: 0;
+}
+
+/* Contact footer line. */
+.legal__contact {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--semanticColorBorderLight);
+}
+
+/* Links use the accent token. */
+.legal a {
+  color: var(--semanticColorContentStatesAccentMainHover);
+  text-decoration: none;
+}
+
+.legal a:hover {
+  text-decoration: underline;
+}
+
+/* Table of contents: hidden on mobile, shown as a sticky sidebar on desktop. */
+.legal__toc {
+  display: none;
+}
+
+.legal__toc ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.legal__toc a {
+  display: block;
+}
+
+@media (min-width: 980px) {
+  .legal__body {
+    display: grid;
+    grid-template-columns: 15rem minmax(0, 70ch);
+    column-gap: 4rem;
+    align-items: start;
+    justify-content: start;
+  }
+
+  .legal__content {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .legal__toc {
+    display: block;
+    grid-column: 1;
+    grid-row: 1;
+    position: sticky;
+    top: 2rem;
+    padding-top: 3rem;
+  }
+}

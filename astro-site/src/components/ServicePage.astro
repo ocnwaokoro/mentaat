@@ -3,99 +3,113 @@ import Base from '../layouts/Base.astro';
 import Header from './Header.astro';
 import Footer from './Footer.astro';
 import '../styles/homepage.css';
-import '../styles/service.css';
+import '../styles/congruent.css';
 
-// Dark-editorial service page. Full-bleed band rhythm (dark hero -> light problem ->
-// dark numbered process -> light proof tiles -> dark CTA), oversized type, monospace
-// accents, deliberate labeled image placeholders. Each service passes its copy via props.
+// Congruent service page — built from the REAL design system (Aeonik via Heading/Text,
+// real Badge + BaseButton, tile 8px cards, measured #0a131a dark surface). Rhymes with
+// the homepage tiles by construction; its own voice via numbered process + section heads.
 const {
-  title, description, eyebrow, headingHtml, sub, heroPhLabel,
-  leadHtml, how = [], proof = [], ctaHeadHtml, ctaSub,
+  meta, how = [], proof = [],
+  howHeading = 'How we go in, and build',
+  proofHeading = 'What we have built',
 } = Astro.props;
+
+const head02white = 'Heading_heading__me6NI Heading_heading--02__GxsbA Heading_align--left__hNEzl Heading_color--white__5VAp3';
+const head02dark = 'Heading_heading__me6NI Heading_heading--02__GxsbA Heading_align--left__hNEzl Heading_color--primary___QOq1';
+const head02base = 'Heading_heading__me6NI Heading_heading--02__GxsbA Heading_align--left__hNEzl';
+const head05white = 'Heading_heading__me6NI Heading_heading--05__4gkI8 Heading_align--left__hNEzl Heading_color--white__5VAp3';
+const head05dark = 'Heading_heading__me6NI Heading_heading--05__4gkI8 Heading_align--left__hNEzl Heading_color--primary___QOq1';
+const textSec = 'Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT Text_deprecatedMargin--none__sZLCS';
+const textSec2 = 'Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--02__HVmZN Text_deprecatedMargin--none__sZLCS';
+const badge = 'Badge_badge__A7OHD Badge_color--accent__Vuh4G Badge_size--medium__MxotV';
+const colL = 'Flex_flex___mzvZ Flex_align--start__Nb_Sy Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Flex_gap--l__lrJk4';
+const colS = 'Flex_flex___mzvZ Flex_align--start__Nb_Sy Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Flex_gap--s__0656J';
+const btnRow = 'Flex_flex___mzvZ Flex_align--center__9VuNC Flex_direction--row__W6CGY Flex_justify--start__vk9Tl ButtonRow_buttonRow__hs7qV Flex_gap--s__0656J';
+const btnPrimary = 'BaseButton_button__S8cdB BaseButton_size--large__dpOfr BaseButton_importance--primary__1_2vI MarketingLinkButton_marketingLinkButton__n8FI4 BaseButton_color--accent-main__KBIuP FocusRing_focusRing__izyZU';
+const btnSecondary = 'BaseButton_button__S8cdB BaseButton_size--large__dpOfr BaseButton_importance--secondary__qMmu3 MarketingLinkButton_marketingLinkButton__n8FI4 BaseButton_color--accent-main__KBIuP FocusRing_focusRing__izyZU';
 ---
 
-<Base title={title} description={description}>
+<Base title={meta.title} description={meta.description}>
   <div id="__next">
     <div class="app_site--homepage__E5h5V app_loggedOut__HHvfJ">
       <div class="Flex_flex___mzvZ Flex_direction--column__TTxLV Flex_justify--space-between__LdB4V Layout_layout__u6BrU">
         <div class="Flex_flex___mzvZ Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Layout_content__q1d4E">
           <Header />
-          <main class="svc">
+          <main class="Layout_main__nbmiJ index_layout__cD6cr cong">
+            <div class="index_container__9GuY8">
+              <div class="cong-stack">
 
-            {/* HERO */}
-            <section class="svc-band svc-band--dark svc-hero">
-              <div class="svc-inner">
-                <div>
-                  <span class="svc-eyebrow">{eyebrow}</span>
-                  <h1 class="svc-h1" set:html={headingHtml} />
-                  <p class="svc-sub">{sub}</p>
-                  <div class="svc-cta-row">
-                    <a href="/contact" class="svc-btn svc-btn--primary">Book a call</a>
-                    <a href="/work" class="svc-btn svc-btn--ghost">See our work</a>
-                  </div>
-                </div>
-                <div class="svc-ph svc-ph--hero" data-label={heroPhLabel}></div>
-              </div>
-            </section>
-
-            {/* PROBLEM */}
-            <section class="svc-band svc-band--light">
-              <div class="svc-inner">
-                <p class="svc-lead" set:html={leadHtml} />
-              </div>
-            </section>
-
-            {/* HOW WE WORK */}
-            <section class="svc-band svc-band--dark">
-              <div class="svc-inner">
-                <span class="svc-eyebrow">// how we work</span>
-                <h2 class="svc-section-head">We go in, then we build</h2>
-                <div class="svc-steps">
-                  {how.map((s) => (
-                    <div class="svc-step">
-                      <div class="svc-step-num">{s.num}</div>
-                      <div>
-                        <p class="svc-step-label">{s.label}</p>
-                        <h3 class="svc-step-title">{s.title}</h3>
-                        <p class="svc-step-body">{s.body}</p>
+                {/* HERO — dark tile surface */}
+                <div class="cong-card cong-card--dark theme--dark">
+                  <div class="cong-hero">
+                    <div class={colL}>
+                      <span class={badge}>{meta.badge}</span>
+                      <h1 class={head02white} set:html={meta.headingHtml} />
+                      <p class={textSec}>{meta.sub}</p>
+                      <div class={btnRow}>
+                        <a href="/contact" class={btnPrimary}><span>Book a call</span></a>
+                        <a href="/work" class={btnSecondary}><span>See our work</span></a>
                       </div>
                     </div>
-                  ))}
+                    <div class="cong-ph"></div>
+                  </div>
                 </div>
-              </div>
-            </section>
 
-            {/* PROOF */}
-            <section class="svc-band svc-band--light">
-              <div class="svc-inner">
-                <span class="svc-eyebrow">// proof, not promises</span>
-                <h2 class="svc-section-head">Work we have actually done</h2>
-                <div class="svc-proof-grid">
-                  {proof.map((p) => (
-                    <a href={p.href} class="svc-case">
-                      <div class="svc-ph svc-ph--wide" data-label={p.phLabel}></div>
-                      <div class="svc-case-body">
-                        <p class="svc-case-metric" set:html={p.metricHtml} />
-                        <p class="svc-case-title">{p.title}</p>
-                        <p class="svc-case-client">{p.client}</p>
+                {/* PROBLEM — blue tint card */}
+                <div class="cong-card cong-card--tint">
+                  <div class={colS}>
+                    <h2 class={head02dark} set:html={meta.problemHtml} />
+                    <p class={textSec}>{meta.problemBody}</p>
+                  </div>
+                </div>
+
+                {/* HOW WE WORK — numbered dark tiles */}
+                <div class="cong-sec">
+                  <h2 class={head02dark}>{howHeading}</h2>
+                  <div class="cong-row3">
+                    {how.map((s) => (
+                      <div class="cong-card cong-card--dark theme--dark">
+                        <div class={colS}>
+                          <span class={`${head02base} cong-num`}>{s.num}</span>
+                          <h3 class={head05white}>{s.title}</h3>
+                          <p class={textSec2}>{s.body}</p>
+                        </div>
                       </div>
-                    </a>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </section>
 
-            {/* CTA */}
-            <section class="svc-band svc-band--dark svc-cta">
-              <div class="svc-inner">
-                <h2 class="svc-cta-head" set:html={ctaHeadHtml} />
-                <p class="svc-cta-sub">{ctaSub}</p>
-                <div class="svc-cta-row">
-                  <a href="/contact" class="svc-btn svc-btn--primary">Book a call</a>
+                {/* PROOF — white tiles with image */}
+                <div class="cong-sec">
+                  <h2 class={head02dark}>{proofHeading}</h2>
+                  <div class="cong-row2">
+                    {proof.map((p) => (
+                      <a href={p.href} class="cong-card cong-card--white cong-case">
+                        <div class="cong-ph"></div>
+                        <div class="cong-case-body">
+                          <div class={colS}>
+                            <h3 class={head05dark} set:html={p.metricHtml} />
+                            <p class={textSec2}>{p.title}</p>
+                          </div>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </section>
 
+                {/* CTA — dark tile */}
+                <div class="cong-card cong-card--dark theme--dark cong-center">
+                  <div class={colL} style="align-items:center;width:100%">
+                    <h2 class={head02white} set:html={meta.ctaHeadHtml} />
+                    <p class={textSec}>{meta.ctaSub}</p>
+                    <div class={btnRow}>
+                      <a href="/contact" class={btnPrimary}><span>Book a call</span></a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </main>
           <Footer />
         </div>

@@ -3,27 +3,26 @@ import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/homepage.css';
-import '../styles/service.css';
+import '../styles/congruent.css';
+
+const head02white = 'Heading_heading__me6NI Heading_heading--02__GxsbA Heading_align--left__hNEzl Heading_color--white__5VAp3';
+const head02dark = 'Heading_heading__me6NI Heading_heading--02__GxsbA Heading_align--left__hNEzl Heading_color--primary___QOq1';
+const textWhite = 'Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT Text_deprecatedMargin--none__sZLCS';
+const badge = 'Badge_badge__A7OHD Badge_color--accent__Vuh4G Badge_size--medium__MxotV';
+const colL = 'Flex_flex___mzvZ Flex_align--start__Nb_Sy Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Flex_gap--l__lrJk4';
+const btnRow = 'Flex_flex___mzvZ Flex_align--center__9VuNC Flex_direction--row__W6CGY Flex_justify--start__vk9Tl ButtonRow_buttonRow__hs7qV Flex_gap--s__0656J';
+const btnPrimary = 'BaseButton_button__S8cdB BaseButton_size--large__dpOfr BaseButton_importance--primary__1_2vI MarketingLinkButton_marketingLinkButton__n8FI4 BaseButton_color--accent-main__KBIuP FocusRing_focusRing__izyZU';
 
 const services = [
-  {
-    n: '01', eyebrow: '// 01 — Digital Products', href: '/services/web-development',
+  { surface: 'dark', badge: 'Digital Products', href: '/services/web-development',
     h: 'Websites and web apps that bring in <em>work</em>',
-    p: 'Fast, modern sites built around how you actually win customers, and simple enough to run yourself.',
-    ph: '// digital products', tone: 'light',
-  },
-  {
-    n: '02', eyebrow: '// 02 — Workflow Intelligence', href: '/services/ai-automation',
+    p: 'Fast, modern sites built around how you actually win customers, and simple enough to run yourself.', ph: '// digital products' },
+  { surface: 'tint', badge: 'Workflow Intelligence', href: '/services/ai-automation',
     h: 'AI woven into how your team <em>already works</em>',
-    p: 'We embed, learn your real process, and automate the busywork that eats your team\'s day.',
-    ph: '// workflow intelligence', tone: 'dark',
-  },
-  {
-    n: '03', eyebrow: '// 03 — Keystone Infrastructure', href: '/services/custom-software',
+    p: 'We embed, learn your real process, and automate the busywork that eats your team\'s day.', ph: '// workflow intelligence' },
+  { surface: 'white', badge: 'Keystone Infrastructure', href: '/services/custom-software',
     h: 'Custom systems your whole operation <em>runs on</em>',
-    p: 'We come in like an operator, find the leverage, and build what the business actually needs.',
-    ph: '// keystone infrastructure', tone: 'light',
-  },
+    p: 'We come in like an operator, find the leverage, and build what the business actually needs.', ph: '// keystone infrastructure' },
 ];
 ---
 
@@ -36,49 +35,44 @@ const services = [
       <div class="Flex_flex___mzvZ Flex_direction--column__TTxLV Flex_justify--space-between__LdB4V Layout_layout__u6BrU">
         <div class="Flex_flex___mzvZ Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Layout_content__q1d4E">
           <Header />
-          <main class="svc">
-
-            <section class="svc-band svc-band--dark svc-hero">
-              <div class="svc-inner">
-                <div>
-                  <span class="svc-eyebrow">// Services</span>
-                  <h1 class="svc-h1">Three ways we go in <em>and build</em></h1>
-                  <p class="svc-sub">Not sure which you need? Most engagements start with a single call and grow from there. Pick the one that sounds like your business, or just book the call.</p>
-                  <div class="svc-cta-row">
-                    <a href="/contact" class="svc-btn svc-btn--primary">Book a call</a>
-                    <a href="/work" class="svc-btn svc-btn--ghost">See our work</a>
-                  </div>
-                </div>
-                <div class="svc-ph svc-ph--hero" data-label="// the studio"></div>
+          <main class="Layout_main__nbmiJ index_layout__cD6cr cong">
+            <div class="index_container__9GuY8">
+              <div class="cong-page-hero">
+                <h1 class={head02dark}>Three ways we go in <em>and build</em></h1>
+                <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT Text_deprecatedMargin--none__sZLCS">Not sure which you need? Most engagements start with a single call and grow from there. Pick the one that sounds like your business.</p>
               </div>
-            </section>
 
-            {services.map((s, i) => (
-              <section class={'svc-band svc-band--' + s.tone}>
-                <div class="svc-inner">
-                  <div class={'svc-feature' + (i % 2 === 1 ? ' svc-feature--flip' : '')}>
-                    <div class="svc-feature-text">
-                      <span class="svc-eyebrow">{s.eyebrow}</span>
-                      <h2 class="svc-feature-h" set:html={s.h} />
-                      <p class="svc-feature-p">{s.p}</p>
-                      <a href={s.href} class="svc-link">Explore →</a>
+              <div class="cong-stack">
+                {services.map((s) => {
+                  const dark = s.surface === 'dark';
+                  return (
+                    <div class={`cong-card cong-card--${s.surface}${dark ? ' theme--dark' : ''}`}>
+                      <div class="cong-hero">
+                        <div class={colL}>
+                          <span class={badge}>{s.badge}</span>
+                          <h2 class={dark ? head02white : head02dark} set:html={s.h} />
+                          <p class={textWhite}>{s.p}</p>
+                          <div class={btnRow}>
+                            <a href={s.href} class={btnPrimary}><span>Explore</span></a>
+                          </div>
+                        </div>
+                        <div class="cong-ph"></div>
+                      </div>
                     </div>
-                    <div class="svc-ph svc-feature-img" data-label={s.ph}></div>
+                  );
+                })}
+
+                <div class="cong-card cong-card--dark theme--dark cong-center">
+                  <div class={colL} style="align-items:center;width:100%">
+                    <h2 class={head02white}>Not sure where to <em>start</em>?</h2>
+                    <p class={textWhite}>Tell us where the business is stuck. We will point you to the right one, or tell you straight if it is not us.</p>
+                    <div class={btnRow}>
+                      <a href="/contact" class={btnPrimary}><span>Book a call</span></a>
+                    </div>
                   </div>
                 </div>
-              </section>
-            ))}
-
-            <section class="svc-band svc-band--dark svc-cta">
-              <div class="svc-inner">
-                <h2 class="svc-cta-head">Not sure where to <em>start</em>?</h2>
-                <p class="svc-cta-sub">Tell us where the business is stuck. We will point you to the right one, or tell you straight if it is not us.</p>
-                <div class="svc-cta-row">
-                  <a href="/contact" class="svc-btn svc-btn--primary">Book a call</a>
-                </div>
               </div>
-            </section>
-
+            </div>
           </main>
           <Footer />
         </div>

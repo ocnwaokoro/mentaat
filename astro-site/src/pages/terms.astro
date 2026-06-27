@@ -3,9 +3,86 @@ import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/homepage.css';
+import '../styles/legal.css';
 
-// Mentaat's own Terms of Service, composed entirely from existing design-system
-// component classes. Starting template; have counsel review before launch.
+// Mentaat's own Terms of Service, composed from existing design-system component
+// classes plus a small scoped legal.css for the reading-column layout.
+
+const headingClass = 'Heading_heading__me6NI Heading_heading--05__4gkI8 Heading_align--left__hNEzl Heading_color--primary___QOq1';
+const textClass = 'Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT';
+
+const sections = [
+  {
+    id: 'acceptance-of-terms',
+    title: 'Acceptance of terms',
+    body: [
+      'These terms govern your use of this website operated by Mentaat Technologies LLC ("Mentaat"). By using the site you agree to them. Paid engagements are governed by a separate written agreement, not these terms.',
+    ],
+  },
+  {
+    id: 'our-services',
+    title: 'Our services',
+    body: [
+      'Mentaat is a New Jersey studio that provides software engineering and AI consulting services. This website describes our work and lets you get in touch. The scope, deliverables, and pricing of any engagement are set out in a separate written agreement.',
+    ],
+  },
+  {
+    id: 'intellectual-property',
+    title: 'Intellectual property',
+    body: [
+      'The content, design, logo, and materials on this site are owned by Mentaat Technologies LLC or its licensors and may not be copied or reused without permission.',
+    ],
+  },
+  {
+    id: 'acceptable-use',
+    title: 'Acceptable use',
+    body: [
+      'You may use this site for lawful purposes only. Do not attempt to disrupt, misuse, or gain unauthorized access to the site or its systems.',
+    ],
+  },
+  {
+    id: 'third-party-services',
+    title: 'Third-party services',
+    body: [
+      'The site may link to or rely on third-party services. We are not responsible for their content or practices, and your use of them is subject to their own terms.',
+    ],
+  },
+  {
+    id: 'disclaimers-and-warranties',
+    title: 'Disclaimers and warranties',
+    body: [
+      'The site is provided "as is" and "as available." We make no warranties about its accuracy, availability, or fitness for a particular purpose.',
+    ],
+  },
+  {
+    id: 'limitation-of-liability',
+    title: 'Limitation of liability',
+    body: [
+      'To the fullest extent permitted by law, Mentaat is not liable for any indirect, incidental, or consequential damages arising from your use of the site.',
+    ],
+  },
+  {
+    id: 'governing-law',
+    title: 'Governing law',
+    body: [
+      'These terms are governed by the laws of the State of New Jersey, without regard to its conflict-of-laws rules.',
+    ],
+  },
+  {
+    id: 'changes-to-these-terms',
+    title: 'Changes to these terms',
+    body: [
+      'We may update these terms. Continued use of the site means you accept the current version.',
+    ],
+  },
+  {
+    id: 'contact',
+    title: 'Contact',
+    body: [
+      'Questions about these terms can be sent to hello@mentaat.com. Mentaat Technologies LLC, New Jersey.',
+    ],
+  },
+];
 ---
 
 <Base
@@ -17,47 +94,42 @@ import '../styles/homepage.css';
       <div class="Flex_flex___mzvZ Flex_direction--column__TTxLV Flex_justify--space-between__LdB4V Layout_layout__u6BrU">
         <div class="Flex_flex___mzvZ Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Layout_content__q1d4E">
           <Header />
-          <main class="Layout_main__nbmiJ">
-            <div class="Flex_flex___mzvZ Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Flex_gap--m__j4Ha1">
-              <h1 class="Heading_heading__me6NI Heading_heading--02__GxsbA">Terms of Service</h1>
+          <main class="legal">
+            <div class="legal__container">
+              <header class="legal__header">
+                <span class="Badge_badge__A7OHD Badge_color--accent__Vuh4G Badge_size--medium__MxotV">Legal</span>
+                <h1 class="Heading_heading__me6NI Heading_heading--02__GxsbA Heading_align--left__hNEzl Heading_color--primary___QOq1">Terms of Service</h1>
+                <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--02__HVmZN">Effective date: June 27, 2026</p>
+              </header>
 
-              <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT">Effective date: June 27, 2026</p>
+              <div class="legal__body">
+                <nav class="legal__toc" aria-label="Sections">
+                  <ol>
+                    {sections.map((section, i) => (
+                      <li>
+                        <a class={textClass} href={`#${section.id}`}>{i + 1}. {section.title}</a>
+                      </li>
+                    ))}
+                  </ol>
+                </nav>
 
-              <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT"><em>This is a starting template and must be reviewed by counsel before launch.</em></p>
+                <div class="legal__content">
+                  {sections.map((section, i) => (
+                    <section class="legal__section" id={section.id}>
+                      <h2 class={headingClass}>{i + 1}. {section.title}</h2>
+                      {section.body.map((para) => (
+                        <p class={textClass}>{para}</p>
+                      ))}
+                    </section>
+                  ))}
 
-              <h2 class="Heading_heading__me6NI Heading_heading--05__4gkI8">Acceptance of terms</h2>
-              <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT">These terms govern your use of this website operated by Mentaat Technologies LLC ("Mentaat"). By using the site you agree to them. Paid engagements are governed by a separate written agreement, not these terms.</p>
-
-              <h2 class="Heading_heading__me6NI Heading_heading--05__4gkI8">Our services</h2>
-              <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT">Mentaat is a New Jersey studio that provides software engineering and AI consulting services. This website describes our work and lets you get in touch. The scope, deliverables, and pricing of any engagement are set out in a separate written agreement.</p>
-
-              <h2 class="Heading_heading__me6NI Heading_heading--05__4gkI8">Intellectual property</h2>
-              <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT">The content, design, logo, and materials on this site are owned by Mentaat Technologies LLC or its licensors and may not be copied or reused without permission.</p>
-
-              <h2 class="Heading_heading__me6NI Heading_heading--05__4gkI8">Acceptable use</h2>
-              <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT">You may use this site for lawful purposes only. Do not attempt to disrupt, misuse, or gain unauthorized access to the site or its systems.</p>
-
-              <h2 class="Heading_heading__me6NI Heading_heading--05__4gkI8">Third-party services</h2>
-              <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT">The site may link to or rely on third-party services. We are not responsible for their content or practices, and your use of them is subject to their own terms.</p>
-
-              <h2 class="Heading_heading__me6NI Heading_heading--05__4gkI8">Disclaimers and warranties</h2>
-              <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT">The site is provided "as is" and "as available." We make no warranties about its accuracy, availability, or fitness for a particular purpose.</p>
-
-              <h2 class="Heading_heading__me6NI Heading_heading--05__4gkI8">Limitation of liability</h2>
-              <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT">To the fullest extent permitted by law, Mentaat is not liable for any indirect, incidental, or consequential damages arising from your use of the site.</p>
-
-              <h2 class="Heading_heading__me6NI Heading_heading--05__4gkI8">Governing law</h2>
-              <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT">These terms are governed by the laws of the State of New Jersey, without regard to its conflict-of-laws rules.</p>
-
-              <h2 class="Heading_heading__me6NI Heading_heading--05__4gkI8">Changes to these terms</h2>
-              <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT">We may update these terms. Continued use of the site means you accept the current version.</p>
-
-              <h2 class="Heading_heading__me6NI Heading_heading--05__4gkI8">Contact</h2>
-              <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT">Questions about these terms can be sent to hello@mentaat.com. Mentaat Technologies LLC, New Jersey.</p>
+                  <p class={`legal__contact ${textClass}`}>Questions? Email <a href="mailto:hello@mentaat.com">hello@mentaat.com</a>.</p>
+                </div>
+              </div>
             </div>
           </main>
+          <Footer />
         </div>
-        <Footer />
       </div>
     </div>
   </div>

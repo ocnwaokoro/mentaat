@@ -1,11 +1,12 @@
 export const meta = {
   title: 'Workflow Intelligence — AI Automation for Small Teams | Mentaat',
   description: 'We embed with your team, learn how you actually work, and weave AI into it. Practical automation that saves real hours, not a science project. Book a call.',
-  eyebrow: '// Workflow Intelligence',
+  badge: 'Workflow Intelligence',
   headingHtml: 'Give your team back the hours <em>busywork eats</em>',
   sub: 'We embed with your team, learn how you actually work, and weave AI into it. Practical automation that saves real hours, not a science project.',
   heroPhLabel: '// workflow preview',
-  leadHtml: 'Your best people are stuck doing <em>repetitive work</em>. Quoting, scheduling, data entry, follow-up, the same tasks every day, done by hand, slow and easy to get wrong.',
+  problemHtml: 'Your best people are stuck on <em>repetitive work</em>',
+  problemBody: 'Quoting, scheduling, data entry, follow-up, the same tasks every day, done by hand. Slow, easy to get wrong, and it keeps your most capable people from the work only they can do.',
   ctaHeadHtml: 'Find the hours hiding in <em>your week</em>',
   ctaSub: 'Show us a process that eats your team\'s day. We will show you what it looks like with AI inside it.',
 };

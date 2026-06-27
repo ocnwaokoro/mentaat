@@ -1,13 +1,12 @@
-// Web-development (Digital Products) service copy — shared across the variant routes
-// while we pick a direction. Folds back into one page once a direction is chosen.
 export const meta = {
   title: 'Digital Products — Websites & Web Apps for Boutique Businesses | Mentaat',
   description: 'We design and build fast, modern websites and web apps for boutique businesses. Built to win customers, and simple enough to run yourself. Book a call.',
-  eyebrow: '// Digital Products',
+  badge: 'Digital Products',
   headingHtml: 'A website that brings in <em>work</em>, not just compliments',
   sub: 'We design and build fast, modern websites and web apps for boutique businesses. Built to win customers, and simple enough to run yourself.',
   heroPhLabel: '// project preview',
-  leadHtml: 'Most small-business websites just <em>sit there</em>. A slow template you cannot update, or a business card no one finds, while the people looking for what you sell land on a competitor instead.',
+  problemHtml: 'Most small-business websites just <em>sit there</em>',
+  problemBody: 'A slow template you cannot update, or a business card no one finds, while the people looking for what you sell land on a competitor instead.',
   ctaHeadHtml: 'Let us build you one that <em>earns its keep</em>',
   ctaSub: 'Tell us how your business wins work. We will show you what a site built around that looks like.',
 };
