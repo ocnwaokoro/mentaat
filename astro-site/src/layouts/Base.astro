@@ -6,15 +6,19 @@ import '../styles/tokens.css';
 // Re-skin experimentation layer: overrides token values on top of the baseline.
 // Empty = baseline (Feedly green). Swap in a candidate to preview a palette.
 import '../styles/active-theme.css';
+import { site } from '../config/site.js';
 
 interface Props {
   title?: string;
   description?: string;
 }
 const {
-  title = 'Feedly',
-  description = 'Track the topics and trends that matter to you.',
+  title = 'Mentaat — Forward-Deployed Engineering & AI for Boutique Businesses',
+  description = site.tagline,
 } = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, site.domain).href;
+const ogImage = new URL(site.ogImage, site.domain).href;
 ---
 
 <!doctype html>
@@ -25,10 +29,14 @@ const {
     <link rel="icon" href="/assets/mentaat-favicon.svg" type="image/svg+xml" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@graph': [

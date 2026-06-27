@@ -12,6 +12,12 @@
 .svc-band--light { background: #ffffff; color: var(--semanticColorContentAccentMain); }
 .svc-band--tint { background: var(--semanticColorBackgroundAccentLight); color: var(--semanticColorContentAccentMain); }
 
+/* Accent on light surfaces uses the deeper blue token so text clears WCAG AA contrast.
+   Bright #009fec (ContentAccent) is reserved for dark bands where it has the contrast. */
+.svc-band--light .svc-eyebrow,
+.svc-band--light .svc-lead em,
+.svc-band--light .svc-case-metric em { color: var(--semanticColorContentStatesAccentMainHover); }
+
 .svc-eyebrow {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.8125rem; letter-spacing: 0.16em; text-transform: uppercase;
