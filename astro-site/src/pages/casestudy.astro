@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { pageHtml } from '../html/casestudy.js';
+import { applyImageOverrides } from '../config/images.js';
+import '../styles/casestudy.css';
+
+// Individual case-study detail layout, pulled clean from the live page and recolored
+// via our tokens. The Work cards will link here. Our chrome wraps it.
+const body = applyImageOverrides(
+  pageHtml
+    .replace(/(src|srcset)="\/_next\//g, '$1="https://feedly.com/_next/')
+    .replace(/(src|srcset)="\/(?!\/)/g, '$1="https://feedly.com/')
+);
+---
+
+<Base
+  title="Case Study | Mentaat"
+  description="How Mentaat went into an operation, found the leverage, and built the system that changed it."
+>
+  <Header />
+  <Fragment set:html={body} />
+  <Footer />
+</Base>
