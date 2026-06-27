@@ -4,7 +4,12 @@
    matched to the measured tile (8px radius, #0a131a dark surface). Scoped to .cong */
 
 .cong-stack { display: flex; flex-direction: column; gap: var(--semanticSpacingPositive800); }
-.cong em { font-style: normal; } /* keep headings uniform like the tiles (no accent-word styling) */
+
+/* Accent — blue is the one accent. Bright #009fec on dark surfaces; deeper blue on light
+   surfaces so it clears WCAG AA. Applied to <em> (bolded accent words) + the big numerals. */
+.cong em { font-style: normal; }
+.theme--dark em, .cong-card--dark em { color: var(--semanticColorContentAccent); }
+.cong-card--tint em, .cong-card--white em, .cong-statement em { color: var(--semanticColorContentStatesAccentMainHover); }
 
 .cong-card { border-radius: 8px; padding: clamp(28px, 4vw, 56px); }
 .cong-card--dark { background: #0a131a; }                                  /* exact homepage dark-tile surface */
@@ -27,3 +32,10 @@
 
 .cong-center { text-align: center; }
 .cong-center .cong-hero, .cong-center .cong-cta-row { justify-content: center; }
+
+/* editorial structure — section headers + plain statement outside cards (differentiates
+   the service page from the homepage's pure tile grid; rhyme, not uniform) */
+.cong-sec { display: flex; flex-direction: column; gap: var(--semanticSpacingPositive700); }
+.cong-statement { max-width: 34em; padding: clamp(12px, 2vw, 28px) 0; }
+/* big blue numerals on the process cards (Aeonik via Heading--02, recoloured to accent) */
+.cong-num { color: var(--semanticColorContentAccent); line-height: 1; font-variant-numeric: tabular-nums; display: block; margin-bottom: 6px; }

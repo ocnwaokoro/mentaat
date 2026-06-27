@@ -6,6 +6,8 @@ import { defineConfig } from 'astro/config';
 // social scrapers get fully-formed HTML, not an empty #root that needs JS.
 export default defineConfig({
   output: 'static',
+  // Hide the floating Astro dev toolbar in the local dev server.
+  devToolbar: { enabled: false },
   vite: {
     build: {
       // Feedly's captured CSS contains a few non-standard selectors (e.g. a

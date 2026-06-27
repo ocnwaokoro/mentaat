@@ -10,6 +10,7 @@ import '../../styles/congruent.css';
 // real Badge chip, real BaseButton, tile 8px cards + #0a131a dark surface). No custom
 // fonts, no invented type scale. Built to rhyme with the homepage tiles by construction.
 const head02white = 'Heading_heading__me6NI Heading_heading--02__GxsbA Heading_align--left__hNEzl Heading_color--white__5VAp3';
+const head02base = 'Heading_heading__me6NI Heading_heading--02__GxsbA Heading_align--left__hNEzl';
 const head02dark = 'Heading_heading__me6NI Heading_heading--02__GxsbA Heading_align--left__hNEzl Heading_color--primary___QOq1';
 const head05white = 'Heading_heading__me6NI Heading_heading--05__4gkI8 Heading_align--left__hNEzl Heading_color--white__5VAp3';
 const head05dark = 'Heading_heading__me6NI Heading_heading--05__4gkI8 Heading_align--left__hNEzl Heading_color--primary___QOq1';
@@ -49,40 +50,46 @@ const btnSecondary = 'BaseButton_button__S8cdB BaseButton_size--large__dpOfr Bas
                   </div>
                 </div>
 
-                {/* PROBLEM — tint tile */}
-                <div class="cong-card cong-card--tint">
+                {/* PROBLEM — plain editorial statement, not a card */}
+                <div class="cong-statement">
                   <div class={colS}>
-                    <h2 class={head02dark}>Most small-business websites just sit there</h2>
-                    <p class={textSec} set:html={meta.leadHtml} />
+                    <h2 class={head02dark}>Most small-business websites just <em>sit there</em></h2>
+                    <p class={textSec}>A slow template you cannot update, or a business card no one finds, while the people looking for what you sell land on a competitor instead.</p>
                   </div>
                 </div>
 
-                {/* HOW WE WORK — 3 dark tiles */}
-                <div class="cong-row3">
-                  {how.map((s) => (
-                    <div class="cong-card cong-card--dark theme--dark">
-                      <div class={colS}>
-                        <span class={badge}>{s.label}</span>
-                        <h3 class={head05white}>{s.title}</h3>
-                        <p class={textSec2}>{s.body}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* PROOF — 2 white tiles with image */}
-                <div class="cong-row2">
-                  {proof.map((p) => (
-                    <a href={p.href} class="cong-card cong-card--white cong-case">
-                      <div class="cong-ph"></div>
-                      <div class="cong-case-body">
+                {/* HOW WE WORK — section header + 3 numbered dark tiles (no badges) */}
+                <div class="cong-sec">
+                  <h2 class={head02dark}>How we go in, and build</h2>
+                  <div class="cong-row3">
+                    {how.map((s) => (
+                      <div class="cong-card cong-card--dark theme--dark">
                         <div class={colS}>
-                          <h3 class={head05dark} set:html={p.metricHtml} />
-                          <p class={textSec2}>{p.title}</p>
+                          <span class={`${head02base} cong-num`}>{s.num}</span>
+                          <h3 class={head05white}>{s.title}</h3>
+                          <p class={textSec2}>{s.body}</p>
                         </div>
                       </div>
-                    </a>
-                  ))}
+                    ))}
+                  </div>
+                </div>
+
+                {/* PROOF — section header + 2 white tiles with image */}
+                <div class="cong-sec">
+                  <h2 class={head02dark}>What we have built</h2>
+                  <div class="cong-row2">
+                    {proof.map((p) => (
+                      <a href={p.href} class="cong-card cong-card--white cong-case">
+                        <div class="cong-ph"></div>
+                        <div class="cong-case-body">
+                          <div class={colS}>
+                            <h3 class={head05dark} set:html={p.metricHtml} />
+                            <p class={textSec2}>{p.title}</p>
+                          </div>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
                 </div>
 
                 {/* CTA — dark tile */}
