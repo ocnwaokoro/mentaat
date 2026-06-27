@@ -1,0 +1,29 @@
+/* Congruent service-page layout — built to MATCH the homepage tiles exactly.
+   No fonts, no type sizes, no buttons here: those come from the real Heading/Text/
+   Badge/BaseButton classes (Aeonik). This file only does card surfaces + grid layout,
+   matched to the measured tile (8px radius, #0a131a dark surface). Scoped to .cong */
+
+.cong-stack { display: flex; flex-direction: column; gap: var(--semanticSpacingPositive800); }
+.cong em { font-style: normal; } /* keep headings uniform like the tiles (no accent-word styling) */
+
+.cong-card { border-radius: 8px; padding: clamp(28px, 4vw, 56px); }
+.cong-card--dark { background: #0a131a; }                                  /* exact homepage dark-tile surface */
+.cong-card--tint { background: var(--semanticColorBackgroundAccentLight); }
+.cong-card--white { background: #fff; box-shadow: inset 0 0 0 1px var(--semanticColorBorderLight); }
+
+.cong-hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(28px, 4vw, 56px); align-items: center; }
+@media (max-width: 860px) { .cong-hero { grid-template-columns: 1fr; } }
+
+.cong-row3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.cong-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 860px) { .cong-row3, .cong-row2 { grid-template-columns: 1fr; } }
+
+.cong-ph { border-radius: 8px; aspect-ratio: 4 / 3; background: linear-gradient(160deg, #12303f, #0a131a); }
+
+.cong-case { padding: 0; overflow: hidden; text-decoration: none; color: inherit; display: block; transition: transform .18s ease, box-shadow .18s ease; }
+.cong-case:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -30px rgba(0,20,38,0.4), inset 0 0 0 1px var(--semanticColorBorderLight); }
+.cong-case .cong-ph { border-radius: 0; aspect-ratio: 16 / 9; }
+.cong-case-body { padding: 24px 28px 28px; }
+
+.cong-center { text-align: center; }
+.cong-center .cong-hero, .cong-center .cong-cta-row { justify-content: center; }
