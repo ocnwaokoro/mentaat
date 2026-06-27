@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { pageHtml } from '../html/terms.js';
+import '../styles/work.css';
+
+// Legal page layout (Feedly's, live-extracted), reskinned via our tokens, our chrome.
+// PLACEHOLDER content: swap for Mentaat's reviewed Terms of Service before launch.
+const body = pageHtml
+  .replace(/(src|srcset)="\/_next\//g, '$1="https://feedly.com/_next/')
+  .replace(/(src|srcset)="\/(?!\/)/g, '$1="https://feedly.com/');
+---
+
+<Base title="Terms of Service | Mentaat" description="Mentaat terms of service.">
+  <Header />
+  <Fragment set:html={body} />
+  <Footer />
+</Base>
