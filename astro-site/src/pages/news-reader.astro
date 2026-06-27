@@ -1,13 +1,23 @@
 ---
 import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import { pageHtml } from '../html/news-reader.js';
 import { applyImageOverrides } from '../config/images.js';
 import '../styles/news-reader.css';
+
+// Reskinned Feedly service-page design. Strip embedded Feedly chrome; our chrome wraps it.
+// Content still Feedly (re-content + rename to /services/custom-software is next).
+const body = applyImageOverrides(
+  pageHtml.replace(/<header[\s\S]*?<\/header>/g, '').replace(/<footer[\s\S]*?<\/footer>/g, '')
+);
 ---
 
 <Base
   title="Feedly News Reader: Take control of your newsfeed"
   description="Read all your favorite blogs, news sites, and newsletters in one place. Take control of your news feed."
 >
-  <Fragment set:html={applyImageOverrides(pageHtml)} />
+  <Header />
+  <Fragment set:html={body} />
+  <Footer />
 </Base>

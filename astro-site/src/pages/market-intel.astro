@@ -1,13 +1,23 @@
 ---
 import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import { pageHtml } from '../html/market-intel.js';
 import { applyImageOverrides } from '../config/images.js';
 import '../styles/market-intel.css';
+
+// Reskinned Feedly service-page design. Strip embedded Feedly chrome; our chrome wraps it.
+// Content still Feedly (re-content + rename to /services/ai-automation is next).
+const body = applyImageOverrides(
+  pageHtml.replace(/<header[\s\S]*?<\/header>/g, '').replace(/<footer[\s\S]*?<\/footer>/g, '')
+);
 ---
 
 <Base
   title="Feedly Market Intelligence: Gain the full view of your competition and industry trends"
   description="Outsmart the competition and stay ahead of industry shifts. Find, synthesize, and share market intelligence faster using AI."
 >
-  <Fragment set:html={applyImageOverrides(pageHtml)} />
+  <Header />
+  <Fragment set:html={body} />
+  <Footer />
 </Base>
