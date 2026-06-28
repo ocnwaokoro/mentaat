@@ -59,9 +59,10 @@
 .cong-home-tiles .Tile_theme__R02Fl,
 .cong-home-tiles .Tile_container__zDoA5,
 .cong-home-tiles .Tile_content___Y878 { height: 100%; min-height: 0; }
-.cong-home-tiles .Tile_container__zDoA5 { padding-bottom: 32px; }
-.cong-home-tiles .Tile_content___Y878 { gap: 1.25rem; }
-.cong-home-tiles .Tile_content___Y878 > div { flex: 1 1 auto; display: flex; flex-direction: column; }
+.cong-home-tiles .Tile_container__zDoA5 { padding-top: 28px; padding-bottom: 28px; }
+/* optical rhythm: badge+title+description tight as one block, buttons anchored lower */
+.cong-home-tiles .Tile_content___Y878 { gap: 14px; }
+.cong-home-tiles .Tile_content___Y878 > div { gap: 14px; flex: 1 1 auto; display: flex; flex-direction: column; }
 .cong-home-tiles .Tile_content___Y878 > div > div:last-child { margin-top: auto; }
 /* reserve 2 lines for the description so the cards stay uniform regardless of copy length */
 .cong-home-tiles .Tile_description__NV9Re { min-height: 3em; }
