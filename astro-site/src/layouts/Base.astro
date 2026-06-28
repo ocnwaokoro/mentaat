@@ -6,6 +6,7 @@ import '../styles/tokens.css';
 // Re-skin experimentation layer: overrides token values on top of the baseline.
 // Empty = baseline (Feedly green). Swap in a candidate to preview a palette.
 import '../styles/active-theme.css';
+import { ClientRouter } from 'astro:transitions';
 import { site } from '../config/site.js';
 
 interface Props {
@@ -87,8 +88,34 @@ const ogImage = new URL(site.ogImage, site.domain).href;
         },
       ],
     })} />
+    <ClientRouter />
+    <style is:global>
+      /* Auto scroll-reveal — only with motion preference; if JS is off, nothing hides */
+      @media (prefers-reduced-motion: no-preference) {
+        [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s cubic-bezier(.22,.61,.36,1); }
+        [data-reveal].is-visible { opacity: 1; transform: none; }
+      }
+    </style>
   </head>
   <body>
     <slot />
+    <script>
+      function initReveal() {
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        const sel = '.cong-home-hero, .cong-home-tiles > div, .cong-page-hero, .cong-card, .cong-cases > a, .cong-statement, .cong-sec, .cong-article > div';
+        const els = document.querySelectorAll(sel);
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        els.forEach((el, i) => {
+          el.setAttribute('data-reveal', '');
+          el.style.transitionDelay = (Math.min(i % 3, 2) * 70) + 'ms';
+          io.observe(el);
+        });
+      }
+      document.addEventListener('astro:page-load', initReveal);
+    </script>
   </body>
 </html>

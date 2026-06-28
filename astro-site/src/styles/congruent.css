@@ -22,7 +22,9 @@
 .cong-card--tint em, .cong-card--white em, .cong-statement em { color: var(--semanticColorContentStatesAccentMainHover); }
 
 .cong-card { border-radius: 8px; padding: clamp(28px, 4vw, 56px); }
-.cong-card--dark { background: #0a131a; }                                  /* exact homepage dark-tile surface */
+/* exact homepage dark-tile surface (#0a131a, literal — token remaps wrong under .theme--dark),
+   plus a faint blue depth-glow from the top corner so the dark cards read with life, not flat */
+.cong-card--dark { background-color: #0a131a; background-image: radial-gradient(130% 150% at 100% 0%, rgba(0, 159, 236, 0.09), transparent 55%); }
 .cong-card--tint { background: var(--semanticColorBackgroundAccentLight); }
 /* darken body copy on the tint surface so it clears WCAG AA (the default secondary
    gray is only ~4.1:1 on the light-blue tint) */
