@@ -40,9 +40,13 @@
 .cong-home-hero h1 { font-size: clamp(2.25rem, 4.6vw, 3.25rem); font-weight: 600; line-height: 1.04; letter-spacing: -0.022em; margin: 0 auto; max-width: 15em; }
 .cong-home-hero h1 em { font-style: normal; font-weight: 600; color: var(--semanticColorContentStatesAccentMainHover); }
 .cong-home-hero p { max-width: 36em; margin: 14px auto 0; }
-/* shorten the homepage tiles so hero + all three sit in one fold */
-.cong-home-tiles .Tile_image__W5sVF { max-height: 150px; object-fit: cover; object-position: top center; }
+/* shorten the homepage tiles: cut the whole card right under the buttons (no screenshot,
+   no reserved image space) */
+.cong-home-tiles .Tile_image__W5sVF { display: none; }
 .cong-home-tiles .Tile_content___Y878 { gap: 1.25rem; }
+.cong-home-tiles .Tile_tile__PBrif,
+.cong-home-tiles .Tile_container__zDoA5 { height: auto; min-height: 0; align-self: stretch; }
+.cong-home-tiles .Tile_container__zDoA5 { padding-bottom: 32px; }
 .cong-center { text-align: center; }
 .cong-center .cong-hero, .cong-center .cong-cta-row { justify-content: center; }
 
