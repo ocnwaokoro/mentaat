@@ -1,6 +1,6 @@
 /* Site header — clean, responsive, navigable at every width. Token colors only.
    Replaces the Feedly header whose mobile variant was never implemented. Scoped to .mh */
-.mh { background: #fff; border-bottom: 1px solid var(--semanticColorBorderLight); }
+.mh { background: var(--semanticColorBackgroundElevationLight); border-bottom: 1px solid var(--semanticColorBorderLight); }
 .mh-inner { max-width: 1180px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; gap: 28px; }
 .mh-logo { display: inline-flex; align-items: center; }
 .mh-nav { display: flex; align-items: center; gap: 26px; flex: 1; }

@@ -9,6 +9,8 @@ export default defineConfig({
   // Hide the floating Astro dev toolbar in the local dev server.
   devToolbar: { enabled: false },
   vite: {
+    // Allow the site to be reached over Tailscale (serve) by its *.ts.net hostname.
+    server: { allowedHosts: true },
     build: {
       // Feedly's captured CSS contains a few non-standard selectors (e.g. a
       // pseudo-element followed by a class) that browsers tolerate but the

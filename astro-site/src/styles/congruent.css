@@ -1,7 +1,17 @@
 /* Congruent service-page layout — built to MATCH the homepage tiles exactly.
-   No fonts, no type sizes, no buttons here: those come from the real Heading/Text/
-   Badge/BaseButton classes (Aeonik). This file only does card surfaces + grid layout,
-   matched to the measured tile (8px radius, #0a131a dark surface). Scoped to .cong */
+   Type/buttons/chips come from the real Heading/Text/Badge/BaseButton classes (Aeonik);
+   colors are theme tokens via var(). This file does card surfaces + grid layout only.
+
+   DELIBERATE, DOCUMENTED LITERALS (verified, not sloppy):
+   - #0a131a dark-card surface: it is the EXACT measured homepage dark-tile color. The
+     token (--semanticColorBackgroundElevationBold) remaps to #22272a inside .theme--dark,
+     which would NOT match the tile, so the literal is required for congruence.
+   - 8px radius: the system ships no radius token; 8px is the tile's measured radius.
+   - Custom font-sizes (numerals/hero/stat/36px title): the DS type scale only has
+     24/48/16px and no token for oversized numerals, so gaps must be filled by hand.
+   - Placeholder gradient/shadow/white-opacity hairlines: decorative, no matching tokens;
+     replaced wholesale when real images land.
+   Scoped to .cong */
 
 .cong-stack { display: flex; flex-direction: column; gap: var(--semanticSpacingPositive800); }
 
@@ -17,7 +27,7 @@
 /* darken body copy on the tint surface so it clears WCAG AA (the default secondary
    gray is only ~4.1:1 on the light-blue tint) */
 .cong-card--tint p { color: var(--semanticColorContentAccentMain); }
-.cong-card--white { background: #fff; box-shadow: inset 0 0 0 1px var(--semanticColorBorderLight); }
+.cong-card--white { background: var(--semanticColorBackgroundElevationLight); box-shadow: inset 0 0 0 1px var(--semanticColorBorderLight); }
 
 .cong-hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(28px, 4vw, 56px); align-items: center; }
 @media (max-width: 860px) { .cong-hero { grid-template-columns: 1fr; } }
@@ -41,7 +51,6 @@
 .cong-case .cong-ph { border-radius: 0; aspect-ratio: 16 / 9; }
 .cong-case-body { padding: 24px 28px 28px; }
 
-.cong-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .cong-page-hero { padding: clamp(44px, 6vw, 84px) 0 clamp(24px, 3vw, 40px); }
 .cong-page-hero > * + * { margin-top: 18px; }
 .cong-page-hero p { max-width: 34em; }
@@ -76,6 +85,7 @@
 }
 .cong-center { text-align: center; }
 .cong-center .cong-hero, .cong-center .cong-cta-row { justify-content: center; }
+.cong-cta-center { align-items: center; width: 100%; } /* centered CTA column (replaces inline style) */
 
 /* case-study stat row (in the dark hero) */
 .cong-stats { display: flex; gap: clamp(28px, 4vw, 56px); flex-wrap: wrap; }
