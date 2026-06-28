@@ -60,6 +60,11 @@
 .cong-home-tiles .Tile_content___Y878 > div > div:last-child { margin-top: auto; }
 /* reserve 2 lines for the description so the cards stay uniform regardless of copy length */
 .cong-home-tiles .Tile_description__NV9Re { min-height: 3em; }
+/* keep the three tiles horizontal down to tablet (Feedly's layout stacks them ~1100px) */
+@media (min-width: 768px) {
+  .cong-home-tiles { flex-direction: row; flex-wrap: nowrap; }
+  .cong-home-tiles > div { flex: 1 1 0; min-width: 0; }
+}
 .cong-center { text-align: center; }
 .cong-center .cong-hero, .cong-center .cong-cta-row { justify-content: center; }
 
