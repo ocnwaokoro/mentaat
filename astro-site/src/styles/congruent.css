@@ -29,6 +29,11 @@
 /* Image slot — reads as a deliberate "image goes here" placeholder, not a broken void:
    inset hairline frame + a faint centered label. Swap for a real screenshot later. */
 .cong-ph { position: relative; border-radius: 8px; aspect-ratio: 4 / 3; background: linear-gradient(160deg, #12303f, #0a131a); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.09); }
+
+/* case-study grid (the /work proof engine) */
+.cong-cases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 1024px) { .cong-cases { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .cong-cases { grid-template-columns: 1fr; } }
 .cong-ph::after { content: "Preview"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.34); }
 
 .cong-case { padding: 0; overflow: hidden; text-decoration: none; color: inherit; display: block; transition: transform .18s ease, box-shadow .18s ease; }
@@ -67,6 +72,15 @@
 }
 .cong-center { text-align: center; }
 .cong-center .cong-hero, .cong-center .cong-cta-row { justify-content: center; }
+
+/* case-study stat row (in the dark hero) */
+.cong-stats { display: flex; gap: clamp(28px, 4vw, 56px); flex-wrap: wrap; }
+.cong-stat-num { display: block; font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 600; color: var(--semanticColorContentAccent); line-height: 1.1; }
+.cong-stat-label { display: block; font-size: 0.9375rem; color: rgba(255,255,255,0.7); margin-top: 6px; max-width: 14em; }
+
+/* case-study readable prose column */
+.cong-article { max-width: 42em; }
+.cong-article-group { display: flex; flex-direction: column; gap: 44px; }
 
 /* editorial structure — section headers + plain statement outside cards (differentiates
    the service page from the homepage's pure tile grid; rhyme, not uniform) */
