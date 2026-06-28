@@ -14,6 +14,9 @@
 .cong-card { border-radius: 8px; padding: clamp(28px, 4vw, 56px); }
 .cong-card--dark { background: #0a131a; }                                  /* exact homepage dark-tile surface */
 .cong-card--tint { background: var(--semanticColorBackgroundAccentLight); }
+/* darken body copy on the tint surface so it clears WCAG AA (the default secondary
+   gray is only ~4.1:1 on the light-blue tint) */
+.cong-card--tint p { color: var(--semanticColorContentAccentMain); }
 .cong-card--white { background: #fff; box-shadow: inset 0 0 0 1px var(--semanticColorBorderLight); }
 
 .cong-hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(28px, 4vw, 56px); align-items: center; }
