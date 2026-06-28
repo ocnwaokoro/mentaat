@@ -67,7 +67,7 @@
 .cong-home-tiles .Tile_description__NV9Re { min-height: 3em; }
 /* nudge the card title 48px -> 40px (the Tile's own next step down) so it sits better in
    the short 3-up cards; the system has no heading token between 24px and 48px */
-.cong-home-tiles .Tile_title__g73a0 { font-size: 2.5rem; line-height: 1.05; }
+.cong-home-tiles .Tile_title__g73a0 { font-size: 2.25rem; line-height: 1.08; }
 /* keep the three tiles horizontal down to tablet (Feedly's layout stacks them ~1100px) */
 @media (min-width: 768px) {
   .cong-home-tiles { flex-direction: row; flex-wrap: nowrap; }
