@@ -58,15 +58,12 @@ const steps = [
                     {/* Booking panel — drop the Calendly/Cal inline embed here later. */}
                     <div class="cong-card cong-card--white">
                       <div class={colS}>
-                        <h2 class="Heading_heading__me6NI Heading_heading--05__4gkI8 Heading_align--left__hNEzl Heading_color--primary___QOq1">Book your call</h2>
-                        <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--02__HVmZN Text_deprecatedMargin--none__sZLCS">Free, about 30 minutes. You will get a short note on what to bring.</p>
+                        <h2 class="Heading_heading__me6NI Heading_heading--05__4gkI8 Heading_align--left__hNEzl Heading_color--primary___QOq1">{hasScheduler ? 'Book your call' : 'Tell us what is slowing you down'}</h2>
+                        <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--02__HVmZN Text_deprecatedMargin--none__sZLCS">Free, about 30 minutes. {hasScheduler ? 'Pick a time and you will get a short note on what to bring.' : 'Send a line about where the business is stuck and we will reply the same day with times.'}</p>
                         <div class={btnRow}>
-                          <a href={bookHref} class={btnPrimary}><span>Book a call</span></a>
-                          <a href={`mailto:${site.email}`} class={btnSecondary}><span>Email us</span></a>
+                          <a href={bookHref} class={btnPrimary}><span>{hasScheduler ? 'Book a call' : 'Email us'}</span></a>
+                          {hasScheduler && <a href={`mailto:${site.email}`} class={btnSecondary}><span>Email us</span></a>}
                         </div>
-                        {!hasScheduler && (
-                          <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--04__2p_2C Text_deprecatedMargin--none__sZLCS">Online scheduling is coming soon. For now, email us and we will send times.</p>
-                        )}
                       </div>
                     </div>
                   </div>

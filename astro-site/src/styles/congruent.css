@@ -23,7 +23,10 @@
 .cong-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 @media (max-width: 860px) { .cong-row3, .cong-row2 { grid-template-columns: 1fr; } }
 
-.cong-ph { border-radius: 8px; aspect-ratio: 4 / 3; background: linear-gradient(160deg, #12303f, #0a131a); }
+/* Image slot — reads as a deliberate "image goes here" placeholder, not a broken void:
+   inset hairline frame + a faint centered label. Swap for a real screenshot later. */
+.cong-ph { position: relative; border-radius: 8px; aspect-ratio: 4 / 3; background: linear-gradient(160deg, #12303f, #0a131a); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.09); }
+.cong-ph::after { content: "Preview"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.34); }
 
 .cong-case { padding: 0; overflow: hidden; text-decoration: none; color: inherit; display: block; transition: transform .18s ease, box-shadow .18s ease; }
 .cong-case:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -30px rgba(0,20,38,0.4), inset 0 0 0 1px var(--semanticColorBorderLight); }
@@ -36,17 +39,24 @@
 .cong-page-hero p { max-width: 34em; }
 
 /* Homepage hero — big, bold, centered, compact so hero + 3 tiles read as one screen */
-.cong-home-hero { text-align: center; padding: clamp(20px, 3vw, 40px) 0 clamp(18px, 2.2vw, 30px); }
+.cong-home-hero { text-align: center; padding: clamp(20px, 3vw, 40px) 0 clamp(10px, 1.4vw, 18px); }
 .cong-home-hero h1 { font-size: clamp(2.25rem, 4.6vw, 3.25rem); font-weight: 600; line-height: 1.04; letter-spacing: -0.022em; margin: 0 auto; max-width: 15em; }
 .cong-home-hero h1 em { font-style: normal; font-weight: 600; color: var(--semanticColorContentStatesAccentMainHover); }
 .cong-home-hero p { max-width: 36em; margin: 14px auto 0; }
-/* shorten the homepage tiles: cut the whole card right under the buttons (no screenshot,
-   no reserved image space) */
+/* homepage tiles: no screenshot, equal height regardless of copy length, buttons pinned
+   to the bottom edge so all three cards match and end at their CTAs */
+.cong-home-tiles { align-items: stretch; }
 .cong-home-tiles .Tile_image__W5sVF { display: none; }
-.cong-home-tiles .Tile_content___Y878 { gap: 1.25rem; }
 .cong-home-tiles .Tile_tile__PBrif,
-.cong-home-tiles .Tile_container__zDoA5 { height: auto; min-height: 0; align-self: stretch; }
+.cong-home-tiles .Tile_theme__R02Fl,
+.cong-home-tiles .Tile_container__zDoA5,
+.cong-home-tiles .Tile_content___Y878 { height: 100%; min-height: 0; }
 .cong-home-tiles .Tile_container__zDoA5 { padding-bottom: 32px; }
+.cong-home-tiles .Tile_content___Y878 { gap: 1.25rem; }
+.cong-home-tiles .Tile_content___Y878 > div { flex: 1 1 auto; display: flex; flex-direction: column; }
+.cong-home-tiles .Tile_content___Y878 > div > div:last-child { margin-top: auto; }
+/* reserve 2 lines for the description so the cards stay uniform regardless of copy length */
+.cong-home-tiles .Tile_description__NV9Re { min-height: 3em; }
 .cong-center { text-align: center; }
 .cong-center .cong-hero, .cong-center .cong-cta-row { justify-content: center; }
 
