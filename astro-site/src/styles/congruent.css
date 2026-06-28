@@ -34,6 +34,12 @@
 .cong-page-hero { padding: clamp(44px, 6vw, 84px) 0 clamp(24px, 3vw, 40px); }
 .cong-page-hero > * + * { margin-top: 18px; }
 .cong-page-hero p { max-width: 34em; }
+
+/* Homepage hero — big, bold, centered, sitting above the tiles */
+.cong-home-hero { text-align: center; padding: clamp(56px, 8vw, 116px) 0 clamp(36px, 5vw, 64px); }
+.cong-home-hero h1 { font-size: clamp(2.5rem, 5.6vw, 4.25rem); font-weight: 600; line-height: 1.05; letter-spacing: -0.022em; margin: 0 auto; max-width: 15em; }
+.cong-home-hero h1 em { font-style: normal; font-weight: 600; color: var(--semanticColorContentStatesAccentMainHover); }
+.cong-home-hero p { max-width: 38em; margin: 20px auto 0; }
 .cong-center { text-align: center; }
 .cong-center .cong-hero, .cong-center .cong-cta-row { justify-content: center; }
 
