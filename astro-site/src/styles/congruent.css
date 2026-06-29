@@ -82,18 +82,26 @@
    blues as the mesh cards, so hero + cards read as one family. Grain comes from the global
    body::after. Contained rounded panel = rhymes with the card language. */
 .cong-home-hero {
-  position: relative; text-align: center; overflow: hidden; border-radius: 14px;
-  margin: 6px 0 clamp(28px, 4vw, 44px);
-  padding: clamp(56px, 8vw, 104px) clamp(24px, 4vw, 48px) clamp(60px, 9vw, 112px);
+  position: relative; text-align: center; overflow: hidden;
+  margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); width: 100vw;
+  padding: clamp(64px, 9vw, 132px) 0 clamp(60px, 9vw, 120px);
   background:
-    radial-gradient(42% 56% at 50% 46%, rgba(255, 255, 255, 0.94), transparent 72%),
-    linear-gradient(122deg, transparent 30%, rgba(0, 159, 236, 0.22) 42%, rgba(114, 197, 255, 0.13) 50%, transparent 60%),
-    radial-gradient(46% 72% at 6% 16%, rgba(0, 159, 236, 0.30), transparent 62%),
-    radial-gradient(42% 60% at 97% 26%, rgba(84, 187, 255, 0.20), transparent 60%),
-    radial-gradient(60% 80% at 78% 122%, rgba(0, 63, 97, 0.16), transparent 62%),
+    radial-gradient(38% 56% at 50% 46%, rgba(255, 255, 255, 0.94), transparent 72%),
+    linear-gradient(122deg, transparent 32%, rgba(0, 159, 236, 0.22) 43%, rgba(114, 197, 255, 0.13) 51%, transparent 62%),
+    radial-gradient(34% 72% at 4% 14%, rgba(0, 159, 236, 0.30), transparent 62%),
+    radial-gradient(32% 60% at 98% 24%, rgba(84, 187, 255, 0.20), transparent 60%),
+    radial-gradient(46% 80% at 84% 124%, rgba(0, 63, 97, 0.16), transparent 62%),
     #ffffff;
 }
 .cong-home-hero > * { position: relative; z-index: 1; }
+
+/* full-bleed bands (homepage) — break out of the centered column to span the viewport,
+   inner content re-centered to the readable width. Fixes the wide-screen white gutters
+   and gives the dark bands their proper weight; a light-grey band adds rhythm. */
+.cong-band { margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); width: 100vw; padding: clamp(52px, 7.5vw, 96px) 0; }
+.cong-band--dark { background-color: #0a131a; color: #fff; background-image: radial-gradient(120% 150% at 100% 0%, rgba(0, 159, 236, 0.12), transparent 55%); }
+.cong-band--grey { background: #e9eef4; }
+.cong-band-inner { max-width: 1180px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 40px); }
 
 /* single-column hero (no image panel) — keep the text measured, not full card width */
 .cong-hero-solo h1 { max-width: 16em; }
@@ -129,7 +137,7 @@
 .cong-cta-center { align-items: center; width: 100%; } /* centered CTA column (replaces inline style) */
 
 /* homepage build-out (proof + selected work + CTA) — separated from the tiles */
-.cong-home-more { margin-top: clamp(64px, 9vw, 116px); }
+.cong-home-more { margin-top: clamp(32px, 5vw, 68px); }
 
 /* case-study stat row (in the dark hero) */
 .cong-stats { display: flex; gap: clamp(32px, 4.5vw, 64px); flex-wrap: wrap; }
