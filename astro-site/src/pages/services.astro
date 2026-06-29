@@ -7,22 +7,23 @@ import '../styles/congruent.css';
 
 const head02white = 'Heading_heading__me6NI Heading_heading--02__GxsbA Heading_align--left__hNEzl Heading_color--white__5VAp3';
 const head02dark = 'Heading_heading__me6NI Heading_heading--02__GxsbA Heading_align--left__hNEzl Heading_color--primary___QOq1';
-const textWhite = 'Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT Text_deprecatedMargin--none__sZLCS';
+const textWhite = 'Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--02__HVmZN Text_deprecatedMargin--none__sZLCS';
 const badge = 'Badge_badge__A7OHD Badge_color--accent__Vuh4G Badge_size--medium__MxotV';
 const colL = 'Flex_flex___mzvZ Flex_align--start__Nb_Sy Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Flex_gap--l__lrJk4';
+const colS = 'Flex_flex___mzvZ Flex_align--start__Nb_Sy Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Flex_gap--s__0656J';
 const btnRow = 'Flex_flex___mzvZ Flex_align--center__9VuNC Flex_direction--row__W6CGY Flex_justify--start__vk9Tl ButtonRow_buttonRow__hs7qV Flex_gap--s__0656J';
 const btnPrimary = 'BaseButton_button__S8cdB BaseButton_size--large__dpOfr BaseButton_importance--primary__1_2vI MarketingLinkButton_marketingLinkButton__n8FI4 BaseButton_color--accent-main__KBIuP FocusRing_focusRing__izyZU';
 
 const services = [
   { surface: 'dark', badge: 'Digital Products', href: '/services/web-development',
     h: 'Websites and web apps that bring in <em>work</em>',
-    p: 'Fast, modern sites built around how you actually win customers, and simple enough to run yourself.', ph: '// digital products' },
+    p: 'Fast, modern sites built around how you actually win customers, and simple enough to run yourself.' },
   { surface: 'tint', badge: 'Workflow Intelligence', href: '/services/ai-automation',
     h: 'AI woven into how your team <em>already works</em>',
-    p: 'We learn how your team really works, then use AI to take the busywork off their plate.', ph: '// workflow intelligence' },
+    p: 'We learn how your team really works, then use AI to take the busywork off their plate.' },
   { surface: 'white', badge: 'Keystone Infrastructure', href: '/services/custom-software',
     h: 'Custom systems your whole operation <em>runs on</em>',
-    p: 'We get into your business and build the custom software it runs on.', ph: '// keystone infrastructure' },
+    p: 'We get into your business and build the custom software it runs on.' },
 ];
 ---
 
@@ -36,40 +37,49 @@ const services = [
         <div class="Flex_flex___mzvZ Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Layout_content__q1d4E">
           <Header />
           <main class="Layout_main__nbmiJ index_layout__cD6cr cong">
-            <div class="index_container__9GuY8">
-              <div class="cong-page-hero">
-                <h1 class={head02dark}>Three ways we <em>get to work</em></h1>
-                <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT Text_deprecatedMargin--none__sZLCS">Not sure which you need? Most engagements start with a single call and grow from there. Pick the one that sounds like your business.</p>
-              </div>
 
-              <div class="cong-stack">
+            {/* HERO — full-bleed beam */}
+            <section class="cong-band theme--dark cs-herowrap">
+              <div class="cong-band-inner">
+                <div class={colL}>
+                  <h1 class={head02white}>Three ways we <em>get to work</em></h1>
+                  <p class="cs-lede">Not sure which you need? Most engagements start with a single call and grow from there. Pick the one that sounds like your business.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* SERVICE CARDS — 3-up grid */}
+            <div class="index_container__9GuY8 cong-svc-body">
+              <div class="cong-row3">
                 {services.map((s) => {
                   const dark = s.surface === 'dark';
                   return (
-                    <div class={`cong-card cong-card--${s.surface}${dark ? ' theme--dark' : ''} cong-hero-solo`}>
-                      <div class={colL}>
+                    <a href={s.href} class={`cong-card cong-card--${s.surface}${dark ? ' theme--dark' : ''} cong-svc-card`}>
+                      <div class={colS}>
                         <span class={badge}>{s.badge}</span>
                         <h2 class={dark ? head02white : head02dark} set:html={s.h} />
                         <p class={textWhite}>{s.p}</p>
-                        <div class={btnRow}>
-                          <a href={s.href} class={btnPrimary}><span>Learn more</span></a>
-                        </div>
+                        <span class="cong-svc-more">Learn more</span>
                       </div>
-                    </div>
+                    </a>
                   );
                 })}
+              </div>
+            </div>
 
-                <div class="cong-card cong-card--dark theme--dark cong-center">
-                  <div class={`${colL} cong-cta-center`}>
-                    <h2 class={head02white}>Not sure where to <em>start</em>?</h2>
-                    <p class={textWhite}>Tell us where the business is stuck. We will point you to the right one, or tell you straight if it is not us.</p>
-                    <div class={btnRow}>
-                      <a href="/contact" class={btnPrimary}><span>Book a call</span></a>
-                    </div>
+            {/* CTA — full-bleed beam */}
+            <section class="cong-band theme--dark cs-herowrap cong-center">
+              <div class="cong-band-inner">
+                <div class={`${colL} cong-cta-center`}>
+                  <h2 class={head02white}>Not sure where to <em>start</em>?</h2>
+                  <p class="cs-lede">Tell us where the business is stuck. We will point you to the right one, or tell you straight if it is not us.</p>
+                  <div class={btnRow}>
+                    <a href="/contact" class={btnPrimary}><span>Book a call</span></a>
                   </div>
                 </div>
               </div>
-            </div>
+            </section>
+
           </main>
           <Footer />
         </div>

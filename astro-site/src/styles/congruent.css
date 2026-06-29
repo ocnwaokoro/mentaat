@@ -108,6 +108,10 @@
 .cong-band--dark { background-color: #0a131a; color: #fff; background-image: radial-gradient(120% 150% at 100% 0%, rgba(0, 159, 236, 0.12), transparent 55%); }
 .cong-band--grey { background: #e9eef4; }
 .cong-band-inner { max-width: 1180px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 40px); }
+/* MARGINS: the contained wrapper was 1440px while the full-bleed bands are 1180px, so cards ran
+   260px wider than the band content and the side margins read thin. Standardize to one 1180
+   column site-wide so everything lines up with generous, consistent margins. */
+main.cong .index_container__9GuY8 { max-width: 1180px; }
 /* service/about body block between a full-bleed hero and a full-bleed CTA */
 .cong-svc-body { padding: clamp(36px, 5vw, 64px) 0; }
 /* proof section — original horizontal stats, just a shorter band */
@@ -118,6 +122,13 @@
 .cong-about-block { padding-top: clamp(18px, 2.4vw, 26px); border-top: 1px solid var(--semanticColorBorderLight); }
 .cong-about-block h2 { margin-bottom: 10px; }
 .cong-about-block p { color: #2f3a45; line-height: 1.62; }
+/* services hub — smaller 3-up cards, whole card clickable, equal height with anchored CTA */
+.cong-svc-card { display: flex; text-decoration: none; color: inherit; transition: transform .18s ease, box-shadow .18s ease; }
+.cong-svc-card > div { flex: 1 1 auto; }
+.cong-svc-card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -30px rgba(0, 20, 38, 0.4); }
+.cong-svc-card h2 { font-size: 1.4rem; line-height: 1.2; letter-spacing: -0.01em; }
+.cong-svc-more { margin-top: auto; padding-top: 4px; color: var(--semanticColorContentAccent); font-weight: 600; font-size: 0.9375rem; }
+.cong-card--tint .cong-svc-more, .cong-card--white .cong-svc-more { color: var(--semanticColorContentStatesAccentMainHover); }
 
 /* single-column hero (no image panel) — keep the text measured, not full card width */
 .cong-hero-solo h1 { max-width: 16em; }
