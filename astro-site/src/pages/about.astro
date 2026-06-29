@@ -33,44 +33,42 @@ const sections = [
         <div class="Flex_flex___mzvZ Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Layout_content__q1d4E">
           <Header />
           <main class="Layout_main__nbmiJ index_layout__cD6cr cong">
-            <div class="index_container__9GuY8">
-              <div class="cong-stack">
-
-                <div class="cong-card cong-card--dark theme--dark cong-hero-solo">
-                  <div class={colL}>
-                    <span class={badge}>About Mentaat</span>
-                    <h1 class={head02white}>We get right into your <em>business</em>, not just hand you a tool</h1>
-                    <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT Text_deprecatedMargin--none__sZLCS">We do not hand you a tool and wish you luck. We get into your business, find the one thing slowing you down, and build the system that changes it.</p>
-                    <div class={btnRow}>
-                      <a href="/contact" class={btnPrimary}><span>Book a call</span></a>
-                      <a href="/work" class={btnSecondary}><span>See the work</span></a>
-                    </div>
+            <section class="cong-band theme--dark cs-herowrap cong-hero-solo">
+              <div class="cong-band-inner">
+                <div class={colL}>
+                  <span class={badge}>About Mentaat</span>
+                  <h1 class={head02white}>We get right into your <em>business</em>, not just hand you a tool</h1>
+                  <p class="cs-lede">We do not hand you a tool and wish you luck. We get into your business, find the one thing slowing you down, and build the system that changes it.</p>
+                  <div class={btnRow}>
+                    <a href="/contact" class={btnPrimary}><span>Book a call</span></a>
+                    <a href="/work" class={btnSecondary}><span>See the work</span></a>
                   </div>
                 </div>
+              </div>
+            </section>
 
-                <div class="cong-card cong-card--white">
-                  <div class="cong-row2">
-                    {sections.map((s) => (
-                      <div class={colS}>
-                        <h2 class={head05dark}>{s.h}</h2>
-                        <p class={textSec} set:html={s.p} />
-                      </div>
-                    ))}
+            <div class="index_container__9GuY8 cong-svc-body">
+              <div class="cong-about-grid">
+                {sections.map((s) => (
+                  <div class="cong-about-block">
+                    <h2 class={head05dark}>{s.h}</h2>
+                    <p class={textSec} set:html={s.p} />
                   </div>
-                </div>
-
-                <div class="cong-card cong-card--dark theme--dark cong-center">
-                  <div class={`${colL} cong-cta-center`}>
-                    <h2 class={head02white}>Let us find the one thing slowing you down in <em>your operation</em></h2>
-                    <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT Text_deprecatedMargin--none__sZLCS">Tell us where the business is stuck. We will take a real look and tell you straight what we would build, and why.</p>
-                    <div class={btnRow}>
-                      <a href="/contact" class={btnPrimary}><span>Book a call</span></a>
-                    </div>
-                  </div>
-                </div>
-
+                ))}
               </div>
             </div>
+
+            <section class="cong-band theme--dark cs-herowrap cong-center">
+              <div class="cong-band-inner">
+                <div class={`${colL} cong-cta-center`}>
+                  <h2 class={head02white}>Let us find the one thing slowing you down in <em>your operation</em></h2>
+                  <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT Text_deprecatedMargin--none__sZLCS">Tell us where the business is stuck. We will take a real look and tell you straight what we would build, and why.</p>
+                  <div class={btnRow}>
+                    <a href="/contact" class={btnPrimary}><span>Book a call</span></a>
+                  </div>
+                </div>
+              </div>
+            </section>
           </main>
           <Footer />
         </div>

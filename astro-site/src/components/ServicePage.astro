@@ -5,14 +5,14 @@ import Footer from './Footer.astro';
 import '../styles/homepage.css';
 import '../styles/congruent.css';
 
-// Congruent service page — built from the REAL design system (Aeonik via Heading/Text,
-// real Badge + BaseButton, tile 8px cards, measured #0a131a dark surface). Rhymes with
-// the homepage tiles by construction; its own voice via numbered process + section heads.
+// Congruent service page on the new system: full-bleed dark BEAM hero, grey-base body,
+// numbered process cards, proof cards WITH the duotone case images, full-bleed beam CTA.
 const {
   meta, how = [], proof = [],
   howHeading = 'How we get to work',
   proofHeading = 'What we have built',
 } = Astro.props;
+const proofImg = (href) => '/work/' + String(href).split('/').filter(Boolean).pop() + '.jpg';
 
 const head02white = 'Heading_heading__me6NI Heading_heading--02__GxsbA Heading_align--left__hNEzl Heading_color--white__5VAp3';
 const head02dark = 'Heading_heading__me6NI Heading_heading--02__GxsbA Heading_align--left__hNEzl Heading_color--primary___QOq1';
@@ -36,21 +36,25 @@ const btnSecondary = 'BaseButton_button__S8cdB BaseButton_size--large__dpOfr Bas
         <div class="Flex_flex___mzvZ Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Layout_content__q1d4E">
           <Header />
           <main class="Layout_main__nbmiJ index_layout__cD6cr cong">
-            <div class="index_container__9GuY8">
-              <div class="cong-stack">
 
-                {/* HERO — dark tile surface, single column (no empty panel) */}
-                <div class="cong-card cong-card--dark theme--dark cong-hero-solo">
-                  <div class={colL}>
-                    <span class={badge}>{meta.badge}</span>
-                    <h1 class={head02white} set:html={meta.headingHtml} />
-                    <p class={textSec}>{meta.sub}</p>
-                    <div class={btnRow}>
-                      <a href="/contact" class={btnPrimary}><span>Book a call</span></a>
-                      <a href="/work" class={btnSecondary}><span>See our work</span></a>
-                    </div>
+            {/* HERO — full-bleed dark beam */}
+            <section class="cong-band theme--dark cs-herowrap cong-hero-solo">
+              <div class="cong-band-inner">
+                <div class={colL}>
+                  <span class={badge}>{meta.badge}</span>
+                  <h1 class={head02white} set:html={meta.headingHtml} />
+                  <p class="cs-lede" set:html={meta.sub} />
+                  <div class={btnRow}>
+                    <a href="/contact" class={btnPrimary}><span>Book a call</span></a>
+                    <a href="/work" class={btnSecondary}><span>See our work</span></a>
                   </div>
                 </div>
+              </div>
+            </section>
+
+            {/* BODY — contained on the grey base */}
+            <div class="index_container__9GuY8 cong-svc-body">
+              <div class="cong-stack">
 
                 {/* PROBLEM — blue tint card */}
                 <div class="cong-card cong-card--tint">
@@ -76,13 +80,13 @@ const btnSecondary = 'BaseButton_button__S8cdB BaseButton_size--large__dpOfr Bas
                   </div>
                 </div>
 
-                {/* PROOF — white tiles with image */}
+                {/* PROOF — white cards with the duotone case image */}
                 <div class="cong-sec">
                   <h2 class={head02dark}>{proofHeading}</h2>
                   <div class="cong-row2">
                     {proof.map((p) => (
                       <a href={p.href} class="cong-card cong-card--white cong-case">
-                        <div class="cong-ph"></div>
+                        <div class="cong-ph"><img src={proofImg(p.href)} alt="" loading="lazy" /></div>
                         <div class="cong-case-body">
                           <div class={colS}>
                             <h3 class={head05dark} set:html={p.metricHtml} />
@@ -95,19 +99,22 @@ const btnSecondary = 'BaseButton_button__S8cdB BaseButton_size--large__dpOfr Bas
                   </div>
                 </div>
 
-                {/* CTA — dark tile */}
-                <div class="cong-card cong-card--dark theme--dark cong-center">
-                  <div class={`${colL} cong-cta-center`}>
-                    <h2 class={head02white} set:html={meta.ctaHeadHtml} />
-                    <p class={textSec}>{meta.ctaSub}</p>
-                    <div class={btnRow}>
-                      <a href="/contact" class={btnPrimary}><span>Book a call</span></a>
-                    </div>
-                  </div>
-                </div>
-
               </div>
             </div>
+
+            {/* CTA — full-bleed dark beam */}
+            <section class="cong-band theme--dark cs-herowrap cong-center">
+              <div class="cong-band-inner">
+                <div class={`${colL} cong-cta-center`}>
+                  <h2 class={head02white} set:html={meta.ctaHeadHtml} />
+                  <p class={textSec}>{meta.ctaSub}</p>
+                  <div class={btnRow}>
+                    <a href="/contact" class={btnPrimary}><span>Book a call</span></a>
+                  </div>
+                </div>
+              </div>
+            </section>
+
           </main>
           <Footer />
         </div>

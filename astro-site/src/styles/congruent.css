@@ -108,6 +108,16 @@
 .cong-band--dark { background-color: #0a131a; color: #fff; background-image: radial-gradient(120% 150% at 100% 0%, rgba(0, 159, 236, 0.12), transparent 55%); }
 .cong-band--grey { background: #e9eef4; }
 .cong-band-inner { max-width: 1180px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 40px); }
+/* service/about body block between a full-bleed hero and a full-bleed CTA */
+.cong-svc-body { padding: clamp(36px, 5vw, 64px) 0; }
+/* proof section — original horizontal stats, just a shorter band */
+.cong-proof-band { padding-top: clamp(26px, 3.2vw, 42px); padding-bottom: clamp(26px, 3.2vw, 42px); }
+/* about body — editorial grid on the grey base (no flat white card); hairline-topped blocks */
+.cong-about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 48px) clamp(40px, 5vw, 72px); max-width: 64em; margin: 0 auto; }
+@media (max-width: 700px) { .cong-about-grid { grid-template-columns: 1fr; } }
+.cong-about-block { padding-top: clamp(18px, 2.4vw, 26px); border-top: 1px solid var(--semanticColorBorderLight); }
+.cong-about-block h2 { margin-bottom: 10px; }
+.cong-about-block p { color: #2f3a45; line-height: 1.62; }
 
 /* single-column hero (no image panel) — keep the text measured, not full card width */
 .cong-hero-solo h1 { max-width: 16em; }
