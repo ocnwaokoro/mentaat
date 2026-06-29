@@ -90,8 +90,10 @@ const ogImage = new URL(site.ogImage, site.domain).href;
     })} />
     <ClientRouter />
     <style is:global>
-      /* White page base (reverted from the tint per feedback — keep it clean white). */
-      html, body { background: #ffffff; }
+      /* Soft grey page base (same token as the footer) so the page reads as grey rhythm with
+         white cards + dark bands punctuating it, and the sticky-footer fill area blends into
+         the footer instead of flashing white. */
+      html, body { background: var(--semanticColorBackgroundLight); }
       /* full-bleed homepage bands use 100vw; clip stray horizontal overflow */
       body { overflow-x: hidden; }
       /* Film grain — fixed, barely-there texture over the whole page. The single most
