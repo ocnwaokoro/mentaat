@@ -2,7 +2,7 @@
 // cards AND the individual /casestudy/[slug] detail pages. House style: no em dashes.
 export const caseStudies = [
   {
-    slug: 'machine-shop-quoting', stat: 'Same day', tier: 'Keystone Infrastructure',
+    slug: 'machine-shop-quoting', image: '/work/machine-shop-quoting.jpg', stat: 'Same day', tier: 'Keystone Infrastructure',
     cardHeadline: 'How a machine shop turned three-day quotes into same-day',
     metricHtml: 'Three-day quotes, <em>same day</em>',
     who: 'An eight-person, owner-operated precision machine shop quoting from customer drawings.',
@@ -17,7 +17,7 @@ export const caseStudies = [
     ],
   },
   {
-    slug: 'electrical-billing', stat: 'Zero missed deadlines', tier: 'Keystone Infrastructure',
+    slug: 'electrical-billing', image: '/work/electrical-billing.jpg', stat: 'Zero missed deadlines', tier: 'Keystone Infrastructure',
     cardHeadline: 'How an electrical sub stopped missing lien deadlines',
     metricHtml: 'Zero <em>missed deadlines</em>',
     who: 'A commercial electrical subcontractor, around 30 employees, billing several active jobs a month.',
@@ -32,7 +32,7 @@ export const caseStudies = [
     ],
   },
   {
-    slug: 'retail-inventory', stat: '6 sheets to 1', tier: 'Keystone Infrastructure',
+    slug: 'retail-inventory', image: '/work/retail-inventory.jpg', stat: '6 sheets to 1', tier: 'Keystone Infrastructure',
     cardHeadline: 'How a retailer replaced six spreadsheets with one source of truth',
     metricHtml: 'Six spreadsheets, <em>retired</em>',
     who: 'A growing two-location home-goods retailer with a small online store, run by a founder and a lean ops team.',
@@ -47,7 +47,7 @@ export const caseStudies = [
     ],
   },
   {
-    slug: 'dental-verification', stat: '15 to 2 min', tier: 'Workflow Intelligence',
+    slug: 'dental-verification', image: '/work/dental-verification.jpg', stat: '15 to 2 min', tier: 'Workflow Intelligence',
     cardHeadline: 'How a dental practice cut benefit verification from 15 minutes to two',
     metricHtml: '15 minutes, <em>down to two</em>',
     who: 'A three-dentist family practice, roughly 18 staff, doing its own insurance work in-house.',
@@ -62,7 +62,7 @@ export const caseStudies = [
     ],
   },
   {
-    slug: 'vet-clinic', stat: 'Evenings back', tier: 'Workflow Intelligence',
+    slug: 'vet-clinic', image: '/work/vet-clinic.jpg', stat: 'Evenings back', tier: 'Workflow Intelligence',
     cardHeadline: 'How a vet clinic got its evenings back',
     metricHtml: 'Evenings, <em>handed back</em>',
     who: 'A two-veterinarian companion-animal clinic, family-owned.',
@@ -77,7 +77,7 @@ export const caseStudies = [
     ],
   },
   {
-    slug: 'brokerage-coordinator', stat: '3x closings', tier: 'Workflow Intelligence',
+    slug: 'brokerage-coordinator', image: '/work/brokerage-coordinator.jpg', stat: '3x closings', tier: 'Workflow Intelligence',
     cardHeadline: 'How one coordinator started running three times the closings',
     metricHtml: 'One coordinator, <em>3x the closings</em>',
     who: 'A boutique real-estate brokerage, a dozen agents and one overwhelmed transaction coordinator.',
@@ -92,7 +92,7 @@ export const caseStudies = [
     ],
   },
   {
-    slug: 'attorney-intake', stat: 'Every call answered', tier: 'Workflow Intelligence',
+    slug: 'attorney-intake', image: '/work/attorney-intake.jpg', stat: 'Every call answered', tier: 'Workflow Intelligence',
     cardHeadline: 'How a solo attorney stopped losing after-hours callers',
     metricHtml: 'After-hours leads, <em>converted</em>',
     who: 'A solo personal-injury attorney with a part-time paralegal.',
@@ -107,7 +107,7 @@ export const caseStudies = [
     ],
   },
   {
-    slug: 'nonprofit-grants', stat: 'Grants in a week', tier: 'Workflow Intelligence',
+    slug: 'nonprofit-grants', image: '/work/nonprofit-grants.jpg', stat: 'Grants in a week', tier: 'Workflow Intelligence',
     cardHeadline: 'How a nonprofit cut grant writing from a month to a week',
     metricHtml: 'A month, <em>down to a week</em>',
     who: 'A small community nonprofit, a handful of staff wearing many hats.',
@@ -122,7 +122,7 @@ export const caseStudies = [
     ],
   },
   {
-    slug: 'financial-advisor', stat: 'Days to an afternoon', tier: 'Workflow Intelligence',
+    slug: 'financial-advisor', image: '/work/financial-advisor.jpg', stat: 'Days to an afternoon', tier: 'Workflow Intelligence',
     cardHeadline: 'How a financial advisor onboards clients in an afternoon',
     metricHtml: 'Onboarding in <em>an afternoon</em>',
     who: 'A solo independent financial advisor building a small wealth practice.',
@@ -137,7 +137,7 @@ export const caseStudies = [
     ],
   },
   {
-    slug: 'boutique-hotel', stat: 'More direct bookings', tier: 'Digital Products',
+    slug: 'boutique-hotel', image: '/work/boutique-hotel.jpg', stat: 'More direct bookings', tier: 'Digital Products',
     cardHeadline: 'How a boutique hotel won back the bookings the platforms took',
     metricHtml: 'Bookings the platforms <em>used to own</em>',
     who: 'A nine-room boutique hotel, independently owned.',

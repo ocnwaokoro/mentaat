@@ -50,6 +50,8 @@
     linear-gradient(150deg, #002034, #001626 72%);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
+/* real image fills the slot (blue-duotone treated, so it stays on-brand) */
+.cong-ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* case-study grid (the /work proof engine) */
 .cong-cases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
