@@ -96,6 +96,12 @@ const ogImage = new URL(site.ogImage, site.domain).href;
       html, body { background: var(--semanticColorBackgroundLight); }
       /* full-bleed homepage bands use 100vw; clip stray horizontal overflow */
       body { overflow-x: hidden; }
+      /* Footer flush with content: the layout's sticky-footer grew Layout_content to fill tall
+         windows, leaving an empty band between the last section and the footer. Drop the grow
+         so the footer sits directly under the content. (Grey base means any area below the
+         footer on ultra-tall windows blends seamlessly.) */
+      .Layout_content__q1d4E { flex: 0 0 auto !important; }
+      .Layout_layout__u6BrU { justify-content: flex-start !important; }
       /* Film grain — fixed, barely-there texture over the whole page. The single most
          reliable "designed by a studio, not a template" cue. Kept very low so it whispers. */
       body::after {
