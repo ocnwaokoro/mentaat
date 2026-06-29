@@ -1,13 +1,13 @@
 export const meta = {
   title: 'Keystone Infrastructure — Custom Software & Operations Engineering | Mentaat',
-  description: 'We go in like an operator, find the leverage, and build the custom systems that scale your operation. Forward-deployed engineering for boutique businesses. Book a call.',
+  description: 'We go in like an operator, find the one thing slowing you down, and build the custom systems that scale your operation. Forward-deployed engineering for boutique businesses. Book a call.',
   badge: 'Keystone Infrastructure',
   headingHtml: 'We go in like an operator and build what your <em>business runs on</em>',
-  sub: 'When the whole operation needs to scale, we come in, find the leverage, and build the custom systems that change how the business runs.',
+  sub: 'When the whole operation needs to scale, we come in, find the one thing slowing you down, and build the custom systems that change how the business runs.',
   heroPhLabel: '// system preview',
   problemHtml: 'At some point, spreadsheets <em>stop holding it together</em>',
   problemBody: 'One person becomes the bottleneck. The numbers live in six places and none of them agree. You do not need another off-the-shelf tool that almost fits.',
-  ctaHeadHtml: 'Let us find the leverage in <em>your operation</em>',
+  ctaHeadHtml: 'Let us find the one thing slowing you down in <em>your operation</em>',
   ctaSub: 'Walk us through where the business strains. We will show you the system that takes the weight off.',
 };
 export const how = [

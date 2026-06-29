@@ -11,13 +11,13 @@ export const caseStudies = [
     stats: [{ num: 'Same day', label: 'quote turnaround, down from three days' }, { num: 'A day a week', label: 'back for the owner' }],
     sections: [
       { h: 'The situation', p: 'Every quote ran through the owner, the one person who could read a print and price it right. Requests piled up for days because quoting competed with running the floor, and a slow quote reads to a customer like a shop with no capacity. The pricing logic lived entirely in the owner\'s head.' },
-      { h: 'What we built', p: 'We mapped the whole quote-to-cash path and found the bottleneck was the front office, not the machines. We built a quoting co-pilot that reads the incoming drawing, extracts material, dimensions, and tolerances with the source shown for one-click checking, then matches the part against the shop\'s own prior quotes: this looks like the job you ran last spring, at this price. The owner reviews and sends. Nothing auto-prices, because the owner\'s judgment is the product.' },
+      { h: 'What we built', p: 'We mapped the whole path from a quote going out to getting paid, and found the bottleneck was the front office, not the machines. We built a quoting co-pilot that reads the incoming drawing, extracts material, dimensions, and tolerances with the source shown for one-click checking, then matches the part against the shop\'s own prior quotes: this looks like the job you ran last spring, at this price. The owner reviews and sends. Nothing auto-prices, because the owner\'s judgment is the product.' },
       { h: 'How the engagement worked', p: 'An eight-week build that started by ingesting two years of the shop\'s historical quotes, so the co-pilot spoke in the owner\'s own numbers from day one. We embedded weekly.' },
       { h: 'The outcome', p: 'Quote turnaround went from three days to same-day. The owner reclaimed roughly a day a week. Win rate rose, because fast, confident quotes beat slow ones. We did not replace the expert. We bottled the expert\'s instinct, so the business stops depending on one tired person at nine at night.' },
     ],
   },
   {
-    slug: 'electrical-billing', stat: 'Zero misses', tier: 'Keystone Infrastructure',
+    slug: 'electrical-billing', stat: 'Zero missed deadlines', tier: 'Keystone Infrastructure',
     cardHeadline: 'How an electrical sub stopped missing lien deadlines',
     metricHtml: 'Zero <em>missed deadlines</em>',
     who: 'A commercial electrical subcontractor, around 30 employees, billing several active jobs a month.',
@@ -32,7 +32,7 @@ export const caseStudies = [
     ],
   },
   {
-    slug: 'retail-inventory', stat: 'One system', tier: 'Keystone Infrastructure',
+    slug: 'retail-inventory', stat: '6 sheets to 1', tier: 'Keystone Infrastructure',
     cardHeadline: 'How a retailer replaced six spreadsheets with one source of truth',
     metricHtml: 'Six spreadsheets, <em>retired</em>',
     who: 'A growing two-location home-goods retailer with a small online store, run by a founder and a lean ops team.',
@@ -41,7 +41,7 @@ export const caseStudies = [
     stats: [{ num: 'Overselling, gone', label: 'one source of truth' }, { num: 'An hour back', label: 'every morning for the founder' }],
     sections: [
       { h: 'The situation', p: 'Inventory lived in a shared spreadsheet that six people edited at once. Counts drifted, the shop oversold online during a busy month, and the founder could not trust any number on the sheet. The off-the-shelf systems were either too basic or quoted at a price and a contract the business could not stomach.' },
-      { h: 'What we built', p: 'We treated it as greenfield. We studied how stock actually moved across the two stores and the website, then built a single inventory and order system shaped to that exact flow, with the website wired to the same source of truth so it can no longer sell what is not there. Not a generic app. Their operation, made into software.' },
+      { h: 'What we built', p: 'We started from a blank page. We studied how stock actually moved across the two stores and the website, then built a single inventory and order system shaped to that exact flow, with the website wired to the same source of truth so it can no longer sell what is not there. Not a generic app. Their operation, made into software.' },
       { h: 'How the engagement worked', p: 'A nine-week build with the founder in the room weekly, replacing the spreadsheet one workflow at a time so the team never lost their footing.' },
       { h: 'The outcome', p: 'Overselling stopped. The founder got numbers they trust and an hour back every morning. The business gained a capability it simply did not have before: room to add a third location without the wheels coming off.' },
     ],
@@ -86,13 +86,13 @@ export const caseStudies = [
     stats: [{ num: '3x', label: 'the closings one coordinator can carry' }, { num: 'No new hire', label: 'growth without back-office payroll' }],
     sections: [
       { h: 'The situation', p: 'Every deal carried dozens of deadlines, documents, and follow-ups, all tracked by hand. The single coordinator was the ceiling on how many deals the brokerage could close, and a dropped task meant a delayed or dead closing.' },
-      { h: 'What we built', p: 'We learned the closing process step by step, then built an assistant that tracks every transaction\'s milestones, chases the missing documents from the right party automatically, and surfaces only the exceptions that need a human. The coordinator stopped being a human checklist and started managing by exception.' },
+      { h: 'What we built', p: 'We learned the closing process step by step, then built an assistant that tracks every transaction\'s milestones, chases the missing documents from the right party automatically, and surfaces only the exceptions that need a human. The coordinator stopped being a human checklist and started handling only the problems that need a person.' },
       { h: 'How the engagement worked', p: 'A six-week build, embedded with the coordinator, evolving the rules as edge cases surfaced.' },
       { h: 'The outcome', p: 'The brokerage roughly tripled the closings one coordinator could carry, with fewer slips. Growth no longer meant another back-office hire. Headcount avoided, capability unlocked.' },
     ],
   },
   {
-    slug: 'attorney-intake', stat: 'Every caller', tier: 'Workflow Intelligence',
+    slug: 'attorney-intake', stat: 'Every call answered', tier: 'Workflow Intelligence',
     cardHeadline: 'How a solo attorney stopped losing after-hours callers',
     metricHtml: 'After-hours leads, <em>converted</em>',
     who: 'A solo personal-injury attorney with a part-time paralegal.',
@@ -103,11 +103,11 @@ export const caseStudies = [
       { h: 'The situation', p: 'Most prospective clients call once. If they reach voicemail, they call the next firm. The attorney was in court or with clients all day and lost real cases to a missed phone, while paying for ads that drove calls nobody could answer.' },
       { h: 'What we built', p: 'An intake assistant that answers every call and web inquiry, day or night, qualifies the matter with the attorney\'s own screening questions, books the consult on the calendar, and hands a clean summary to the paralegal. It is tuned to the attorney\'s voice and risk tolerance, with a clear handoff to a human for anything sensitive.' },
       { h: 'How the engagement worked', p: 'A three-week build, then a low monthly fee. Intentionally light-touch, because the win was speed, not a platform.' },
-      { h: 'The outcome', p: 'After-hours leads that used to vanish now convert to booked consults. The attorney stopped paying for ad clicks that hit a dead end. The paralegal walks in to a full calendar instead of a full voicemail. Not every job is a transformation. Sometimes the leverage is one expensive leak, closed cleanly.' },
+      { h: 'The outcome', p: 'After-hours leads that used to vanish now convert to booked consults. The attorney stopped paying for ad clicks that hit a dead end. The paralegal walks in to a full calendar instead of a full voicemail. Not every job is a transformation. Sometimes the win is one expensive leak, closed cleanly.' },
     ],
   },
   {
-    slug: 'nonprofit-grants', stat: 'A month to a week', tier: 'Workflow Intelligence',
+    slug: 'nonprofit-grants', stat: 'Grants in a week', tier: 'Workflow Intelligence',
     cardHeadline: 'How a nonprofit cut grant writing from a month to a week',
     metricHtml: 'A month, <em>down to a week</em>',
     who: 'A small community nonprofit, a handful of staff wearing many hats.',
@@ -122,7 +122,7 @@ export const caseStudies = [
     ],
   },
   {
-    slug: 'financial-advisor', stat: 'An afternoon', tier: 'Workflow Intelligence',
+    slug: 'financial-advisor', stat: 'Days to an afternoon', tier: 'Workflow Intelligence',
     cardHeadline: 'How a financial advisor onboards clients in an afternoon',
     metricHtml: 'Onboarding in <em>an afternoon</em>',
     who: 'A solo independent financial advisor building a small wealth practice.',
@@ -137,7 +137,7 @@ export const caseStudies = [
     ],
   },
   {
-    slug: 'boutique-hotel', stat: 'Direct bookings', tier: 'Digital Products',
+    slug: 'boutique-hotel', stat: 'More direct bookings', tier: 'Digital Products',
     cardHeadline: 'How a boutique hotel won back the bookings the platforms took',
     metricHtml: 'Bookings the platforms <em>used to own</em>',
     who: 'A nine-room boutique hotel, independently owned.',
