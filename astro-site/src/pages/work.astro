@@ -33,7 +33,7 @@ const colS = 'Flex_flex___mzvZ Flex_align--start__Nb_Sy Flex_direction--column__
               <div class="cong-cases">
                 {caseStudies.map((c) => (
                   <a href={`/casestudy/${c.slug}`} class="cong-card cong-card--white cong-case">
-                    <div class="cong-metric"><span set:html={c.metricHtml} /></div>
+                    <div class="cong-metric"><span><em>{c.stat}</em></span></div>
                     <div class="cong-case-body">
                       <div class={colS}>
                         <span class={badgeGray}>{c.tier}</span>
