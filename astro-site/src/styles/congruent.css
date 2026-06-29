@@ -88,11 +88,12 @@
   margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); width: 100vw;
   padding: clamp(92px, 9vw, 124px) 0 clamp(40px, 4.5vw, 64px);
   background:
-    radial-gradient(40% 62% at 50% 50%, rgba(255, 255, 255, 0.92), transparent 70%),
-    linear-gradient(118deg, transparent 34%, rgba(0, 159, 236, 0.26) 45%, rgba(114, 197, 255, 0.16) 52%, transparent 62%),
-    radial-gradient(28% 82% at 2% 12%, rgba(0, 159, 236, 0.34), transparent 60%),
-    radial-gradient(24% 66% at 99% 22%, rgba(84, 187, 255, 0.20), transparent 58%),
-    radial-gradient(38% 82% at 90% 128%, rgba(0, 63, 97, 0.16), transparent 60%),
+    radial-gradient(32% 40% at 50% 30%, rgba(255, 255, 255, 0.78), transparent 74%),
+    linear-gradient(118deg, transparent 22%, rgba(0, 159, 236, 0.22) 46%, rgba(114, 197, 255, 0.15) 56%, transparent 78%),
+    radial-gradient(34% 104% at 0% 4%, rgba(0, 159, 236, 0.32), transparent 56%),
+    radial-gradient(30% 92% at 100% 16%, rgba(84, 187, 255, 0.22), transparent 56%),
+    radial-gradient(48% 74% at 14% 106%, rgba(0, 159, 236, 0.20), transparent 60%),
+    radial-gradient(46% 78% at 90% 110%, rgba(0, 63, 97, 0.22), transparent 60%),
     #ffffff;
 }
 .cong-home-hero > * { position: relative; z-index: 1; }
@@ -147,7 +148,7 @@
 
 /* case-study stat row (in the dark hero) */
 .cong-stats { display: flex; gap: clamp(32px, 4.5vw, 64px); flex-wrap: wrap; }
-.cong-stat-num { display: block; font-size: clamp(2rem, 3.6vw, 2.875rem); font-weight: 600; letter-spacing: -0.015em; color: var(--semanticColorContentAccent); line-height: 1.05; }
+.cong-stat-num { display: block; font-size: clamp(2.5rem, 4.8vw, 3.625rem); font-weight: 600; letter-spacing: -0.02em; color: var(--semanticColorContentAccent); line-height: 1.02; }
 .cong-stat-label { display: block; font-size: 0.8125rem; color: rgba(255,255,255,0.6); margin-top: 10px; max-width: 13em; }
 
 /* case-study readable prose column */
@@ -185,7 +186,7 @@
 .cs-block:first-child { padding-top: 0; margin-top: 0; border-top: none; }
 @media (max-width: 720px) { .cs-block { grid-template-columns: 1fr; gap: 6px; } }
 .cs-block-label { font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.09em; color: var(--semanticColorContentStatesAccentMainHover); }
-.cs-block-num { display: block; font-size: 1.75rem; color: #b9c9d8; margin-bottom: 6px; letter-spacing: 0; }
+.cs-block-num { display: block; font-size: 2.5rem; color: #aebfcf; margin-bottom: 4px; letter-spacing: -0.01em; line-height: 1; }
 /* darker prose for readability on the grey base (the secondary token was too light) */
 .cs-body p { color: #2f3a45; line-height: 1.62; }
 .cs-cta-grid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: clamp(28px, 4vw, 56px); align-items: center; }
