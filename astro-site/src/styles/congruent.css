@@ -84,7 +84,7 @@
 .cong-home-hero {
   position: relative; text-align: center; overflow: hidden;
   margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); width: 100vw;
-  padding: clamp(40px, 5vw, 76px) 0 clamp(36px, 4.5vw, 60px);
+  padding: clamp(92px, 9vw, 124px) 0 clamp(40px, 4.5vw, 64px);
   background:
     radial-gradient(40% 62% at 50% 50%, rgba(255, 255, 255, 0.92), transparent 70%),
     linear-gradient(118deg, transparent 34%, rgba(0, 159, 236, 0.26) 45%, rgba(114, 197, 255, 0.16) 52%, transparent 62%),
@@ -127,6 +127,10 @@
 /* nudge the card title 48px -> 40px (the Tile's own next step down) so it sits better in
    the short 3-up cards; the system has no heading token between 24px and 48px */
 .cong-home-tiles .Tile_title__g73a0 { font-size: 2.25rem; line-height: 1.08; }
+/* whole-tile click target -> the service detail page; buttons stay clickable above it */
+.cong-tilewrap { position: relative; }
+.cong-tile-stretch { position: absolute; inset: 0; z-index: 1; border-radius: 12px; }
+.cong-home-tiles .ButtonRow_buttonRow__hs7qV { position: relative; z-index: 2; }
 /* keep the three tiles horizontal down to tablet (Feedly's layout stacks them ~1100px) */
 @media (min-width: 768px) {
   .cong-home-tiles { flex-direction: row; flex-wrap: nowrap; }

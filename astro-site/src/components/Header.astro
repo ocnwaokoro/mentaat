@@ -3,9 +3,10 @@
 // mobile variant was never implemented (empty + sf-hidden), so this replaces it.
 import Logo from './Logo.astro';
 import '../styles/header.css';
+const { overlay = false } = Astro.props;
 ---
 
-<header class="mh">
+<header class={`mh${overlay ? ' mh--overlay' : ''}`}>
   <div class="mh-inner">
     <a class="mh-logo" href="/" aria-label="Mentaat home"><Logo height={28} /></a>
     <nav class="mh-nav" aria-label="Primary">
