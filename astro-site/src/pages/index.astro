@@ -4,8 +4,30 @@ import Header from '../components/Header.astro';
 import Tile from '../components/Tile.astro';
 import Footer from '../components/Footer.astro';
 import { tileImages } from '../config/images.js';
+import { cases } from '../data/cases.js';
 import '../styles/homepage.css';
 import '../styles/congruent.css';
+
+const head02dark = 'Heading_heading__me6NI Heading_heading--02__GxsbA Heading_align--left__hNEzl Heading_color--primary___QOq1';
+const head02white = 'Heading_heading__me6NI Heading_heading--02__GxsbA Heading_align--left__hNEzl Heading_color--white__5VAp3';
+const head05dark = 'Heading_heading__me6NI Heading_heading--05__4gkI8 Heading_align--left__hNEzl Heading_color--primary___QOq1';
+const textSec = 'Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT Text_deprecatedMargin--none__sZLCS';
+const textSec2 = 'Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--02__HVmZN Text_deprecatedMargin--none__sZLCS';
+const badge = 'Badge_badge__A7OHD Badge_color--accent__Vuh4G Badge_size--medium__MxotV';
+const badgeGray = 'Badge_badge__A7OHD Badge_color--gray__pkQCI Badge_size--medium__MxotV';
+const colL = 'Flex_flex___mzvZ Flex_align--start__Nb_Sy Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Flex_gap--l__lrJk4';
+const colS = 'Flex_flex___mzvZ Flex_align--start__Nb_Sy Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Flex_gap--s__0656J';
+const btnRow = 'Flex_flex___mzvZ Flex_align--center__9VuNC Flex_direction--row__W6CGY Flex_justify--start__vk9Tl ButtonRow_buttonRow__hs7qV Flex_gap--s__0656J';
+const btnPrimary = 'BaseButton_button__S8cdB BaseButton_size--large__dpOfr BaseButton_importance--primary__1_2vI MarketingLinkButton_marketingLinkButton__n8FI4 BaseButton_color--accent-main__KBIuP FocusRing_focusRing__izyZU';
+const btnSecondary = 'BaseButton_button__S8cdB BaseButton_size--large__dpOfr BaseButton_importance--secondary__qMmu3 MarketingLinkButton_marketingLinkButton__n8FI4 BaseButton_color--accent-main__KBIuP FocusRing_focusRing__izyZU';
+
+const stats = [
+  { num: 'Same day', label: 'quotes out the door, down from three days' },
+  { num: '15 → 2 min', label: 'benefit verification, by hand no more' },
+  { num: '3x', label: 'the closings one coordinator can carry' },
+  { num: 'A day a week', label: 'handed back to the owner' },
+];
+const featured = [cases[0], cases[4], cases[6]]; // machine shop, hotel, vet — one per service
 ---
 
 <Base
@@ -18,49 +40,77 @@ import '../styles/congruent.css';
         <div class="Flex_flex___mzvZ Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Layout_content__q1d4E">
           <Header />
           <main class="Layout_main__nbmiJ index_layout__cD6cr cong">
+
+            {/* HERO */}
             <div class="index_container__9GuY8">
               <div class="cong-home-hero">
                 <h1 class="Heading_heading__me6NI Heading_heading--02__GxsbA Heading_color--primary___QOq1">Engineering and AI for <em>boutique businesses</em></h1>
                 <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT Text_deprecatedMargin--none__sZLCS">Forward-deployed. We build the websites, automate the busywork, and stand up the custom systems your business runs on.</p>
               </div>
             </div>
+
+            {/* WHAT WE DO — the 3 tiles */}
             <div class="cong-home-tiles Flex_flex___mzvZ Flex_align--center__9VuNC Flex_direction--row__W6CGY Flex_justify--start__vk9Tl index_container__9GuY8 Flex_gap--m__j4Ha1">
-              <Tile
-                badge="Build"
-                titleHtml="Digital<br />Products"
-                description="Modern websites and web apps, built to perform."
-                primaryHref="/work"
-                primaryLabel="See the work"
-                secondaryHref="/services/web-development"
-                secondaryLabel="Explore"
-                imageSrc={tileImages.digitalProducts}
-                imageAlt="A modern web product built by Mentaat."
-                theme="dark"
-              />
-              <Tile
-                badge="Embed"
-                titleHtml="Workflow<br />Intelligence"
-                description="We embed with your team, learn how you really work, and weave AI into it."
-                primaryHref="/contact"
-                primaryLabel="Book a call"
-                secondaryHref="/services/ai-automation"
-                secondaryLabel="Explore"
-                imageSrc={tileImages.workflowIntelligence}
-                imageAlt="An AI-assisted workflow built into a team's existing tools."
-                theme="light"
-              />
-              <Tile
-                badge="Transform"
-                titleHtml="Keystone<br />Infrastructure"
-                description="We go in like an operator and build the systems that scale you."
-                primaryHref="/contact"
-                primaryLabel="Book a call"
-                secondaryHref="/services/custom-software"
-                secondaryLabel="Explore"
-                imageSrc={tileImages.keystoneInfrastructure}
-                imageAlt="A custom operations system built for a small business."
-                theme="white"
-              />
+              <Tile badge="Build" titleHtml="Digital<br />Products" description="Modern websites and web apps, built to perform." primaryHref="/work" primaryLabel="See the work" secondaryHref="/services/web-development" secondaryLabel="Explore" imageSrc={tileImages.digitalProducts} imageAlt="A modern web product built by Mentaat." theme="dark" />
+              <Tile badge="Embed" titleHtml="Workflow<br />Intelligence" description="We embed with your team, learn how you really work, and weave AI into it." primaryHref="/contact" primaryLabel="Book a call" secondaryHref="/services/ai-automation" secondaryLabel="Explore" imageSrc={tileImages.workflowIntelligence} imageAlt="An AI-assisted workflow built into a team's existing tools." theme="light" />
+              <Tile badge="Transform" titleHtml="Keystone<br />Infrastructure" description="We go in like an operator and build the systems that scale you." primaryHref="/contact" primaryLabel="Book a call" secondaryHref="/services/custom-software" secondaryLabel="Explore" imageSrc={tileImages.keystoneInfrastructure} imageAlt="A custom operations system built for a small business." theme="white" />
+            </div>
+
+            {/* PROOF + SELECTED WORK + CTA */}
+            <div class="index_container__9GuY8">
+              <div class="cong-stack cong-home-more">
+
+                {/* PROOF STATS */}
+                <div class="cong-card cong-card--dark theme--dark">
+                  <div class={colL}>
+                    <span class={badge}>Proof</span>
+                    <h2 class={head02white}>What changes when we <em>go in</em></h2>
+                    <div class="cong-stats">
+                      {stats.map((s) => (
+                        <div>
+                          <span class="cong-stat-num">{s.num}</span>
+                          <span class="cong-stat-label">{s.label}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* SELECTED WORK */}
+                <div class="cong-sec">
+                  <h2 class={head02dark}>Selected work</h2>
+                  <div class="cong-row3">
+                    {featured.map((c) => (
+                      <a href={c.href} class="cong-card cong-card--white cong-case">
+                        <div class="cong-ph"></div>
+                        <div class="cong-case-body">
+                          <div class={colS}>
+                            <span class={badgeGray}>{c.tier}</span>
+                            <h3 class={head05dark}>{c.headline}</h3>
+                            <p class={textSec2}>{c.who}</p>
+                          </div>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                  <div class={btnRow}>
+                    <a href="/work" class={btnSecondary}><span>See all work</span></a>
+                  </div>
+                </div>
+
+                {/* CTA */}
+                <div class="cong-card cong-card--dark theme--dark cong-center">
+                  <div class={`${colL} cong-cta-center`}>
+                    <h2 class={head02white}>Let's take a look at your <em>operation</em></h2>
+                    <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT Text_deprecatedMargin--none__sZLCS">Tell us where the business is stuck. We will take a real look and tell you straight what we would build, and why. No pitch, no pressure.</p>
+                    <div class={btnRow}>
+                      <a href="/contact" class={btnPrimary}><span>Book a call</span></a>
+                      <a href="/work" class={btnSecondary}><span>See the work</span></a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
           </main>
         </div>
