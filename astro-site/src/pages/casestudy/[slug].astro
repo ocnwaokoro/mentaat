@@ -55,9 +55,9 @@ const btnSecondary = 'BaseButton_button__S8cdB BaseButton_size--large__dpOfr Bas
             <section class="cs-article">
               <div class="cong-band-inner">
                 <div class="cs-body">
-                  {cs.sections.map((s) => (
+                  {cs.sections.map((s, i) => (
                     <div class="cs-block">
-                      <h2 class={`${head05dark} cs-block-h`}>{s.h}</h2>
+                      <div class="cs-block-label"><span class="cs-block-num">{`0${i + 1}`}</span>{s.h}</div>
                       <p class={textSec}>{s.p}</p>
                     </div>
                   ))}
