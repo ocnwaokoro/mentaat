@@ -8,7 +8,7 @@ export const site = {
   name: 'Mentaat',
   legalName: 'Mentaat Technologies LLC',
   domain: 'https://mentaat.com',
-  tagline: 'Forward-deployed engineering and AI for boutique businesses.',
+  tagline: 'Engineering and AI for boutique businesses. We come to you.',
 
   // Contact + the "Book a call" funnel
   email: 'hello@mentaat.com',          // TODO: confirm the real inbox

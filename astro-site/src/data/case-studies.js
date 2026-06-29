@@ -7,7 +7,7 @@ export const caseStudies = [
     metricHtml: 'Three-day quotes, <em>same day</em>',
     who: 'An eight-person, owner-operated precision machine shop quoting from customer drawings.',
     title: 'Quotes out the door in minutes, not days',
-    intro: 'A precision machine shop handed us its whole quoting process. We went in like an operator, found the bottleneck, and built the system that fixed it.',
+    intro: 'A precision machine shop handed us its whole quoting process. We got right into the business, found the bottleneck, and built the system that fixed it.',
     stats: [{ num: 'Same day', label: 'quote turnaround, down from three days' }, { num: 'A day a week', label: 'back for the owner' }],
     sections: [
       { h: 'The situation', p: 'Every quote ran through the owner, the one person who could read a print and price it right. Requests piled up for days because quoting competed with running the floor, and a slow quote reads to a customer like a shop with no capacity. The pricing logic lived entirely in the owner\'s head.' },

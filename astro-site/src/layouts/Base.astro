@@ -14,7 +14,7 @@ interface Props {
   description?: string;
 }
 const {
-  title = 'Mentaat — Forward-Deployed Engineering & AI for Boutique Businesses',
+  title = 'Mentaat — Engineering & AI for Boutique Businesses',
   description = site.tagline,
 } = Astro.props;
 
@@ -47,7 +47,7 @@ const ogImage = new URL(site.ogImage, site.domain).href;
           name: 'Mentaat',
           url: 'https://mentaat.com',
           email: 'hello@mentaat.com',
-          description: 'A forward-deployed engineering and AI studio for boutique businesses',
+          description: 'An engineering and AI studio for boutique businesses that comes to you',
           areaServed: 'New Jersey',
           address: {
             '@type': 'PostalAddress',
@@ -83,16 +83,15 @@ const ogImage = new URL(site.ogImage, site.domain).href;
           '@id': 'https://mentaat.com/#website',
           url: 'https://mentaat.com',
           name: 'Mentaat',
-          description: 'A forward-deployed engineering and AI studio for boutique businesses',
+          description: 'An engineering and AI studio for boutique businesses that comes to you',
           publisher: { '@id': 'https://mentaat.com/#organization' },
         },
       ],
     })} />
     <ClientRouter />
     <style is:global>
-      /* Tinted off-white page base — white cards on top get free elevation. (Premium sites
-         never sit on stark #fff.) */
-      html, body { background: #f7fafd; }
+      /* White page base (reverted from the tint per feedback — keep it clean white). */
+      html, body { background: #ffffff; }
       /* Film grain — fixed, barely-there texture over the whole page. The single most
          reliable "designed by a studio, not a template" cue. Kept very low so it whispers. */
       body::after {
