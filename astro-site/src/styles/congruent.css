@@ -113,9 +113,9 @@
 .cong-home-more { margin-top: clamp(64px, 9vw, 116px); }
 
 /* case-study stat row (in the dark hero) */
-.cong-stats { display: flex; gap: clamp(28px, 4vw, 56px); flex-wrap: wrap; }
-.cong-stat-num { display: block; font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 600; color: var(--semanticColorContentAccent); line-height: 1.1; }
-.cong-stat-label { display: block; font-size: 0.9375rem; color: rgba(255,255,255,0.7); margin-top: 6px; max-width: 14em; }
+.cong-stats { display: flex; gap: clamp(32px, 4.5vw, 64px); flex-wrap: wrap; }
+.cong-stat-num { display: block; font-size: clamp(2rem, 3.6vw, 2.875rem); font-weight: 600; letter-spacing: -0.015em; color: var(--semanticColorContentAccent); line-height: 1.05; }
+.cong-stat-label { display: block; font-size: 0.8125rem; color: rgba(255,255,255,0.6); margin-top: 10px; max-width: 13em; }
 
 /* case-study readable prose column */
 .cong-article { max-width: 42em; }
