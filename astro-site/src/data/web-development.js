@@ -16,6 +16,6 @@ export const how = [
   { num: '03', label: 'Own', title: 'Yours to run', body: 'Change prices, hours, and photos yourself in minutes. You own the code, the content, and the domain. No lock-in.' },
 ];
 export const proof = [
-  { metricHtml: 'Bookings the platforms <em>used to own</em>', title: 'A slow, dated site was sending guests to the booking platforms. We rebuilt it. Direct bookings rose, and each one skips the commission.', client: 'Boutique hotel', href: '/casestudy', phLabel: '// hotel site' },
-  { metricHtml: 'Six spreadsheets, <em>retired</em>', title: 'A two-location shop kept overselling online from a shared sheet. We built one system they trust, with room to add a third location.', client: 'Two-location retailer', href: '/work', phLabel: '// retail platform' },
+  { metricHtml: 'Bookings the platforms <em>used to own</em>', title: 'A slow, dated site was sending guests to the booking platforms. We rebuilt it. Direct bookings rose, and each one skips the commission.', client: 'Boutique hotel', href: '/casestudy/boutique-hotel', phLabel: '// hotel site' },
+  { metricHtml: 'Six spreadsheets, <em>retired</em>', title: 'A two-location shop kept overselling online from a shared sheet. We built one system they trust, with room to add a third location.', client: 'Two-location retailer', href: '/casestudy/retail-inventory', phLabel: '// retail platform' },
 ];

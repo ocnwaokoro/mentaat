@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { cases } from '../data/cases.js';
+import { caseStudies } from '../data/case-studies.js';
 import '../styles/homepage.css';
 import '../styles/congruent.css';
 
@@ -10,7 +10,7 @@ const head02dark = 'Heading_heading__me6NI Heading_heading--02__GxsbA Heading_al
 const head05dark = 'Heading_heading__me6NI Heading_heading--05__4gkI8 Heading_align--left__hNEzl Heading_color--primary___QOq1';
 const textSec = 'Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT Text_deprecatedMargin--none__sZLCS';
 const textSec2 = 'Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--02__HVmZN Text_deprecatedMargin--none__sZLCS';
-const badge = 'Badge_badge__A7OHD Badge_color--gray__pkQCI Badge_size--medium__MxotV';
+const badgeGray = 'Badge_badge__A7OHD Badge_color--gray__pkQCI Badge_size--medium__MxotV';
 const colS = 'Flex_flex___mzvZ Flex_align--start__Nb_Sy Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Flex_gap--s__0656J';
 ---
 
@@ -31,14 +31,13 @@ const colS = 'Flex_flex___mzvZ Flex_align--start__Nb_Sy Flex_direction--column__
               </div>
 
               <div class="cong-cases">
-                {cases.map((c) => (
-                  <a href={c.href} class="cong-card cong-card--white cong-case">
-                    <div class="cong-ph"></div>
+                {caseStudies.map((c) => (
+                  <a href={`/casestudy/${c.slug}`} class="cong-card cong-card--white cong-case">
+                    <div class="cong-metric"><span set:html={c.metricHtml} /></div>
                     <div class="cong-case-body">
                       <div class={colS}>
-                        <span class={badge}>{c.tier}</span>
-                        <h2 class={head05dark}>{c.headline}</h2>
-                        <p class={textSec2}>{c.who}</p>
+                        <span class={badgeGray}>{c.tier}</span>
+                        <h2 class={head05dark}>{c.cardHeadline}</h2>
                       </div>
                     </div>
                   </a>

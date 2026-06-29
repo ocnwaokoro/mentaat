@@ -16,6 +16,6 @@ export const how = [
   { num: '03', label: 'Measure', title: 'Hours back, not hype', body: 'We tie it to real outcomes: hours saved, errors caught, work that stops slipping. If it does not earn its keep, we change it.' },
 ];
 export const proof = [
-  { metricHtml: 'Evenings, <em>handed back</em>', title: 'A two-vet clinic was drowning in after-hours charting and phones. We moved charting into the visit. Missed calls dropped, evenings came back.', client: 'Veterinary clinic', href: '/work', phLabel: '// charting flow' },
-  { metricHtml: 'Voicemail leads, <em>converted</em>', title: 'A solo attorney was losing cases to voicemail. After-hours callers now become consults instead of vanishing to the next firm.', client: 'Solo attorney', href: '/work', phLabel: '// intake automation' },
+  { metricHtml: 'Evenings, <em>handed back</em>', title: 'A two-vet clinic was drowning in after-hours charting and phones. We moved charting into the visit. Missed calls dropped, evenings came back.', client: 'Veterinary clinic', href: '/casestudy/vet-clinic', phLabel: '// charting flow' },
+  { metricHtml: 'Voicemail leads, <em>converted</em>', title: 'A solo attorney was losing cases to voicemail. After-hours callers now become consults instead of vanishing to the next firm.', client: 'Solo attorney', href: '/casestudy/attorney-intake', phLabel: '// intake automation' },
 ];

@@ -85,11 +85,11 @@ const btnSecondary = 'BaseButton_button__S8cdB BaseButton_size--large__dpOfr Bas
                   <div class="cong-row2">
                     {proof.map((p) => (
                       <a href={p.href} class="cong-card cong-card--white cong-case">
-                        <div class="cong-ph"></div>
+                        <div class="cong-metric"><span set:html={p.metricHtml} /></div>
                         <div class="cong-case-body">
                           <div class={colS}>
-                            <h3 class={head05dark} set:html={p.metricHtml} />
                             <p class={textSec2}>{p.title}</p>
+                            <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--04__2p_2C cong-attribution">{p.client}</p>
                           </div>
                         </div>
                       </a>

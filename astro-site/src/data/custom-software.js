@@ -16,6 +16,6 @@ export const how = [
   { num: '03', label: 'Stay', title: 'We stay until it works', body: 'Forward-deployed means we are in it with you, through rollout and the messy edges, until the system carries real weight.' },
 ];
 export const proof = [
-  { metricHtml: 'Three-day quotes, <em>same day</em>', title: 'Every quote ran through one tired owner. We built a system that reads the drawing and prices from history. The owner got a day a week back.', client: 'Precision machine shop', href: '/casestudy', phLabel: '// quoting system' },
-  { metricHtml: '15 minutes, <em>down to two</em>', title: 'A family dental practice did all benefit verification by hand. We cut it to under two minutes, with no new hires.', client: 'Dental practice', href: '/work', phLabel: '// verification tool' },
+  { metricHtml: 'Three-day quotes, <em>same day</em>', title: 'Every quote ran through one tired owner. We built a system that reads the drawing and prices from history. The owner got a day a week back.', client: 'Precision machine shop', href: '/casestudy/machine-shop-quoting', phLabel: '// quoting system' },
+  { metricHtml: '15 minutes, <em>down to two</em>', title: 'A family dental practice did all benefit verification by hand. We cut it to under two minutes, with no new hires.', client: 'Dental practice', href: '/casestudy/dental-verification', phLabel: '// verification tool' },
 ];
