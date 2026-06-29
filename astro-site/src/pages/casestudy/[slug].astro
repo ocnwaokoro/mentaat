@@ -33,28 +33,20 @@ const btnSecondary = 'BaseButton_button__S8cdB BaseButton_size--large__dpOfr Bas
           <Header />
           <main class="Layout_main__nbmiJ index_layout__cD6cr cong">
 
-            {/* HERO — full-bleed dark, image + metrics */}
-            <section class="cong-band cong-band--dark theme--dark cs-herowrap">
+            {/* HERO — full-bleed dark BEAM, image alongside */}
+            <section class="cong-band theme--dark cs-herowrap">
               <div class="cong-band-inner">
                 <div class="cs-hero">
                   <div class={colL}>
                     <span class={badge}>{cs.tier}</span>
                     <h1 class={head02white}>{cs.title}</h1>
-                    <p class={`${textWhite} cs-lede`}>{cs.intro}</p>
+                    <p class="cs-lede">{cs.intro}</p>
                     <div class={btnRow}>
                       <a href="/contact" class={btnPrimary}><span>Book a call</span></a>
                       <a href="/work" class={btnSecondary}><span>All work</span></a>
                     </div>
                   </div>
                   <figure class="cs-figure"><img src={cs.image} alt={cs.cardHeadline} /></figure>
-                </div>
-                <div class="cong-stats cs-hero-stats">
-                  {cs.stats.map((s) => (
-                    <div>
-                      <span class="cong-stat-num">{s.num}</span>
-                      <span class="cong-stat-label">{s.label}</span>
-                    </div>
-                  ))}
                 </div>
               </div>
             </section>
