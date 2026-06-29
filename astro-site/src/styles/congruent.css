@@ -13,7 +13,7 @@
      replaced wholesale when real images land.
    Scoped to .cong */
 
-.cong-stack { display: flex; flex-direction: column; gap: var(--semanticSpacingPositive800); }
+.cong-stack { display: flex; flex-direction: column; gap: clamp(18px, 2.6vw, 32px); }
 
 /* Accent — blue is the one accent. Bright #009fec on dark surfaces; deeper blue on light
    surfaces so it clears WCAG AA. Applied to <em> (bolded accent words) + the big numerals. */
@@ -21,7 +21,7 @@
 .theme--dark em, .cong-card--dark em { color: var(--semanticColorContentAccent); }
 .cong-card--tint em, .cong-card--white em, .cong-statement em { color: var(--semanticColorContentStatesAccentMainHover); }
 
-.cong-card { border-radius: 8px; padding: clamp(28px, 4vw, 56px); }
+.cong-card { border-radius: 8px; padding: clamp(24px, 3vw, 44px); }
 /* exact homepage dark-tile surface (#0a131a, literal — token remaps wrong under .theme--dark),
    plus a faint blue depth-glow from the top corner so the dark cards read with life, not flat */
 .cong-card--dark { background-color: #0a131a; background-image: radial-gradient(130% 150% at 100% 0%, rgba(0, 159, 236, 0.09), transparent 55%); }
@@ -73,7 +73,7 @@
 .cong-case-body { padding: 24px 28px 28px; }
 .cong-attribution { text-transform: uppercase; letter-spacing: 0.08em; }
 
-.cong-page-hero { padding: clamp(44px, 6vw, 84px) 0 clamp(24px, 3vw, 40px); }
+.cong-page-hero { padding: clamp(28px, 4vw, 56px) 0 clamp(14px, 2vw, 26px); }
 .cong-page-hero > * + * { margin-top: 18px; }
 .cong-page-hero p { max-width: 34em; }
 
@@ -84,13 +84,13 @@
 .cong-home-hero {
   position: relative; text-align: center; overflow: hidden;
   margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); width: 100vw;
-  padding: clamp(64px, 9vw, 132px) 0 clamp(60px, 9vw, 120px);
+  padding: clamp(40px, 5vw, 76px) 0 clamp(36px, 4.5vw, 60px);
   background:
-    radial-gradient(38% 56% at 50% 46%, rgba(255, 255, 255, 0.94), transparent 72%),
-    linear-gradient(122deg, transparent 32%, rgba(0, 159, 236, 0.22) 43%, rgba(114, 197, 255, 0.13) 51%, transparent 62%),
-    radial-gradient(34% 72% at 4% 14%, rgba(0, 159, 236, 0.30), transparent 62%),
-    radial-gradient(32% 60% at 98% 24%, rgba(84, 187, 255, 0.20), transparent 60%),
-    radial-gradient(46% 80% at 84% 124%, rgba(0, 63, 97, 0.16), transparent 62%),
+    radial-gradient(40% 62% at 50% 50%, rgba(255, 255, 255, 0.92), transparent 70%),
+    linear-gradient(118deg, transparent 34%, rgba(0, 159, 236, 0.26) 45%, rgba(114, 197, 255, 0.16) 52%, transparent 62%),
+    radial-gradient(28% 82% at 2% 12%, rgba(0, 159, 236, 0.34), transparent 60%),
+    radial-gradient(24% 66% at 99% 22%, rgba(84, 187, 255, 0.20), transparent 58%),
+    radial-gradient(38% 82% at 90% 128%, rgba(0, 63, 97, 0.16), transparent 60%),
     #ffffff;
 }
 .cong-home-hero > * { position: relative; z-index: 1; }
@@ -98,7 +98,7 @@
 /* full-bleed bands (homepage) — break out of the centered column to span the viewport,
    inner content re-centered to the readable width. Fixes the wide-screen white gutters
    and gives the dark bands their proper weight; a light-grey band adds rhythm. */
-.cong-band { margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); width: 100vw; padding: clamp(52px, 7.5vw, 96px) 0; }
+.cong-band { margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); width: 100vw; padding: clamp(36px, 4.5vw, 64px) 0; }
 .cong-band--dark { background-color: #0a131a; color: #fff; background-image: radial-gradient(120% 150% at 100% 0%, rgba(0, 159, 236, 0.12), transparent 55%); }
 .cong-band--grey { background: #e9eef4; }
 .cong-band-inner { max-width: 1180px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 40px); }
@@ -108,7 +108,7 @@
 .cong-hero-solo p { max-width: 40em; }
 .cong-home-hero h1 { font-size: clamp(2.25rem, 4.6vw, 3.25rem); font-weight: 600; line-height: 1.04; letter-spacing: -0.022em; margin: 0 auto; max-width: 15em; }
 .cong-home-hero h1 em { font-style: normal; font-weight: 600; color: var(--semanticColorContentStatesAccentMainHover); }
-.cong-home-hero p { max-width: 36em; margin: 14px auto 0; }
+.cong-home-hero p { max-width: 40em; margin: 14px auto 0; font-size: clamp(1.0625rem, 1.3vw, 1.1875rem); line-height: 1.5; }
 /* homepage tiles: no screenshot, equal height regardless of copy length, buttons pinned
    to the bottom edge so all three cards match and end at their CTAs */
 .cong-home-tiles { align-items: stretch; }
@@ -137,7 +137,7 @@
 .cong-cta-center { align-items: center; width: 100%; } /* centered CTA column (replaces inline style) */
 
 /* homepage build-out (proof + selected work + CTA) — separated from the tiles */
-.cong-home-more { margin-top: clamp(32px, 5vw, 68px); }
+.cong-home-more { margin-top: clamp(14px, 2.2vw, 30px); }
 
 /* case-study stat row (in the dark hero) */
 .cong-stats { display: flex; gap: clamp(32px, 4.5vw, 64px); flex-wrap: wrap; }
@@ -146,11 +146,11 @@
 
 /* case-study readable prose column */
 .cong-article { max-width: 42em; }
-.cong-article-group { display: flex; flex-direction: column; gap: 44px; }
+.cong-article-group { display: flex; flex-direction: column; gap: 30px; }
 
 /* editorial structure — section headers + plain statement outside cards (differentiates
    the service page from the homepage's pure tile grid; rhyme, not uniform) */
-.cong-sec { display: flex; flex-direction: column; gap: var(--semanticSpacingPositive700); }
+.cong-sec { display: flex; flex-direction: column; gap: clamp(16px, 2.4vw, 28px); }
 .cong-statement { max-width: 34em; padding: clamp(12px, 2vw, 28px) 0; }
 /* big blue numerals on the process cards (Aeonik, recoloured to accent, oversized signature) */
 .cong-num { color: var(--semanticColorContentAccent); font-size: clamp(3.5rem, 5vw, 5rem); line-height: 1; font-variant-numeric: tabular-nums; display: block; margin-bottom: 10px; }
