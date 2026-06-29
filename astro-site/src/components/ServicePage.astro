@@ -39,19 +39,16 @@ const btnSecondary = 'BaseButton_button__S8cdB BaseButton_size--large__dpOfr Bas
             <div class="index_container__9GuY8">
               <div class="cong-stack">
 
-                {/* HERO — dark tile surface */}
-                <div class="cong-card cong-card--dark theme--dark">
-                  <div class="cong-hero">
-                    <div class={colL}>
-                      <span class={badge}>{meta.badge}</span>
-                      <h1 class={head02white} set:html={meta.headingHtml} />
-                      <p class={textSec}>{meta.sub}</p>
-                      <div class={btnRow}>
-                        <a href="/contact" class={btnPrimary}><span>Book a call</span></a>
-                        <a href="/work" class={btnSecondary}><span>See our work</span></a>
-                      </div>
+                {/* HERO — dark tile surface, single column (no empty panel) */}
+                <div class="cong-card cong-card--dark theme--dark cong-hero-solo">
+                  <div class={colL}>
+                    <span class={badge}>{meta.badge}</span>
+                    <h1 class={head02white} set:html={meta.headingHtml} />
+                    <p class={textSec}>{meta.sub}</p>
+                    <div class={btnRow}>
+                      <a href="/contact" class={btnPrimary}><span>Book a call</span></a>
+                      <a href="/work" class={btnSecondary}><span>See our work</span></a>
                     </div>
-                    <div class="cong-ph"></div>
                   </div>
                 </div>
 

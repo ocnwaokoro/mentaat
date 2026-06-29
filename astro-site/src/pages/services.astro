@@ -46,17 +46,14 @@ const services = [
                 {services.map((s) => {
                   const dark = s.surface === 'dark';
                   return (
-                    <div class={`cong-card cong-card--${s.surface}${dark ? ' theme--dark' : ''}`}>
-                      <div class="cong-hero">
-                        <div class={colL}>
-                          <span class={badge}>{s.badge}</span>
-                          <h2 class={dark ? head02white : head02dark} set:html={s.h} />
-                          <p class={textWhite}>{s.p}</p>
-                          <div class={btnRow}>
-                            <a href={s.href} class={btnPrimary}><span>Explore</span></a>
-                          </div>
+                    <div class={`cong-card cong-card--${s.surface}${dark ? ' theme--dark' : ''} cong-hero-solo`}>
+                      <div class={colL}>
+                        <span class={badge}>{s.badge}</span>
+                        <h2 class={dark ? head02white : head02dark} set:html={s.h} />
+                        <p class={textWhite}>{s.p}</p>
+                        <div class={btnRow}>
+                          <a href={s.href} class={btnPrimary}><span>Explore</span></a>
                         </div>
-                        <div class="cong-ph"></div>
                       </div>
                     </div>
                   );
