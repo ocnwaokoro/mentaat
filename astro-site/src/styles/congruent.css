@@ -38,15 +38,30 @@
 .cong-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 @media (max-width: 860px) { .cong-row3, .cong-row2 { grid-template-columns: 1fr; } }
 
-/* Image slot — reads as a deliberate "image goes here" placeholder, not a broken void:
-   inset hairline frame + a faint centered label. Swap for a real screenshot later. */
-.cong-ph { position: relative; border-radius: 8px; aspect-ratio: 4 / 3; background: linear-gradient(160deg, #12303f, #0a131a); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.09); }
+/* Image slot — a branded blue gradient MESH built from the palette tokens (deep navy base
+   #001626/#002034, mid blues #002f4a/#003f61, bright accents #009fec/#54bbff as luminous
+   glows). Feels intentional and alive; a real screenshot drops on top later. */
+.cong-ph {
+  position: relative; border-radius: 8px; aspect-ratio: 4 / 3; overflow: hidden;
+  background:
+    radial-gradient(58% 80% at 14% 8%, rgba(0, 159, 236, 0.30), transparent 60%),
+    radial-gradient(50% 70% at 96% 18%, rgba(84, 187, 255, 0.22), transparent 55%),
+    radial-gradient(85% 95% at 72% 116%, rgba(0, 63, 97, 0.60), transparent 60%),
+    linear-gradient(150deg, #002034, #001626 72%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
 
 /* case-study grid (the /work proof engine) */
 .cong-cases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 @media (max-width: 1024px) { .cong-cases { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) { .cong-cases { grid-template-columns: 1fr; } }
-.cong-ph::after { content: "Preview"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.34); }
+/* faint M-mark watermark centered in the slot — the signature motif, so the panel reads
+   as a branded visual, not an empty box. Tints with the bright accent at low opacity. */
+.cong-ph::after {
+  content: ""; position: absolute; inset: 0;
+  background: center / 34% no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 266 279'%3E%3Cg transform='translate(0,279) scale(0.1,-0.1)' fill='%2354bbff' stroke='%2354bbff' stroke-width='220' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M1350 2055 c-36 2 -82 0 -103 -5 -20 -5 -61 -22 -90 -36 -37 -19 -111 -85 -262 -235 -116 -115 -215 -209 -220 -209 -6 0 -99 89 -208 198 l-198 197 -90 -94 -91 -94 513 -512 c483 -482 518 -514 574 -536 46 -18 80 -23 150 -24 81 0 97 3 159 33 61 29 96 59 281 242 116 116 215 210 220 210 6 0 95 -85 198 -190 103 -104 192 -192 197 -195 5 -3 51 35 102 85 l92 91 -485 485 c-273 273 -509 502 -542 524 -32 22 -75 44 -95 50 -20 6 -66 13 -102 15z m14 -267 c16 -4 38 -15 48 -25 11 -10 96 -92 190 -182 93 -90 174 -173 180 -184 9 -17 -13 -43 -183 -213 -107 -107 -209 -201 -227 -210 -23 -11 -46 -14 -70 -9 -31 5 -70 39 -234 203 -109 108 -198 201 -198 207 0 6 91 102 203 212 158 157 209 202 232 205 17 2 43 0 59 -4z'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.16;
+}
 
 .cong-case { padding: 0; overflow: hidden; text-decoration: none; color: inherit; display: block; transition: transform .18s ease, box-shadow .18s ease; }
 .cong-case:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -30px rgba(0,20,38,0.4), inset 0 0 0 1px var(--semanticColorBorderLight); }
