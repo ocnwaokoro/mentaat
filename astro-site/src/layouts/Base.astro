@@ -102,6 +102,12 @@ const ogImage = new URL(site.ogImage, site.domain).href;
          footer on ultra-tall windows blends seamlessly.) */
       .Layout_content__q1d4E { flex: 0 0 auto !important; }
       .Layout_layout__u6BrU { justify-content: flex-start !important; }
+      /* THE white bar: main had 48px bottom padding (homepage.css .index_layout__cD6cr) that
+         exposed the white page base between the last full-bleed band and the footer. Zero it. */
+      .index_layout__cD6cr { padding-bottom: 0 !important; }
+      /* and make the grey base actually win the cascade (homepage.css body{background:#fff}
+         was overriding it), so any remaining transparent gap reads grey, not white. */
+      html, body { background-color: var(--semanticColorBackgroundLight) !important; }
       /* Film grain — fixed, barely-there texture over the whole page. The single most
          reliable "designed by a studio, not a template" cue. Kept very low so it whispers. */
       body::after {

@@ -41,7 +41,8 @@ const featured = [caseStudies[0], caseStudies[9], caseStudies[4]]; // machine sh
           <Header overlay />
           <main class="Layout_main__nbmiJ index_layout__cD6cr cong">
 
-            {/* HERO — full-bleed blue beam */}
+            {/* HERO + TILES share one beam background */}
+            <div class="cong-home-top">
             <section class="cong-home-hero">
               <div class="cong-band-inner">
                 <h1 class="Heading_heading__me6NI Heading_heading--02__GxsbA Heading_color--primary___QOq1">Engineering and AI for <em>boutique businesses</em></h1>
@@ -54,6 +55,7 @@ const featured = [caseStudies[0], caseStudies[9], caseStudies[4]]; // machine sh
               <Tile badge="Build" titleHtml="Digital<br />Products" description="Modern websites and web apps, built to perform." primaryHref="/work" primaryLabel="See the work" secondaryHref="/services/web-development" secondaryLabel="Learn more" imageSrc={tileImages.digitalProducts} imageAlt="A modern web product built by Mentaat." theme="dark" />
               <Tile badge="Embed" titleHtml="Workflow<br />Intelligence" description="We learn how your team really works, then use AI to take the busywork off their plate." primaryHref="/contact" primaryLabel="Book a call" secondaryHref="/services/ai-automation" secondaryLabel="Learn more" imageSrc={tileImages.workflowIntelligence} imageAlt="An AI-assisted workflow built into a team's existing tools." theme="light" />
               <Tile badge="Transform" titleHtml="Keystone<br />Infrastructure" description="We get into your business and build the custom software it runs on." primaryHref="/contact" primaryLabel="Book a call" secondaryHref="/services/custom-software" secondaryLabel="Learn more" imageSrc={tileImages.keystoneInfrastructure} imageAlt="A custom operations system built for a small business." theme="white" />
+            </div>
             </div>
 
             {/* PROOF — full-bleed dark band */}

@@ -83,19 +83,22 @@
    at the core so the headline stays crisp; a diagonal accent beam + corner glows in the same
    blues as the mesh cards, so hero + cards read as one family. Grain comes from the global
    body::after. Contained rounded panel = rhymes with the card language. */
-.cong-home-hero {
-  position: relative; text-align: center; overflow: hidden;
+/* hero + the 3 tiles share ONE beam background (cong-home-top); the top of the beam reads
+   exactly like the hero did, and it continues down behind the cards */
+.cong-home-top {
+  position: relative; overflow: hidden;
   margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); width: 100vw;
-  padding: clamp(92px, 9vw, 124px) 0 clamp(40px, 4.5vw, 64px);
+  padding-bottom: clamp(8px, 1.5vw, 18px);
   background:
-    radial-gradient(32% 40% at 50% 30%, rgba(255, 255, 255, 0.78), transparent 74%),
-    linear-gradient(118deg, transparent 22%, rgba(0, 159, 236, 0.22) 46%, rgba(114, 197, 255, 0.15) 56%, transparent 78%),
-    radial-gradient(34% 104% at 0% 4%, rgba(0, 159, 236, 0.32), transparent 56%),
-    radial-gradient(30% 92% at 100% 16%, rgba(84, 187, 255, 0.22), transparent 56%),
-    radial-gradient(48% 74% at 14% 106%, rgba(0, 159, 236, 0.20), transparent 60%),
-    radial-gradient(46% 78% at 90% 110%, rgba(0, 63, 97, 0.22), transparent 60%),
+    radial-gradient(40% 29% at 50% 22%, rgba(255, 255, 255, 0.90), transparent 70%),
+    linear-gradient(118deg, transparent 34%, rgba(0, 159, 236, 0.24) 46%, rgba(114, 197, 255, 0.15) 53%, transparent 66%),
+    radial-gradient(28% 40% at 2% 6%, rgba(0, 159, 236, 0.34), transparent 58%),
+    radial-gradient(24% 32% at 99% 10%, rgba(84, 187, 255, 0.20), transparent 56%),
+    radial-gradient(38% 40% at 90% 62%, rgba(0, 63, 97, 0.16), transparent 60%),
+    radial-gradient(42% 36% at 10% 96%, rgba(0, 159, 236, 0.12), transparent 62%),
     #ffffff;
 }
+.cong-home-hero { position: relative; text-align: center; padding: clamp(92px, 9vw, 124px) 0 clamp(12px, 2vw, 22px); }
 .cong-home-hero > * { position: relative; z-index: 1; }
 
 /* full-bleed bands (homepage) — break out of the centered column to span the viewport,
@@ -144,11 +147,11 @@
 .cong-cta-center { align-items: center; width: 100%; } /* centered CTA column (replaces inline style) */
 
 /* homepage build-out (proof + selected work + CTA) — separated from the tiles */
-.cong-home-more { margin-top: clamp(14px, 2.2vw, 30px); }
+.cong-home-more { margin-top: 0; }
 
 /* case-study stat row (in the dark hero) */
 .cong-stats { display: flex; gap: clamp(32px, 4.5vw, 64px); flex-wrap: wrap; }
-.cong-stat-num { display: block; font-size: clamp(2.5rem, 4.8vw, 3.625rem); font-weight: 600; letter-spacing: -0.02em; color: var(--semanticColorContentAccent); line-height: 1.02; }
+.cong-stat-num { display: block; font-size: clamp(2rem, 3.6vw, 2.875rem); font-weight: 600; letter-spacing: -0.015em; color: var(--semanticColorContentAccent); line-height: 1.05; }
 .cong-stat-label { display: block; font-size: 0.8125rem; color: rgba(255,255,255,0.6); margin-top: 10px; max-width: 13em; }
 
 /* case-study readable prose column */
