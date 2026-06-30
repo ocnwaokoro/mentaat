@@ -6,6 +6,9 @@ import { defineConfig } from 'astro/config';
 // social scrapers get fully-formed HTML, not an empty #root that needs JS.
 export default defineConfig({
   output: 'static',
+  // Canonical production origin. Used for absolute URLs (canonical tags, OG image,
+  // sitemap). Must match the live domain so crawlers/social scrapers resolve the right host.
+  site: 'https://mentaat.com',
   // Hide the floating Astro dev toolbar in the local dev server.
   devToolbar: { enabled: false },
   vite: {

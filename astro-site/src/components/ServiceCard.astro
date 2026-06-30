@@ -1,0 +1,30 @@
+---
+// One image-topped service card. Shared by the homepage and the /services hub so both
+// render the identical card: image on top, big title, single whole-card "Learn more ->".
+interface Props {
+  surface: 'dark' | 'tint' | 'white';
+  eyebrow: string;
+  title: string;
+  p: string;
+  href: string;
+  img: string;
+}
+const { surface, eyebrow, title, p, href, img } = Astro.props;
+const dark = surface === 'dark';
+
+const headWhite = 'Heading_heading__me6NI Heading_heading--02__GxsbA Heading_align--left__hNEzl Heading_color--white__5VAp3';
+const headDark = 'Heading_heading__me6NI Heading_heading--02__GxsbA Heading_align--left__hNEzl Heading_color--primary___QOq1';
+const textBody = 'Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--02__HVmZN Text_deprecatedMargin--none__sZLCS';
+const badgeAccent = 'Badge_badge__A7OHD Badge_color--accent__Vuh4G Badge_size--medium__MxotV';
+const badgeGray = 'Badge_badge__A7OHD Badge_color--gray__pkQCI Badge_size--medium__MxotV';
+---
+
+<a href={href} class={`cong-card cong-card--${surface}${dark ? ' theme--dark' : ''} cong-svc-card`}>
+  <div class="cong-svc-img"><img src={img} alt="" loading="lazy" /></div>
+  <div class="cong-svc-body2">
+    <span class={surface === 'white' ? badgeGray : badgeAccent}>{eyebrow}</span>
+    <h2 class={dark ? headWhite : headDark}>{title}</h2>
+    <p class={textBody}>{p}</p>
+    <span class="cong-svc-more">Learn more</span>
+  </div>
+</a>

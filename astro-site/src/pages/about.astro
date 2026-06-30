@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { site } from '../config/site.js';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/homepage.css';
@@ -25,7 +26,7 @@ const sections = [
 
 <Base
   title="About Mentaat — Engineering & AI in New Jersey"
-  description="Mentaat is an engineering and AI studio for boutique businesses, and we come to you. We get into your business, find the one thing slowing you down, and build the system that changes it."
+  description="Mentaat is an engineering and AI studio for boutique businesses, and we come to you. We find the one thing slowing you down and build the system that changes it."
 >
   <div id="__next">
     <div class="app_site--homepage__E5h5V app_loggedOut__HHvfJ">
@@ -40,7 +41,7 @@ const sections = [
                   <h1 class={head02white}>We get right into your <em>business</em>, not just hand you a tool</h1>
                   <p class="cs-lede">We do not hand you a tool and wish you luck. We get into your business, find the one thing slowing you down, and build the system that changes it.</p>
                   <div class={btnRow}>
-                    <a href="/contact" class={btnPrimary}><span>Book a call</span></a>
+                    <a href={site.bookingUrl} target="_blank" rel="noopener" class={btnPrimary}><span>Book a call</span></a>
                     <a href="/work" class={btnSecondary}><span>See the work</span></a>
                   </div>
                 </div>
@@ -48,10 +49,10 @@ const sections = [
             </section>
 
             <div class="index_container__9GuY8 cong-svc-body">
-              <div class="cong-about-grid">
+              <div class="cs-body cong-about-cs">
                 {sections.map((s) => (
-                  <div class="cong-about-block">
-                    <h2 class={head05dark}>{s.h}</h2>
+                  <div class="cs-block">
+                    <div class="cs-block-label">{s.h}</div>
                     <p class={textSec} set:html={s.p} />
                   </div>
                 ))}
@@ -64,7 +65,7 @@ const sections = [
                   <h2 class={head02white}>Let us find the one thing slowing you down in <em>your operation</em></h2>
                   <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT Text_deprecatedMargin--none__sZLCS">Tell us where the business is stuck. We will take a real look and tell you straight what we would build, and why.</p>
                   <div class={btnRow}>
-                    <a href="/contact" class={btnPrimary}><span>Book a call</span></a>
+                    <a href={site.bookingUrl} target="_blank" rel="noopener" class={btnPrimary}><span>Book a call</span></a>
                   </div>
                 </div>
               </div>

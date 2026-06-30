@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { site } from '../config/site.js';
 import Header from './Header.astro';
 import Footer from './Footer.astro';
 import '../styles/homepage.css';
@@ -13,6 +14,28 @@ const {
   proofHeading = 'What we have built',
 } = Astro.props;
 const proofImg = (href) => '/work/' + String(href).split('/').filter(Boolean).pop() + '.jpg';
+
+// SEO: declare this page's Service + a breadcrumb trail for rich results.
+const pageUrl = new URL(Astro.url.pathname, site.domain).href;
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: meta.badge,
+  serviceType: meta.badge,
+  description: meta.description,
+  provider: { '@id': 'https://mentaat.com/#organization' },
+  areaServed: 'New Jersey',
+  url: pageUrl,
+};
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mentaat.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://mentaat.com/services/' },
+    { '@type': 'ListItem', position: 3, name: meta.badge, item: pageUrl },
+  ],
+};
 
 const head02white = 'Heading_heading__me6NI Heading_heading--02__GxsbA Heading_align--left__hNEzl Heading_color--white__5VAp3';
 const head02dark = 'Heading_heading__me6NI Heading_heading--02__GxsbA Heading_align--left__hNEzl Heading_color--primary___QOq1';
@@ -29,7 +52,7 @@ const btnPrimary = 'BaseButton_button__S8cdB BaseButton_size--large__dpOfr BaseB
 const btnSecondary = 'BaseButton_button__S8cdB BaseButton_size--large__dpOfr BaseButton_importance--secondary__qMmu3 MarketingLinkButton_marketingLinkButton__n8FI4 BaseButton_color--accent-main__KBIuP FocusRing_focusRing__izyZU';
 ---
 
-<Base title={meta.title} description={meta.description}>
+<Base title={meta.title} description={meta.description} jsonLd={[serviceSchema, breadcrumb]}>
   <div id="__next">
     <div class="app_site--homepage__E5h5V app_loggedOut__HHvfJ">
       <div class="Flex_flex___mzvZ Flex_direction--column__TTxLV Flex_justify--space-between__LdB4V Layout_layout__u6BrU">
@@ -45,7 +68,7 @@ const btnSecondary = 'BaseButton_button__S8cdB BaseButton_size--large__dpOfr Bas
                   <h1 class={head02white} set:html={meta.headingHtml} />
                   <p class="cs-lede" set:html={meta.sub} />
                   <div class={btnRow}>
-                    <a href="/contact" class={btnPrimary}><span>Book a call</span></a>
+                    <a href={site.bookingUrl} target="_blank" rel="noopener" class={btnPrimary}><span>Book a call</span></a>
                     <a href="/work" class={btnSecondary}><span>See our work</span></a>
                   </div>
                 </div>
@@ -109,7 +132,7 @@ const btnSecondary = 'BaseButton_button__S8cdB BaseButton_size--large__dpOfr Bas
                   <h2 class={head02white} set:html={meta.ctaHeadHtml} />
                   <p class={textSec}>{meta.ctaSub}</p>
                   <div class={btnRow}>
-                    <a href="/contact" class={btnPrimary}><span>Book a call</span></a>
+                    <a href={site.bookingUrl} target="_blank" rel="noopener" class={btnPrimary}><span>Book a call</span></a>
                   </div>
                 </div>
               </div>

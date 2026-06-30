@@ -1,6 +1,6 @@
 export const meta = {
-  title: 'Keystone Infrastructure — Custom Software & Operations Engineering | Mentaat',
-  description: 'We get into your business, find the one thing slowing you down, and build the custom systems that scale it. Engineering for boutique businesses, and we come to you. Book a call.',
+  title: 'Keystone Infrastructure — Custom Software | Mentaat',
+  description: 'We get into your business, find the one thing slowing you down, and build the custom systems that scale it. Engineering for boutique businesses. Book a call.',
   badge: 'Keystone Infrastructure',
   headingHtml: 'We get into your business and build what it <em>runs on</em>',
   sub: 'When the whole operation needs to scale, we come in, find the one thing slowing you down, and build the custom systems that change how the business runs.',

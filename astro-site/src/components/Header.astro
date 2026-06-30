@@ -2,6 +2,7 @@
 // Site header — clean responsive nav, navigable at every width. The Feedly header's
 // mobile variant was never implemented (empty + sf-hidden), so this replaces it.
 import Logo from './Logo.astro';
+import { site } from '../config/site.js';
 import '../styles/header.css';
 const { overlay = false } = Astro.props;
 ---
@@ -14,6 +15,6 @@ const { overlay = false } = Astro.props;
       <a href="/services">Services</a>
       <a href="/about">About</a>
     </nav>
-    <a class="mh-cta" href="/contact">Book a call</a>
+    <a class="mh-cta" href={site.bookingUrl} target="_blank" rel="noopener">Book a call</a>
   </div>
 </header>

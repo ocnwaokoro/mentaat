@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { site } from '../config/site.js';
 import '../styles/homepage.css';
 import '../styles/legal.css';
 
@@ -10,6 +11,10 @@ import '../styles/legal.css';
 
 const headingClass = 'Heading_heading__me6NI Heading_heading--05__4gkI8 Heading_align--left__hNEzl Heading_color--primary___QOq1';
 const textClass = 'Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT';
+
+// Email is config-driven and HIDDEN when empty: fall back to the contact page.
+const askPhrase = site.email ? `by emailing ${site.email}` : 'through our contact page';
+const sendPhrase = site.email ? `to ${site.email}` : 'through our contact page';
 
 const sections = [
   {
@@ -51,7 +56,7 @@ const sections = [
     id: 'your-rights',
     title: 'Your rights',
     body: [
-      'You may ask us to access, correct, or delete the personal information you have given us by emailing hello@mentaat.com. We use reasonable measures to protect your information, though no method of transmission or storage is perfectly secure. This site is not directed to children under 13, and we do not knowingly collect their information.',
+      `You may ask us to access, correct, or delete the personal information you have given us ${askPhrase}. We use reasonable measures to protect your information, though no method of transmission or storage is perfectly secure. This site is not directed to children under 13, and we do not knowingly collect their information.`,
     ],
   },
   {
@@ -65,7 +70,7 @@ const sections = [
     id: 'how-to-contact-us',
     title: 'How to contact us',
     body: [
-      'Questions about this policy can be sent to hello@mentaat.com. Mentaat Technologies LLC, New Jersey.',
+      `Questions about this policy can be sent ${sendPhrase}. Mentaat Technologies LLC, New Jersey.`,
     ],
   },
 ];
@@ -111,7 +116,7 @@ const sections = [
                     </section>
                   ))}
 
-                  <p class={`legal__contact ${textClass}`}>Questions? Email <a href="mailto:hello@mentaat.com">hello@mentaat.com</a>.</p>
+                  <p class={`legal__contact ${textClass}`}>Questions? {site.email ? <Fragment>Email <a href={`mailto:${site.email}`}>{site.email}</a>.</Fragment> : <Fragment>Reach us through our <a href="/contact">contact page</a>.</Fragment>}</p>
                 </div>
               </div>
             </div>

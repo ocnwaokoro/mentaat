@@ -1,5 +1,5 @@
 export const meta = {
-  title: 'Digital Products — Websites & Web Apps for Boutique Businesses | Mentaat',
+  title: 'Digital Products — Websites & Web Apps | Mentaat',
   description: 'We design and build fast, modern websites and web apps for boutique businesses. Built to win customers, and simple enough to run yourself. Book a call.',
   badge: 'Digital Products',
   headingHtml: 'A website that brings in <em>work</em>, not just compliments',

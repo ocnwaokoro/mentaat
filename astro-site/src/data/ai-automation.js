@@ -1,5 +1,5 @@
 export const meta = {
-  title: 'Workflow Intelligence — AI Automation for Small Teams | Mentaat',
+  title: 'Workflow Intelligence — AI Automation | Mentaat',
   description: 'We embed with your team, learn how you actually work, and weave AI into it. Practical automation that saves real hours, not a science project. Book a call.',
   badge: 'Workflow Intelligence',
   headingHtml: 'Give your team back the hours <em>busywork eats</em>',

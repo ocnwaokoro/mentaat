@@ -6,16 +6,18 @@ import { site } from '../config/site.js';
 import '../styles/homepage.css';
 import '../styles/congruent.css';
 
-// Booking CTA is functional now (email) and auto-upgrades to the real scheduler the
-// moment a real URL is set in site.bookingUrl (Calendly/Cal). Inline embed can replace
-// the panel later by dropping the widget where the comment marks it.
+// Booking CTA auto-upgrades to the real scheduler the moment a real URL is set in
+// site.bookingUrl (Cal/Calendly). Email is config-driven and HIDDEN when empty —
+// the secondary "Email us" button disappears and the primary falls back gracefully.
 const hasScheduler = site.bookingUrl && site.bookingUrl !== '#';
-const bookHref = hasScheduler ? site.bookingUrl : `mailto:${site.email}?subject=Book%20a%20call`;
+const bookHref = hasScheduler
+  ? site.bookingUrl
+  : (site.email ? `mailto:${site.email}?subject=Book%20a%20call` : '#');
 
 const head02white = 'Heading_heading__me6NI Heading_heading--02__GxsbA Heading_align--left__hNEzl Heading_color--white__5VAp3';
-const head05white = 'Heading_heading__me6NI Heading_heading--05__4gkI8 Heading_align--left__hNEzl Heading_color--white__5VAp3';
-const textWhite = 'Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--01__aiSyT Text_deprecatedMargin--none__sZLCS';
+const head05dark = 'Heading_heading__me6NI Heading_heading--05__4gkI8 Heading_align--left__hNEzl Heading_color--primary___QOq1';
 const textWhite2 = 'Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--02__HVmZN Text_deprecatedMargin--none__sZLCS';
+const textSec2 = 'Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--02__HVmZN Text_deprecatedMargin--none__sZLCS';
 const badge = 'Badge_badge__A7OHD Badge_color--accent__Vuh4G Badge_size--medium__MxotV';
 const colL = 'Flex_flex___mzvZ Flex_align--start__Nb_Sy Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Flex_gap--l__lrJk4';
 const colS = 'Flex_flex___mzvZ Flex_align--start__Nb_Sy Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Flex_gap--s__0656J';
@@ -40,36 +42,37 @@ const steps = [
         <div class="Flex_flex___mzvZ Flex_direction--column__TTxLV Flex_justify--start__vk9Tl Layout_content__q1d4E">
           <Header />
           <main class="Layout_main__nbmiJ index_layout__cD6cr cong">
-            <div class="index_container__9GuY8">
-              <div class="cong-stack">
-                <div class="cong-card cong-card--dark theme--dark">
-                  <div class="cong-hero">
-                    <div class={colL}>
-                      <span class={badge}>Contact</span>
-                      <h1 class={head02white}>Let's take a look at your <em>operation</em></h1>
-                      <p class={textWhite}>Tell us what is slowing you down. We will tell you, honestly, whether and how we would build for it. No pitch, no pressure.</p>
-                      <div class={colS}>
-                        {steps.map((s, i) => (
-                          <p class={textWhite2}><em>{i + 1}.</em>&nbsp;&nbsp;{s}</p>
-                        ))}
-                      </div>
-                    </div>
 
-                    {/* Booking panel — drop the Calendly/Cal inline embed here later. */}
-                    <div class="cong-card cong-card--white">
-                      <div class={colS}>
-                        <h2 class="Heading_heading__me6NI Heading_heading--05__4gkI8 Heading_align--left__hNEzl Heading_color--primary___QOq1">{hasScheduler ? 'Book your call' : 'Tell us what is slowing you down'}</h2>
-                        <p class="Text_text__4F9CK Text_color--secondary__oRE1u Text_size--body--02__HVmZN Text_deprecatedMargin--none__sZLCS">Free, about 30 minutes. {hasScheduler ? 'Pick a time and you will get a short note on what to bring.' : 'Send a line about where the business is stuck and we will reply the same day with times.'}</p>
-                        <div class={btnRow}>
-                          <a href={bookHref} class={btnPrimary}><span>{hasScheduler ? 'Book a call' : 'Email us'}</span></a>
-                          {hasScheduler && <a href={`mailto:${site.email}`} class={btnSecondary}><span>Email us</span></a>}
-                        </div>
+            {/* HERO — full-bleed dark beam, booking panel alongside (matches the rest of the site) */}
+            <section class="cong-band theme--dark cs-herowrap">
+              <div class="cong-band-inner">
+                <div class="cs-hero">
+                  <div class={colL}>
+                    <span class={badge}>Contact</span>
+                    <h1 class={head02white}>Let's take a look at your <em>operation</em></h1>
+                    <p class="cs-lede">Tell us what is slowing you down. We will tell you, honestly, whether and how we would build for it. No pitch, no pressure.</p>
+                    <div class={colS}>
+                      {steps.map((s, i) => (
+                        <p class={textWhite2}><em>{i + 1}.</em>&nbsp;&nbsp;{s}</p>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Booking panel — drop the Cal/Calendly inline embed here later. */}
+                  <div class="cong-card cong-card--white cong-contact-panel">
+                    <div class={colS}>
+                      <h2 class={head05dark}>{hasScheduler ? 'Book your call' : 'Tell us what is slowing you down'}</h2>
+                      <p class={textSec2}>Free, about 30 minutes. {hasScheduler ? 'Pick a time and you will get a short note on what to bring.' : 'Send a line about where the business is stuck and we will reply the same day with times.'}</p>
+                      <div class={btnRow}>
+                        <a href={bookHref} target={hasScheduler ? '_blank' : null} rel={hasScheduler ? 'noopener' : null} class={btnPrimary}><span>{hasScheduler ? 'Book a call' : 'Email us'}</span></a>
+                        {hasScheduler && site.email && <a href={`mailto:${site.email}`} class={btnSecondary}><span>Email us</span></a>}
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </section>
+
           </main>
           <Footer />
         </div>

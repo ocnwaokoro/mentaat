@@ -12,10 +12,14 @@ import { site } from '../config/site.js';
 interface Props {
   title?: string;
   description?: string;
+  ogType?: string;          // 'website' (default) or 'article' (case studies)
+  jsonLd?: object | object[]; // optional per-page schema.org block(s)
 }
 const {
   title = 'Mentaat — Engineering & AI for Boutique Businesses',
   description = site.tagline,
+  ogType = 'website',
+  jsonLd,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, site.domain).href;
@@ -27,16 +31,27 @@ const ogImage = new URL(site.ogImage, site.domain).href;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a131a" />
     <link rel="icon" href="/assets/mentaat-favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/mentaat-favicon.svg" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {/* Open Graph */}
+    <meta property="og:site_name" content="Mentaat" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta property="og:image:alt" content="Mentaat — engineering and AI for boutique businesses" />
+    {/* Twitter */}
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
@@ -46,7 +61,8 @@ const ogImage = new URL(site.ogImage, site.domain).href;
           '@id': 'https://mentaat.com/#organization',
           name: 'Mentaat',
           url: 'https://mentaat.com',
-          email: 'hello@mentaat.com',
+          // email is config-driven: omit the property entirely when site.email is empty (HIDDEN until real)
+          ...(site.email ? { email: site.email } : {}),
           description: 'An engineering and AI studio for boutique businesses that comes to you',
           areaServed: 'New Jersey',
           address: {
@@ -88,14 +104,18 @@ const ogImage = new URL(site.ogImage, site.domain).href;
         },
       ],
     })} />
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
     <ClientRouter />
     <style is:global>
       /* Soft grey page base (same token as the footer) so the page reads as grey rhythm with
          white cards + dark bands punctuating it, and the sticky-footer fill area blends into
          the footer instead of flashing white. */
       html, body { background: var(--semanticColorBackgroundLight); }
-      /* full-bleed homepage bands use 100vw; clip stray horizontal overflow */
-      body { overflow-x: hidden; }
+      /* full-bleed homepage bands use 100vw; clip stray horizontal overflow.
+         Use `clip` (not `hidden`): hidden makes <body> a scroll container, which
+         silently breaks `position: sticky` descendants (e.g. the legal-page TOC).
+         clip clips the same overflow without establishing a scroll container. */
+      body { overflow-x: clip; }
       /* Footer flush with content: the layout's sticky-footer grew Layout_content to fill tall
          windows, leaving an empty band between the last section and the footer. Drop the grow
          so the footer sits directly under the content. (Grey base means any area below the
