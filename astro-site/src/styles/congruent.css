@@ -51,7 +51,7 @@
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 /* real image fills the slot (blue-duotone treated, so it stays on-brand) */
-.cong-ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cong-ph img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .25s ease; }
 
 /* case-study grid (the /work proof engine) */
 .cong-cases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -71,6 +71,7 @@
 
 .cong-case { padding: 0; overflow: hidden; text-decoration: none; color: inherit; display: block; transition: transform .18s ease, box-shadow .18s ease; }
 .cong-case:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -30px rgba(0,20,38,0.4), inset 0 0 0 1px var(--semanticColorBorderLight); }
+.cong-case:hover .cong-ph img { transform: scale(1.04); } /* match the service cards' image zoom */
 .cong-case .cong-ph { border-radius: 0; aspect-ratio: 16 / 9; }
 .cong-case-body { padding: 24px 28px 28px; }
 .cong-attribution { text-transform: uppercase; letter-spacing: 0.08em; }

@@ -1,5 +1,5 @@
 /* Site header — clean, responsive, navigable at every width. Token colors only.
-   Replaces the Feedly header whose mobile variant was never implemented. Scoped to .mh */
+   Replaces the Mentaat header whose mobile variant was never implemented. Scoped to .mh */
 .mh { background: var(--semanticColorBackgroundElevationLight); border-bottom: 1px solid var(--semanticColorBorderLight); }
 /* overlay variant (homepage): frosted glass over the hero beam — translucent + blur so the
    beam shows through, but keeps the bottom hairline. Fixed so it stays as you scroll. */

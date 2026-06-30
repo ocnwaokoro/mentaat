@@ -244,7 +244,7 @@
     }
 
     .color--tertiary__JGhS2 {
-        color: var(--feedly-icon-color-tertiary, var(--semanticColorContentLight))
+        color: var(--mentaat-icon-color-tertiary, var(--semanticColorContentLight))
     }
 
     .icon-clickable__Lyw27:hover {
@@ -253,19 +253,19 @@
 
     .theme--light,
     :root {
-        --feedly-box-shadow-lightest: 0 2px 4px 0 rgb(0 0 0/4%);
-        --feedly-box-shadow-light: 0px 2px 8px rgb(0 0 0/8%), 0px 1px 2px rgba(0, 0, 0, .38);
-        --feedly-box-shadow-light-caret: 2px 2px 8px rgb(0 0 0/8%), 0px 1px 2px rgba(0, 0, 0, .38);
-        --feedly-box-shadow-medium: 0px 2px 15px rgba(0, 0, 0, .15), 0px 2px 8px rgb(0 0 0/8%);
-        --feedly-box-shadow-bold: 0px 8px 25px rgba(0, 0, 0, .15), 0px 4px 15px rgba(0, 0, 0, .38), 0px 2px 4px rgba(0, 0, 0, .38)
+        --mentaat-box-shadow-lightest: 0 2px 4px 0 rgb(0 0 0/4%);
+        --mentaat-box-shadow-light: 0px 2px 8px rgb(0 0 0/8%), 0px 1px 2px rgba(0, 0, 0, .38);
+        --mentaat-box-shadow-light-caret: 2px 2px 8px rgb(0 0 0/8%), 0px 1px 2px rgba(0, 0, 0, .38);
+        --mentaat-box-shadow-medium: 0px 2px 15px rgba(0, 0, 0, .15), 0px 2px 8px rgb(0 0 0/8%);
+        --mentaat-box-shadow-bold: 0px 8px 25px rgba(0, 0, 0, .15), 0px 4px 15px rgba(0, 0, 0, .38), 0px 2px 4px rgba(0, 0, 0, .38)
     }
 
     .theme--dark {
-        --feedly-box-shadow-lightest: 0 2px 4px 0 rgba(0, 0, 0, .8);
-        --feedly-box-shadow-light: 0px 2px 8px rgba(0, 0, 0, .8), 0px 1px 2px rgba(0, 0, 0, .54);
-        --feedly-box-shadow-light-caret: 2px 2px 8px rgba(0, 0, 0, .8), 0px 1px 2px rgba(0, 0, 0, .54);
-        --feedly-box-shadow-medium: 0px 4px 15px rgba(0, 0, 0, .38), 0px 4px 8px rgba(0, 0, 0, .54);
-        --feedly-box-shadow-bold: 0px 8px 25px rgba(0, 0, 0, .54), 0px 4px 15px rgba(0, 0, 0, .8), 0px 2px 4px rgba(0, 0, 0, .8)
+        --mentaat-box-shadow-lightest: 0 2px 4px 0 rgba(0, 0, 0, .8);
+        --mentaat-box-shadow-light: 0px 2px 8px rgba(0, 0, 0, .8), 0px 1px 2px rgba(0, 0, 0, .54);
+        --mentaat-box-shadow-light-caret: 2px 2px 8px rgba(0, 0, 0, .8), 0px 1px 2px rgba(0, 0, 0, .54);
+        --mentaat-box-shadow-medium: 0px 4px 15px rgba(0, 0, 0, .38), 0px 4px 8px rgba(0, 0, 0, .54);
+        --mentaat-box-shadow-bold: 0px 8px 25px rgba(0, 0, 0, .54), 0px 4px 15px rgba(0, 0, 0, .8), 0px 2px 4px rgba(0, 0, 0, .8)
     }
 
     :root {
@@ -457,7 +457,7 @@
     .BaseButton_button__S8cdB {
         align-items: center;
         display: inline-flex;
-        gap: var(--feedly-button-gap);
+        gap: var(--mentaat-button-gap);
         justify-content: center;
         font-weight: 550;
         text-decoration: none;
@@ -472,7 +472,7 @@
         box-shadow: none;
         outline: 0;
         transition: background-color .02s ease-in-out, border-color .02s ease-in-out, color .02s ease-in-out;
-        color: var(--feedly-button-color-text)
+        color: var(--mentaat-button-color-text)
     }
 
     .BaseButton_button__S8cdB:hover {
@@ -484,81 +484,81 @@
     }
 
     .BaseButton_importance--primary__1_2vI {
-        background-color: var(--feedly-button-color-background);
-        --feedly-button-color-background: var(--semanticColorBackgroundAccent)
+        background-color: var(--mentaat-button-color-background);
+        --mentaat-button-color-background: var(--semanticColorBackgroundAccent)
     }
 
     .BaseButton_importance--primary__1_2vI:hover {
-        --feedly-button-color-background: var(--semanticColorBackgroundStatesAccentHover)
+        --mentaat-button-color-background: var(--semanticColorBackgroundStatesAccentHover)
     }
 
     .BaseButton_importance--primary__1_2vI {
-        --feedly-button-color-border: var(--semanticColorBorderAccent)
+        --mentaat-button-color-border: var(--semanticColorBorderAccent)
     }
 
     .BaseButton_importance--primary__1_2vI:hover {
-        --feedly-button-color-border: var(--semanticColorBorderStatesAccentHover)
+        --mentaat-button-color-border: var(--semanticColorBorderStatesAccentHover)
     }
 
     .BaseButton_importance--primary__1_2vI {
-        --feedly-button-color-text: var(--semanticColorContentAccent)
+        --mentaat-button-color-text: var(--semanticColorContentAccent)
     }
 
     .BaseButton_importance--primary__1_2vI:hover {
-        --feedly-button-color-text: var(--semanticColorContentStatesAccentHover)
+        --mentaat-button-color-text: var(--semanticColorContentStatesAccentHover)
     }
 
     .BaseButton_importance--primary__1_2vI {
-        --feedly-button-color-text: var(--semanticColorContentLightest)
+        --mentaat-button-color-text: var(--semanticColorContentLightest)
     }
 
     .BaseButton_importance--primary__1_2vI:hover {
-        --feedly-button-color-text: var(--semanticColorContentStatesLightestHover)
+        --mentaat-button-color-text: var(--semanticColorContentStatesLightestHover)
     }
 
     .BaseButton_importance--secondary__qMmu3 {
         background-color: transparent;
-        border-color: var(--feedly-button-color-border);
-        --feedly-button-color-border: var(--semanticColorBorderMedium);
-        --feedly-button-color-text: var(--semanticColorContentMedium)
+        border-color: var(--mentaat-button-color-border);
+        --mentaat-button-color-border: var(--semanticColorBorderMedium);
+        --mentaat-button-color-text: var(--semanticColorContentMedium)
     }
 
     .BaseButton_importance--secondary__qMmu3:hover {
-        --feedly-button-color-border: var(--semanticColorBorderStatesMediumHover);
-        --feedly-button-color-text: var(--semanticColorContentStatesMediumHover)
+        --mentaat-button-color-border: var(--semanticColorBorderStatesMediumHover);
+        --mentaat-button-color-text: var(--semanticColorContentStatesMediumHover)
     }
 
     .theme--night .BaseButton_importance--secondary__qMmu3:hover {
-        --feedly-button-color-background: #636363;
-        --feedly-button-color-border: #ededed;
-        --feedly-button-color-text: #636363
+        --mentaat-button-color-background: #636363;
+        --mentaat-button-color-border: #ededed;
+        --mentaat-button-color-text: #636363
     }
 
     .BaseButton_importance--tertiary__kESF6 {
         background-color: transparent;
         border-color: transparent;
         min-width: 0;
-        --feedly-button-color-background: var(--semanticColorBackgroundMedium)
+        --mentaat-button-color-background: var(--semanticColorBackgroundMedium)
     }
 
     .BaseButton_importance--tertiary__kESF6:hover {
-        --feedly-button-color-background:
+        --mentaat-button-color-background:
     }
 
     .BaseButton_importance--tertiary__kESF6 {
-        --feedly-button-color-border: var(--semanticColorBorderMedium)
+        --mentaat-button-color-border: var(--semanticColorBorderMedium)
     }
 
     .BaseButton_importance--tertiary__kESF6:hover {
-        --feedly-button-color-border: var(--semanticColorBorderStatesMediumHover)
+        --mentaat-button-color-border: var(--semanticColorBorderStatesMediumHover)
     }
 
     .BaseButton_importance--tertiary__kESF6 {
-        --feedly-button-color-text: var(--semanticColorContentMedium)
+        --mentaat-button-color-text: var(--semanticColorContentMedium)
     }
 
     .BaseButton_importance--tertiary__kESF6:hover {
-        --feedly-button-color-text: var(--semanticColorContentStatesMediumHover);
+        --mentaat-button-color-text: var(--semanticColorContentStatesMediumHover);
         background-color: var(--semanticColorBackgroundStatesLightestHover)
     }
 
@@ -567,118 +567,118 @@
     }
 
     .mobile .BaseButton_importance--tertiary__kESF6:hover {
-        --feedly-button-color-background: #636363;
-        --feedly-button-color-border: #636363;
-        --feedly-button-color-text: #636363
+        --mentaat-button-color-background: #636363;
+        --mentaat-button-color-border: #636363;
+        --mentaat-button-color-text: #636363
     }
 
     .theme--night .BaseButton_importance--tertiary__kESF6:hover {
-        --feedly-button-color-background: #636363;
-        --feedly-button-color-border: #636363;
-        --feedly-button-color-text: #636363
+        --mentaat-button-color-background: #636363;
+        --mentaat-button-color-border: #636363;
+        --mentaat-button-color-text: #636363
     }
 
     .BaseButton_color--accent__Sqzqy:hover,
     .mobile .BaseButton_color--accent__Sqzqy:hover {
-        --feedly-button-color-background: var(--semanticColorBackgroundStatesAccentHover)
+        --mentaat-button-color-background: var(--semanticColorBackgroundStatesAccentHover)
     }
 
     .BaseButton_color--accent__Sqzqy:hover,
     .mobile .BaseButton_color--accent__Sqzqy:hover {
-        --feedly-button-color-border: var(--semanticColorBorderStatesAccentHover)
+        --mentaat-button-color-border: var(--semanticColorBorderStatesAccentHover)
     }
 
     .BaseButton_color--accent__Sqzqy:hover,
     .mobile .BaseButton_color--accent__Sqzqy:hover {
-        --feedly-button-color-text: var(--semanticColorContentStatesAccentHover)
+        --mentaat-button-color-text: var(--semanticColorContentStatesAccentHover)
     }
 
     .theme--night .BaseButton_color--accent__Sqzqy:hover,
     .theme--night .mobile .BaseButton_color--accent__Sqzqy:hover {
-        --feedly-button-color-background: #9bff95;
-        --feedly-button-color-border: #9bff95;
-        --feedly-button-color-text: #9bff95
+        --mentaat-button-color-background: #9bff95;
+        --mentaat-button-color-border: #9bff95;
+        --mentaat-button-color-text: #9bff95
     }
 
     .BaseButton_color--accent-main__KBIuP.BaseButton_importance--primary__1_2vI {
-        --feedly-button-color-background: var(--semanticColorBackgroundAccentMain)
+        --mentaat-button-color-background: var(--semanticColorBackgroundAccentMain)
     }
 
     .BaseButton_color--accent-main__KBIuP.BaseButton_importance--primary__1_2vI:hover,
     .mobile .BaseButton_color--accent-main__KBIuP.BaseButton_importance--primary__1_2vI:hover {
-        --feedly-button-color-background: var(--semanticColorBackgroundStatesAccentMainHover)
+        --mentaat-button-color-background: var(--semanticColorBackgroundStatesAccentMainHover)
     }
 
     .BaseButton_color--accent-main__KBIuP.BaseButton_importance--primary__1_2vI {
-        --feedly-button-color-text: var(--semanticColorContentLightest)
+        --mentaat-button-color-text: var(--semanticColorContentLightest)
     }
 
     .BaseButton_color--accent-main__KBIuP.BaseButton_importance--secondary__qMmu3 {
-        --feedly-button-color-text: var(--semanticColorContentAccentMain)
+        --mentaat-button-color-text: var(--semanticColorContentAccentMain)
     }
 
     .BaseButton_color--accent-main__KBIuP.BaseButton_importance--secondary__qMmu3:hover,
     .BaseButton_color--accent-main__KBIuP.BaseButton_importance--tertiary__kESF6:hover,
     .mobile .BaseButton_color--accent-main__KBIuP.BaseButton_importance--secondary__qMmu3:hover,
     .mobile .BaseButton_color--accent-main__KBIuP.BaseButton_importance--tertiary__kESF6:hover {
-        --feedly-button-color-text: var(--semanticColorContentStatesAccentMainHover)
+        --mentaat-button-color-text: var(--semanticColorContentStatesAccentMainHover)
     }
 
     .BaseButton_color--danger___7bnr:hover,
     .mobile .BaseButton_color--danger___7bnr:hover {
-        --feedly-button-color-background: var(--semanticColorBackgroundStatesDangerHover)
+        --mentaat-button-color-background: var(--semanticColorBackgroundStatesDangerHover)
     }
 
     .BaseButton_color--danger___7bnr:hover,
     .mobile .BaseButton_color--danger___7bnr:hover {
-        --feedly-button-color-border: var(--semanticColorBorderStatesDangerHover)
+        --mentaat-button-color-border: var(--semanticColorBorderStatesDangerHover)
     }
 
     .BaseButton_color--danger___7bnr:hover,
     .mobile .BaseButton_color--danger___7bnr:hover {
-        --feedly-button-color-text: var(--semanticColorContentStatesDangerHover)
+        --mentaat-button-color-text: var(--semanticColorContentStatesDangerHover)
     }
 
     .BaseButton_color--danger-hover__CdYlK:hover,
     .mobile .BaseButton_color--danger-hover__CdYlK:hover {
-        --feedly-button-color-background: var(--semanticColorBackgroundStatesDangerHover);
-        --feedly-button-color-border: var(--semanticColorBorderStatesDangerHover);
-        --feedly-button-color-text: var(--semanticColorContentStatesDangerHover)
+        --mentaat-button-color-background: var(--semanticColorBackgroundStatesDangerHover);
+        --mentaat-button-color-border: var(--semanticColorBorderStatesDangerHover);
+        --mentaat-button-color-text: var(--semanticColorContentStatesDangerHover)
     }
 
     .BaseButton_color--danger-hover__CdYlK:hover.BaseButton_importance--primary__1_2vI,
     .mobile .BaseButton_color--danger-hover__CdYlK:hover.BaseButton_importance--primary__1_2vI {
-        --feedly-button-color-text: var(--semanticColorContentStatesInverseHover)
+        --mentaat-button-color-text: var(--semanticColorContentStatesInverseHover)
     }
 
     .BaseButton_color--notification__2rPh3:hover,
     .mobile .BaseButton_color--notification__2rPh3:hover {
-        --feedly-button-color-background: var(--semanticColorBackgroundInfo)
+        --mentaat-button-color-background: var(--semanticColorBackgroundInfo)
     }
 
     .BaseButton_color--notification__2rPh3:hover,
     .mobile .BaseButton_color--notification__2rPh3:hover {
-        --feedly-button-color-border: var(--semanticColorContentInfo)
+        --mentaat-button-color-border: var(--semanticColorContentInfo)
     }
 
     .BaseButton_color--notification__2rPh3:hover,
     .mobile .BaseButton_color--notification__2rPh3:hover {
-        --feedly-button-color-text: var(--semanticColorContentInfo)
+        --mentaat-button-color-text: var(--semanticColorContentInfo)
     }
 
     .BaseButton_color--warning__c9BkA:hover,
     .mobile .BaseButton_color--warning__c9BkA:hover {
-        --feedly-button-color-background: var(--semanticColorBackgroundStatesWarningHover)
+        --mentaat-button-color-background: var(--semanticColorBackgroundStatesWarningHover)
     }
 
     .BaseButton_color--warning__c9BkA:hover,
     .mobile .BaseButton_color--warning__c9BkA:hover {
-        --feedly-button-color-border: var(--semanticColorBorderStatesWarningHover)
+        --mentaat-button-color-border: var(--semanticColorBorderStatesWarningHover)
     }
 
     .BaseButton_color--warning__c9BkA:hover,
     .mobile .BaseButton_color--warning__c9BkA:hover {
-        --feedly-button-color-text: var(--semanticColorContentStatesWarningHover)
+        --mentaat-button-color-text: var(--semanticColorContentStatesWarningHover)
     }
 
     .BaseButton_color--danger___7bnr.BaseButton_importance--primary__1_2vI:hover,
@@ -687,15 +687,15 @@
     .mobile .BaseButton_color--danger___7bnr.BaseButton_importance--primary__1_2vI:hover,
     .mobile .BaseButton_color--notification__2rPh3.BaseButton_importance--primary__1_2vI:hover,
     .mobile .BaseButton_color--warning__c9BkA.BaseButton_importance--primary__1_2vI:hover {
-        --feedly-button-color-text: var(--semanticColorContentStatesInverseHover)
+        --mentaat-button-color-text: var(--semanticColorContentStatesInverseHover)
     }
 
     .BaseButton_size--small__hW4Qr {
-        --feedly-button-gap: var(--semanticSpacingPositive200)
+        --mentaat-button-gap: var(--semanticSpacingPositive200)
     }
 
     .BaseButton_size--large__dpOfr {
-        --feedly-button-gap: var(--semanticSpacingPositive300)
+        --mentaat-button-gap: var(--semanticSpacingPositive300)
     }
 
     .BaseButton_size--small__hW4Qr {
@@ -733,7 +733,7 @@
         height: 16px;
         border-radius: 500rem;
         border: 2px solid;
-        border-color: transparent var(--feedly-button-color-text) var(--feedly-button-color-text)
+        border-color: transparent var(--mentaat-button-color-text) var(--mentaat-button-color-text)
     }
 
     .TextFocusRing_textFocusRing__ikoTB {
@@ -873,7 +873,7 @@
     }
 
     .TooltipView_caret__uxnIZ:after {
-        box-shadow: var(--feedly-box-shadow-light-caret)
+        box-shadow: var(--mentaat-box-shadow-light-caret)
     }
 
     .TooltipView_caret--top__UvXu9:after {
@@ -953,7 +953,7 @@
     }
 
     .VisualCard_visualCard___ipc7:hover {
-        box-shadow: var(--feedly-box-shadow-medium)
+        box-shadow: var(--mentaat-box-shadow-medium)
     }
 
     .BasePopover_color--default__KG9sA .BasePopover_caret__BzwSi:after {
@@ -973,7 +973,7 @@
         position: absolute;
         width: 12px;
         height: 12px;
-        box-shadow: var(--feedly-box-shadow-light-caret);
+        box-shadow: var(--mentaat-box-shadow-light-caret);
         transform: rotate(45deg)
     }
 
@@ -1252,7 +1252,7 @@
     }
 
     .CVETrendsGraph_caret__gKBqZ:after {
-        box-shadow: var(--feedly-box-shadow-light-caret)
+        box-shadow: var(--mentaat-box-shadow-light-caret)
     }
 
     .CVETrendsGraph_caret__gKBqZ:after {
@@ -1659,7 +1659,7 @@
 
     .RadioButton_importance--secondary__hj71s:hover {
         color: var(--semanticColorContentStatesMediumHover);
-        box-shadow: var(--feedly-box-shadow-medium)
+        box-shadow: var(--mentaat-box-shadow-medium)
     }
 
     .RadioButton_importance--primary__Gz_WG:hover,
@@ -1682,7 +1682,7 @@
         background: var(--semanticColorBackgroundLightest);
         border-radius: 50%;
         border: 1px solid var(--semanticColorBorderLight);
-        box-shadow: var(--feedly-box-shadow-medium);
+        box-shadow: var(--mentaat-box-shadow-medium);
         cursor: pointer;
         height: 36px;
         width: 36px
@@ -1697,7 +1697,7 @@
         background: var(--semanticColorBackgroundLightest);
         border-radius: 50%;
         border: 1px solid var(--semanticColorBorderLight);
-        box-shadow: var(--feedly-box-shadow-medium);
+        box-shadow: var(--mentaat-box-shadow-medium);
         cursor: pointer;
         height: 36px;
         width: 36px
@@ -1714,7 +1714,7 @@
         background: var(--semanticColorBackgroundLightest);
         border-radius: 50%;
         border: 1px solid var(--semanticColorBorderLight);
-        box-shadow: var(--feedly-box-shadow-medium);
+        box-shadow: var(--mentaat-box-shadow-medium);
         cursor: pointer;
         height: 36px;
         width: 36px

@@ -3,7 +3,7 @@
  * Plus: logo recolor (green→blue) for the demo. */
 /* =============================================================================
  * DESIGN TOKENS — single source of truth
- * Harvested from the captured Feedly CSS. This is the design system: every
+ * Harvested from the captured Mentaat CSS. This is the design system: every
  * color, space, and size in the site resolves to a token defined here.
  *
  * NAMING GRAMMAR:  --semantic <property> <role> <variant> <state>
@@ -191,7 +191,7 @@
     --semanticColorServicesBluesky: #1185fe;
     --semanticColorServicesBlueskyLight: #cfe7ff;
     --semanticColorServicesEnterpriseSso: #6d747d;
-    --semanticColorServicesFeedly: #2bb24c;
+    --semanticColorServicesMentaat: #2bb24c;
     --semanticColorServicesGoogle: #4285f4;
     --semanticColorServicesReddit: #ff4500;
     --semanticColorServicesRedditLight: #ffdacc;
@@ -199,7 +199,7 @@
     --semanticColorServicesTwitterLight: #d2ecfc;
     --semanticColorServicesStatesAppleHover: #333;
     --semanticColorServicesStatesEnterpriseSsoHover: #373a3f;
-    --semanticColorServicesStatesFeedlyHover: #228e3d;
+    --semanticColorServicesStatesMentaatHover: #228e3d;
     --semanticColorServicesStatesGoogleHover: #356ac3;
     --semanticColorServicesStatesRedditDisabled: #ffa280;
     --semanticColorServicesStatesTwitterDisabled: #8ed0f9
@@ -354,7 +354,7 @@
     --semanticColorServicesBluesky: #1185fe;
     --semanticColorServicesBlueskyLight: #124070;
     --semanticColorServicesEnterpriseSso: #6d747d;
-    --semanticColorServicesFeedly: #2bb24c;
+    --semanticColorServicesMentaat: #2bb24c;
     --semanticColorServicesGoogle: #4285f4;
     --semanticColorServicesReddit: #ff4500;
     --semanticColorServicesRedditLight: #661c00;
@@ -362,7 +362,7 @@
     --semanticColorServicesTwitterLight: #0c4061;
     --semanticColorServicesStatesAppleHover: #333;
     --semanticColorServicesStatesEnterpriseSsoHover: #373a3f;
-    --semanticColorServicesStatesFeedlyHover: #228e3d;
+    --semanticColorServicesStatesMentaatHover: #228e3d;
     --semanticColorServicesStatesGoogleHover: #356ac3;
     --semanticColorServicesStatesRedditDisabled: #661c00;
     --semanticColorServicesStatesTwitterDisabled: #0c4061
