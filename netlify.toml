@@ -1,0 +1,10 @@
+# The Astro project lives in astro-site/, not the repo root. `base` makes Netlify
+# cd into it (so it finds package.json), build there, and publish its static output.
+# This is a static Astro site (output: 'static') — no Next.js, no adapter needed.
+[build]
+  base = "astro-site"
+  command = "npm run build"
+  publish = "dist"          # relative to base -> astro-site/dist
+
+[build.environment]
+  NODE_VERSION = "22"
